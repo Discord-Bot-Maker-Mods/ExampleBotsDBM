@@ -1373,8 +1373,16 @@
         "info": "0",
         "infoIndex": "1",
         "storage": "1",
-        "varName": "requested_tag",
+        "varName": "requested_tag_raw",
         "name": "Store Command Params"
+      },
+      {
+        "behavior": "1",
+        "interpretation": "0",
+        "code": "var raw = this.evalMessage('${tempVars(\"requested_tag_raw\")}', cache);\nvar res = raw.toLowerCase();\nthis.storeValue(res, 1, \"requested_tag\", cache);\nthis.callNextAction(cache);",
+        "storage": "0",
+        "varName": "",
+        "name": "Run Script"
       },
       {
         "server": "0",
