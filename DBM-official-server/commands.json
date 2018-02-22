@@ -49,6 +49,14 @@
         "name": "Store Message Things"
       },
       {
+        "message": "0",
+        "varName": "",
+        "info": "4",
+        "storage": "1",
+        "varName2": "msg-channel",
+        "name": "Store Message Info"
+      },
+      {
         "info": "1",
         "find": "bot-log",
         "storage": "1",
@@ -58,7 +66,7 @@
       {
         "channel": "5",
         "varName": "channel",
-        "message": "`${tempVars(\"audn\")} (${tempVars(\"auid\")})` mentioned ${tempVars(\"mentioned users number\")} users: ${tempVars(\"mentioned users\")}",
+        "message": "`${tempVars(\"audn\")} (${tempVars(\"auid\")})` mentioned ${tempVars(\"mentioned users number\")} users: ${tempVars(\"mentioned users\")} in #${tempVars(\"msg-channel\").name}",
         "storage": "0",
         "varName2": "",
         "name": "Send Message"
@@ -207,7 +215,7 @@
         "title": "Discord Invite",
         "author": "",
         "color": "fc3535",
-        "timestamp": "false",
+        "timestamp": "true",
         "url": "",
         "authorIcon": "",
         "imageUrl": "",
@@ -239,20 +247,20 @@
       {
         "channel": "0",
         "varName": "",
-        "message": "${member} Discord links aren't allowed here! Please message links in DMs next time (only for support issues).",
+        "message": "${member} Discord links aren't allowed here! Please send them in DMs (only for support reasons!).\n*This message will disappear in a moment.*",
         "storage": "1",
         "varName2": "message",
         "name": "Send Message"
       },
       {
-        "time": "5",
-        "measurement": "1",
-        "name": "Wait"
-      },
-      {
         "storage": "0",
         "varName": "",
         "name": "Delete Message"
+      },
+      {
+        "time": "5",
+        "measurement": "1",
+        "name": "Wait"
       },
       {
         "storage": "1",
@@ -302,40 +310,29 @@
     "comType": "0"
   },
   {
-    "name": "botinfo",
-    "permissions": "MANAGE_MESSAGES",
-    "restriction": "1",
-    "_id": "VrZCk",
+    "name": "restart",
+    "permissions": "NONE",
+    "restriction": "4",
+    "_id": "nPFRT",
     "actions": [
       {
-        "info": "5",
-        "storage": "1",
-        "varName2": "ping",
-        "name": "Store Bot Client Info"
-      },
-      {
-        "info": "15",
-        "storage": "1",
-        "varName2": "ram",
-        "name": "Store Bot Client Info"
+        "channel": "0",
+        "varName": "",
+        "message": "*Okay... give me a second and check #bot-log...*",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
       },
       {
         "behavior": "0",
         "interpretation": "0",
-        "code": "Math.floor(this.getDBM().Bot.bot.uptime/1000/60/60)",
-        "storage": "1",
-        "varName": "uptime",
-        "name": "Run Script"
-      },
-      {
-        "channel": "0",
-        "varName": "",
-        "message": "Uptime: ${tempVars(\"uptime\")} hours\nPing: ${tempVars(\"ping\")} ms\nRam Usage: ${tempVars(\"ram\")}",
+        "code": "process.exit(0);",
         "storage": "0",
-        "varName2": "",
-        "name": "Send Message"
+        "varName": "",
+        "name": "Run Script"
       }
-    ]
+    ],
+    "comType": "0"
   },
   {
     "name": "--------------------------------------",
@@ -367,7 +364,7 @@
       {
         "storage": "1",
         "varName": "embed",
-        "message": "Extra commands:\n`!mute [@user] [minutes]`\n`!unmute [@user]`\n`!open` - Second support channel\n`!close` - Second support channel\n`!warn [ID] [points] [reason]`\n`!warnings [ID]`\n`!clearwarns [ID]`\n`!prune [Number]`\n`!play [name]`\n`!skip`\n`!stop`\n`!setinfo [infoname] [AnyText(AndTitle)]`\nModerators can give you 1-5 warning points.\nIf someone reached 4 points he'll get kicked.\nAnd if someone reach 5 points she'll get banned.",
+        "message": "Extra commands:\n`!mute [@user] [minutes]`\n`!unmute [@user]`\n`!open` - Second support channel\n`!close` - Second support channel\n`!warn [ID] [points] [reason]`\n`!warnings [ID]`\n`!clearwarns [ID]`\n`!prune [Number]`\n`!play [name]`\n`!skip`\n`!stop`\n`!setinfo [infoname] [AnyText(AndTitle)]`\n`!botinfo`\nModerators can give 0-5 warning points.\nIf someone reaches 4 points he'll get kicked.\nAnd if someone reaches 5 points she'll get banned.",
         "name": "Set Embed Description"
       },
       {
@@ -837,7 +834,7 @@
       {
         "storage": "1",
         "varName": "embed",
-        "message": "You have ${tempVars(\"own_points\")} warnings!",
+        "message": "You have ${tempVars(\"own_points\")} warning points!",
         "name": "Set Embed Description"
       },
       {
@@ -1059,7 +1056,7 @@
   },
   {
     "name": "skip",
-    "permissions": "NONE",
+    "permissions": "MANAGE_MESSAGES",
     "restriction": "1",
     "_id": "QhrYA",
     "actions": [
@@ -1080,7 +1077,7 @@
   },
   {
     "name": "stop",
-    "permissions": "NONE",
+    "permissions": "MANAGE_MESSAGES",
     "restriction": "1",
     "_id": "wxIAH",
     "actions": [
@@ -1157,6 +1154,43 @@
       }
     ],
     "_aliases": []
+  },
+  {
+    "name": "botinfo",
+    "permissions": "MANAGE_MESSAGES",
+    "restriction": "1",
+    "_id": "VrZCk",
+    "actions": [
+      {
+        "info": "5",
+        "storage": "1",
+        "varName2": "ping",
+        "name": "Store Bot Client Info"
+      },
+      {
+        "info": "15",
+        "storage": "1",
+        "varName2": "ram",
+        "name": "Store Bot Client Info"
+      },
+      {
+        "behavior": "0",
+        "interpretation": "0",
+        "code": "Math.floor(this.getDBM().Bot.bot.uptime/1000/60/60)",
+        "storage": "1",
+        "varName": "uptime",
+        "name": "Run Script"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "Uptime: ${tempVars(\"uptime\")} hours\nPing: ${tempVars(\"ping\")} ms\nRam Usage: ${tempVars(\"ram\")}",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ],
+    "comType": "0"
   },
   {
     "name": "--------------------------------------",

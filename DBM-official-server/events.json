@@ -501,7 +501,7 @@
         "name": "Find Channel"
       },
       {
-        "title": "Bot is RIP!",
+        "title": "Bot -> RIP!",
         "author": "",
         "color": "",
         "timestamp": "false",
@@ -561,95 +561,5 @@
       }
     ],
     "temp2": "js_error"
-  },
-  {
-    "name": "GameWarning",
-    "temp": "oldmember",
-    "event-type": "21",
-    "_id": "hGYWb",
-    "actions": [
-      {
-        "info": "1",
-        "find": "bot-log",
-        "storage": "1",
-        "varName": "log-channel",
-        "name": "Find Channel"
-      },
-      {
-        "member": "2",
-        "varName": "member",
-        "info": "14",
-        "storage": "1",
-        "varName2": "game",
-        "name": "Store Member Info"
-      },
-      {
-        "member": "2",
-        "varName": "oldmember",
-        "info": "14",
-        "storage": "1",
-        "varName2": "oldgame",
-        "name": "Store Member Info"
-      },
-      {
-        "storage": "1",
-        "varName": "game",
-        "comparison": "1",
-        "value": "tempVars(\"oldgame\")",
-        "iftrue": "1",
-        "iftrueVal": "",
-        "iffalse": "0",
-        "iffalseVal": "",
-        "name": "Check Variable"
-      },
-      {
-        "storage": "1",
-        "varName": "game",
-        "comparison": "6",
-        "value": "discord.gg|discord.me|fucking|porn",
-        "iftrue": "0",
-        "iftrueVal": "",
-        "iffalse": "1",
-        "iffalseVal": "",
-        "name": "Check Variable"
-      },
-      {
-        "title": "Game Alert - ${tempVars(\"member\").user.tag}",
-        "author": "",
-        "color": "f99454",
-        "timestamp": "false",
-        "url": "",
-        "authorIcon": "",
-        "imageUrl": "",
-        "thumbUrl": "",
-        "storage": "1",
-        "varName": "embed",
-        "name": "Create Embed Message"
-      },
-      {
-        "storage": "1",
-        "varName": "embed",
-        "fieldName": "Member:",
-        "message": "${tempVars(\"member\")}",
-        "inline": "0",
-        "name": "Add Embed Field"
-      },
-      {
-        "storage": "1",
-        "varName": "embed",
-        "fieldName": "Game:",
-        "message": "${tempVars(\"game\")}",
-        "inline": "0",
-        "name": "Add Embed Field"
-      },
-      {
-        "storage": "1",
-        "varName": "embed",
-        "channel": "5",
-        "varName2": "log-channel",
-        "name": "Send Embed Message"
-      }
-    ],
-    "temp2": "member"
   }
 ]
