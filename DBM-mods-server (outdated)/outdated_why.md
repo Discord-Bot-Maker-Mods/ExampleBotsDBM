@@ -1,1 +1,0 @@
-Most actions have been transfered into the unofficial DBM Bot.

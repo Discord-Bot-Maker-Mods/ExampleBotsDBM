@@ -1,1 +1,0 @@
-All actions have been transfered into the unofficial DBM Bot - The bot is offline now.
