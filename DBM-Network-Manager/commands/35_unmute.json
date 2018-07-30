@@ -1,0 +1,102 @@
+{
+  "name": "unmute",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "MvwJz",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👿 **NO!**\nIt's `!unmute @User`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"member\").user.id}",
+      "storage": "1",
+      "varName": "member-check",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "member-check",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🐒 No u! The user is not here!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "^ Storing & Checking Parameters ^",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🕐 *Unmute on all servers...*",
+      "storage": "1",
+      "varName2": "status-msg",
+      "name": "Send Message"
+    },
+    {
+      "source": "PPMD4",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "storage": "1",
+      "varName": "status-msg",
+      "message": "✅ **Unmuted ${mentionedUser.tag} in all unofficial servers for ${tempVars(\"time\")} minute(s).**",
+      "name": "Edit Message"
+    }
+  ]
+}

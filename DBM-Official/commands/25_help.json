@@ -1,0 +1,108 @@
+{
+  "name": "help",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "FJgZk",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-commands",
+      "storage": "1",
+      "varName": "bot-commands",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "mod-test-channel",
+      "storage": "1",
+      "varName": "mod-test-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"bot-commands\")",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"mod-test-channel\")",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "This command is only available in ${tempVars(\"bot-commands\")}!",
+      "storage": "1",
+      "varName2": "info-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "info-msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Command list",
+      "author": "",
+      "color": "407cdd",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "**DBM Helper Role:**\nThat role is for users who know much about DBM\nbecause it can be mentioned for help reasons.\n`!helper`\n\n**Suggestions:**\nYou can suggest stuff for the bot/server/DBM. Please write exactly what you want!\n`!suggest [text]`\n\n**Warnings:**\nModerators can warn you. If you reached a specific amount of warning points, you'll get kicked/banned.\n`!warnings`\n\n**Info commands:**\nYou can use premade messages to answer to often asked questions\nusing our \"info\" command.\n \nType **!info [infoname]** to get such a message.\nInfonames:\n`beta`, `mods`, `rawdata`, `vps`, `tutorials`, `srd`, `ffmpeg`, `verify`, `embed`, `./nodemodules`, `cmd`, `mac`, `forum`, `mac`, `moduleerror`, `enduserdata`, `music`, `helper`, `google`, `scripts`, `suggestions`, `one-channel`, `servers`, `token`, `achievements`, `support-website`, `dbm2`, `expert`, `supporter`\n\n**My data?**\nIf you want to check what we saved from you please use this command:\n`!mydata`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "h"
+  ]
+}

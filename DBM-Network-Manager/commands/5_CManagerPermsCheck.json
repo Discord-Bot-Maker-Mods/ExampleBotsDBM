@@ -1,0 +1,103 @@
+{
+  "name": "CManagerPermsCheck",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_perms_manager",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"au_id\")}",
+      "storage": "1",
+      "varName": "s_mem",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "s_mem",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😁 Nope. Not you!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "471754425007079425",
+      "storage": "1",
+      "varName": "team-leader",
+      "name": "Find Role"
+    },
+    {
+      "info": "0",
+      "find": "431821906841305088",
+      "storage": "1",
+      "varName": "network",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName": "s_mem",
+      "role": "3",
+      "varName2": "team-leader",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "2",
+      "varName": "s_mem",
+      "role": "3",
+      "varName2": "network",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💩 You are Staff... but not good enough! (Team Leader + Network Manager only)",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "name": "Change Server"
+    }
+  ],
+  "comType": "0"
+}

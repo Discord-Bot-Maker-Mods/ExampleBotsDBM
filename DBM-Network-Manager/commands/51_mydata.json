@@ -1,0 +1,63 @@
+{
+  "name": "mydata",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "zDESL",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":floppy_disk: I will send you everything in a DM. If you don't recieve a message check if you have DMs enabled.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "JSON.stringify(Files.data.players[msg.author.id], null, 2)",
+      "storage": "1",
+      "varName": "data",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "data",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "💭 We saved ... nothing (?). That can't be possible!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "<a:loading:439082601211494412> We saved the following information from you:\n```${tempVars(\"data\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "whatdidyousavefromme"
+  ],
+  "_timeRestriction": 60
+}

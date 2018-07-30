@@ -1,0 +1,66 @@
+{
+  "name": "onMemberJoin",
+  "temp": "mem",
+  "event-type": "6",
+  "_id": "PPTCU",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "mem",
+      "dataName": "warning_points",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Member Data"
+    },
+    {
+      "info": "0",
+      "find": "362345616929718273",
+      "storage": "1",
+      "varName": "mod-channel",
+      "name": "Find Channel"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "points",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "5",
+      "varName": "mod-channel",
+      "message": "Going to ban ${tempVars(\"mem\")} (${tempVars(\"mem\").user.id}) now cause they have ${tempVars(\"points\")} and just joined!",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "mem",
+      "message": "You have been banned manually. Please contact <@156176442835730432> if you think your ban is wrong.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "reason": "Manual set by Moderator!",
+      "name": "Ban Member"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "😤",
+      "varName3": "",
+      "name": "Add Reaction"
+    }
+  ]
+}

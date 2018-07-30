@@ -1,0 +1,74 @@
+{
+  "name": "reset-cooldown",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "HFyAI",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "1",
+      "find": "Helper",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😷 Nope. We don't have that helper system here!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "role",
+      "name": "Edit Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🍻 You can mention helpers again!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "**${member} enabled helper mentions on ${msg.guild.name}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

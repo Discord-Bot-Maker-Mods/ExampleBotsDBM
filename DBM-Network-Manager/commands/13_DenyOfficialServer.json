@@ -1,0 +1,27 @@
+{
+  "name": "DenyOfficialServer",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "hUbUn",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "335407595890409472",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    }
+  ]
+}

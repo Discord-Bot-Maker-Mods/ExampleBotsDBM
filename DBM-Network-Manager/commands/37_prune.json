@@ -1,0 +1,62 @@
+{
+  "name": "prune",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "yFioc",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "♻ What????\n`!prune number-of-messages`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "count": "${tempVars(\"number\")}",
+      "condition": "0",
+      "custom": "",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    }
+  ],
+  "_aliases": [
+    "purge"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "name": "request",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_serv_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_serv_id",
+      "comparison": "1",
+      "value": "379372685182107669",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "find": "445577168744087563",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "desc",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👀 Sorry, that is not correct...\n`!request idea`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "I want...",
+      "author": "${member.user.username}",
+      "color": "4286f4",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "suggestion",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sug-num",
+      "min": "10000",
+      "max": "99999",
+      "name": "Generate Random Number"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "req_${tempVars(\"sug-num\")}",
+      "changeType": "0",
+      "value": "tempVars(\"desc\")",
+      "name": "Control Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "message": "💛 Sounds nice! • 🕒 I'll do that! • 💩 Inoperative • #${tempVars(\"sug-num\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "message": "${tempVars(\"desc\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "channel": "5",
+      "varName2": "channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "info": "4",
+      "storage": "1",
+      "varName2": "lastmsginchannel",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "💛",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "🕒",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "💩",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ ${member} Your raw data request has been submitted!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "0",
+  "_id": "wwMVa",
+  "_aliases": []
+}

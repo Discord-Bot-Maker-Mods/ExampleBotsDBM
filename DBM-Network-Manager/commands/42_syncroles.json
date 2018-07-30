@@ -1,0 +1,106 @@
+{
+  "name": "syncroles",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "XoDPz",
+  "actions": [
+    {
+      "source": "no_staff",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "${member.user.id}",
+      "storage": "1",
+      "varName": "staffmember",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "staffmember",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<:deny:455023973537939456> This command is only for Staff members",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "member",
+      "name": "Store Member Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"staffmember\").roles.array()",
+      "storage": "1",
+      "varName": "staffmemberroles",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:loading:439082601211494412> Loading your roles...",
+      "storage": "1",
+      "varName2": "stat-msg",
+      "name": "Send Message"
+    },
+    {
+      "source": "TMZwz",
+      "list": "7",
+      "varName": "staffmemberroles",
+      "tempVarName": "staffrole",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "server": "0",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "message": "1",
+      "varName": "stat-msg",
+      "info": "2",
+      "storage": "1",
+      "varName2": "stat-msg-txt",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "stat-msg",
+      "message": "${tempVars(\"stat-msg-txt\")}\n✅ Synced.",
+      "name": "Edit Message"
+    }
+  ]
+}

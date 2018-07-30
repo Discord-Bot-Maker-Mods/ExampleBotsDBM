@@ -1,0 +1,148 @@
+{
+  "name": "helper",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "idDKw",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "0",
+      "find": "379372685182107669",
+      "storage": "1",
+      "varName": "rawdataserver",
+      "name": "Find Server"
+    },
+    {
+      "info": "0",
+      "find": "374961173524643843",
+      "storage": "1",
+      "varName": "modsserver",
+      "name": "Find Server"
+    },
+    {
+      "info": "0",
+      "find": "418414602536091648",
+      "storage": "1",
+      "varName": "hostingserver",
+      "name": "Find Server"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serverid",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "serverid",
+      "comparison": "1",
+      "value": "${tempVars(\"rawdataserver\").id}",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "serverid",
+      "comparison": "1",
+      "value": "${tempVars(\"hostingserver\").id}",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "serverid",
+      "comparison": "1",
+      "value": "${tempVars(\"modsserver\").id}",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "Helper",
+      "storage": "1",
+      "varName": "helper-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "helper-role",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The **Helper** role has been given to you ${member}.\nThe role is for users who know much about ${msg.guild.name} because the role can be mentioned if someone needs help.\nYou can remove the role using `!helper` again.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "helper-role",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "${member.user.tag} (${member.user.id}) joined Helpers on ${msg.guild.name}.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You removed the Helper role from yourself ${member}.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "helper-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "${member.user.tag} (${member.user.id}) left Helpers on ${msg.guild.name}.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

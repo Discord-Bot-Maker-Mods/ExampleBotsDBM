@@ -1,0 +1,296 @@
+{
+  "name": "OnStar",
+  "temp": "msg",
+  "event-type": "28",
+  "_id": "NNWE3",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-name",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").emoji.name}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-name",
+      "comparison": "1",
+      "value": "'100'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_serv_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_serv_id",
+      "comparison": "1",
+      "value": "'379372685182107669'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.channel.id}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.channel}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'379523292077228042'",
+      "iftrue": "3",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'386829188511957003'",
+      "iftrue": "3",
+      "iftrueVal": "6",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'379523071310299136'",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'379523089811374080'",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'379522798009319435'",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'379523133184409600'",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'414814123562631169'",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'445302973854122014'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "find": "402203855208579083",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "Check if the raw data is registerd",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "message_id",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.id}'",
+      "name": "Control Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "msg_${tempVars(\"message_id\")}_pub_id",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": ":star: **Error!** The starred message does not include raw data!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Stores Raw Data Info",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "msg_${tempVars(\"message_id\")}_pub_id",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "raw_id",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}_au",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "raw_au",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "raw_text",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"raw_au\")}",
+      "storage": "1",
+      "varName": "raw_au_member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "raw_au_member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": ":star: **Error:** 🐾 The author left the server...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${tempVars(\"reaction-user\")} starred **#${tempVars(\"raw_id\")}** from <@${tempVars(\"raw_au\")}>. But that is not supported yet!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": " ",
+      "author": "${tempVars(\"raw_au_member\").user.username}",
+      "color": "",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${tempVars(\"raw_au_member\").user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "star-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "star-embed",
+      "message": "${tempVars(\"raw_text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "star-embed",
+      "message": "#${tempVars(\"raw_id\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "star-embed",
+      "channel": "5",
+      "varName2": "star-channel",
+      "name": "Send Embed Message"
+    }
+  ]
+}

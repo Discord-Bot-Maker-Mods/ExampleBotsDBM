@@ -1,0 +1,40 @@
+{
+  "name": "update",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "aHSsj",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "bot",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "text",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"bot\")} **9.${globalVars(\"restarts\")}** - ${tempVars(\"text\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

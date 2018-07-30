@@ -1,0 +1,179 @@
+{
+  "name": "reply",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "KZOyu",
+  "actions": [
+    {
+      "source": "check_server_rawdata_post",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "0",
+      "find": "449262058563698691",
+      "storage": "1",
+      "varName": "role_raw_dat_posters",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role_raw_dat_posters",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🙉 Only Raw Contributors can reply to requests.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_serv_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_serv_id",
+      "comparison": "1",
+      "value": "379372685182107669",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😣 Wrong format!\n`!reply [ID] [Text]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "sug-num",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "req_${tempVars(\"sug-num\")}",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ What? Where???",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "req_${tempVars(\"sug-num\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "suggestion-text",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "comment-text",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "445577168744087563",
+      "storage": "1",
+      "varName": "sug-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "Stored & Checked everything",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "Raw Contributor Reply",
+      "author": "${member.user.username}",
+      "color": "ffee00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "*${tempVars(\"suggestion-text\")}*",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Comment",
+      "message": "${tempVars(\"comment-text\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "sug-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ]
+}

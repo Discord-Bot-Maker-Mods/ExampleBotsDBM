@@ -1,0 +1,24 @@
+{
+  "name": "restart",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "0",
+  "_id": "nPFRT",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "*Okay... give me a second and check #bot-log...*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "process.exit(0);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

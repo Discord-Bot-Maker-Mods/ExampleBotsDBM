@@ -1,0 +1,149 @@
+{
+  "name": "rep",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "fGSor",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "rep_c",
+      "defaultVal": "'nou'",
+      "storage": "1",
+      "varName2": "timestamptowaitfor",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "timestamptowaitfor",
+      "comparison": "1",
+      "value": "'nou'",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const value = Date.parse(new Date()) / 1000 - tempVars(\"timestamptowaitfor\");\nvalue > 1 ? \"true\" : \"false\";",
+      "storage": "1",
+      "varName": "status",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "status",
+      "comparison": "1",
+      "value": "\"false\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const value = tempVars(\"timestamptowaitfor\") - Date.parse(new Date()) / 1000;\nthis.generateTimeString(value);",
+      "storage": "1",
+      "varName": "string",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🕒 Please wait ${tempVars(\"string\")} you can give reputation points again!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ You can give reputation points to other users (Check your points using `!me`). `!rep @user`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "1",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:a_youtried:440893916112486402> You cannot add reputation points to yourself!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "member",
+      "dataName": "rep_c",
+      "changeType": "0",
+      "value": "(Date.parse(new Date()) / 1000) + 43200",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "member",
+      "dataName": "rep_s",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "rep_r",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<:rep:468908867904995328> ${member} gave ${tempVars(\"member\")} one reputation point!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": []
+}

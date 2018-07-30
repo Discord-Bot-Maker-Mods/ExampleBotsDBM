@@ -1,0 +1,53 @@
+{
+  "name": "botinfo",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "_id": "VrZCk",
+  "actions": [
+    {
+      "info": "5",
+      "storage": "1",
+      "varName2": "ping",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "15",
+      "storage": "1",
+      "varName2": "ram",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "23",
+      "storage": "1",
+      "varName2": "udays",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "24",
+      "storage": "1",
+      "varName2": "uhours",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "25",
+      "storage": "1",
+      "varName2": "umins",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "26",
+      "storage": "1",
+      "varName2": "usecs",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Uptime: ${tempVars(\"udays\")}d : ${tempVars(\"uhours\")}h : ${tempVars(\"umins\")}m : ${tempVars(\"usecs\")}s\nPing: ${tempVars(\"ping\")} ms\nRam Usage: ${tempVars(\"ram\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

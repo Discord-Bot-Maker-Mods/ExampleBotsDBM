@@ -1,0 +1,55 @@
+{
+  "name": "NoMessagesIn",
+  "temp": "msg",
+  "event-type": "2",
+  "_id": "RVblZ",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "accept-rules",
+      "storage": "1",
+      "varName": "accept-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "accept-channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"accept-channel\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    }
+  ]
+}

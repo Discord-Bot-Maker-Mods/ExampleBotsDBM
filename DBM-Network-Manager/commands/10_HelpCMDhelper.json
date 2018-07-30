@@ -1,0 +1,84 @@
+{
+  "name": "HelpCMDhelper",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_server_helper",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "379372685182107669",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "374961173524643843",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "418414602536091648",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Helper Role",
+      "message": "That role is for users who know much about DBM\nbecause it can be mentioned for help reasons.\n`!helper`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "374961173524643843",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Suggestions",
+      "message": "You can suggest modifications here. Please write exactly what you want!\n`!suggest [text]`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}

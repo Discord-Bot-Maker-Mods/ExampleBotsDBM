@@ -1,0 +1,39 @@
+{
+  "name": "[Call]MessageStaff",
+  "temp": "",
+  "event-type": "0",
+  "_id": "BgzxW",
+  "actions": [
+    {
+      "title": "Staff Announcement from ${member.user.username}",
+      "author": "",
+      "color": "f44286",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"message\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "member",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "100",
+      "measurement": "0",
+      "name": "Wait"
+    }
+  ]
+}

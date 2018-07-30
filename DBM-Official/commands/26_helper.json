@@ -1,0 +1,140 @@
+{
+  "name": "helper",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "idDKw",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-commands",
+      "storage": "1",
+      "varName": "bot-commands",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"bot-commands\")",
+      "iftrue": "2",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "This command is only available in ${tempVars(\"bot-commands\")}!",
+      "storage": "1",
+      "varName2": "info-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "info-msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "find": "DBM Helper",
+      "storage": "1",
+      "varName": "helper-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "helper-role",
+      "iftrue": "2",
+      "iftrueVal": "17",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The **DBM Helper** role has been given to you ${member}.\nThe role is for users who know much about DBM because the role can be mentioned if someone needs help.\nYou can remove the role using `!helper` again.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "helper-role",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "5",
+      "varName": "log-channel",
+      "message": "${member} joined DBM Helpers.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You removed the DBM Helper role from yourself ${member}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "helper-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "5",
+      "varName": "log-channel",
+      "message": "${member} left DBM Helpers.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

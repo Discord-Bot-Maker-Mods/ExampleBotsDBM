@@ -1,0 +1,97 @@
+{
+  "name": "Init",
+  "temp": "",
+  "event-type": "1",
+  "_id": "gjXaV",
+  "actions": [
+    {
+      "storage": "3",
+      "varName": "init",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "init",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "restarts",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "restarts",
+      "name": "Save Variable"
+    },
+    {
+      "info": "0",
+      "find": "374529428174405632",
+      "storage": "3",
+      "varName": "staff-server",
+      "name": "Find Server"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "422662411347034112",
+      "storage": "3",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "422484358079971328",
+      "storage": "3",
+      "varName": "warn-log",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "427102107607367690",
+      "storage": "3",
+      "varName": "mod-chat",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "420578443483414528",
+      "storage": "3",
+      "varName": "advert-channel-hosting",
+      "name": "Find Channel"
+    },
+    {
+      "activity": "2",
+      "nameText": "for commands",
+      "url": "",
+      "name": "Set Bot Activity"
+    },
+    {
+      "source": "oTfSB",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "*Bot restarted*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

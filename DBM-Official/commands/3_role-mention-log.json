@@ -1,0 +1,116 @@
+{
+  "name": "role-mention-log",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "PoOtT",
+  "actions": [
+    {
+      "condition": "3",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "3",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "role",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "auus",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "audi",
+      "name": "Store Member Things"
+    },
+    {
+      "role": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "rname",
+      "name": "Store Role Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "**${member} mentioned `${tempVars(\"rname\")}`**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "1",
+      "find": "DBM Helper",
+      "storage": "1",
+      "varName": "helper_role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "1",
+      "value": "tempVars(\"helper_role\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "false",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "helper_role",
+      "name": "Edit Role"
+    },
+    {
+      "time": "30",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "helper_role",
+      "name": "Edit Role"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "*Helpers can get mentioned again*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

@@ -1,0 +1,71 @@
+{
+  "name": "dutch",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "TCNL5",
+  "actions": [
+    {
+      "info": "1",
+      "find": "Dutch",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "role",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, you joined **Dutch**.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, you left **Dutch**.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_timeRestriction": 10
+}

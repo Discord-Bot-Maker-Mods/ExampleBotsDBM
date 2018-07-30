@@ -1,0 +1,21 @@
+{
+  "name": "[Log]Leave",
+  "temp": "mem",
+  "event-type": "7",
+  "_id": "SvLrU",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "${tempVars(\"mem\").user.tag} (${tempVars(\"mem\").user.id}) left ${tempVars(\"mem\").guild.name}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

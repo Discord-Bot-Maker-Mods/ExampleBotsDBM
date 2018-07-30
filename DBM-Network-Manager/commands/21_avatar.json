@@ -1,0 +1,24 @@
+{
+  "name": "avatar",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "EMXAE",
+  "actions": [
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "url",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"url\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

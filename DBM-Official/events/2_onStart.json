@@ -1,0 +1,67 @@
+{
+  "name": "onStart",
+  "temp": "",
+  "event-type": "1",
+  "_id": "gjXaV",
+  "actions": [
+    {
+      "activity": "2",
+      "nameText": "for spammers",
+      "url": "",
+      "name": "Set Bot Activity"
+    },
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "log-channel",
+      "message": "*Bot restarted*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "1",
+      "find": "DBM Helper",
+      "storage": "1",
+      "varName": "helper-role",
+      "name": "Find Role"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "helper-role",
+      "name": "Edit Role"
+    },
+    {
+      "storage": "2",
+      "varName": "infos",
+      "name": "Create List"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"server\").fetchMembers()",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

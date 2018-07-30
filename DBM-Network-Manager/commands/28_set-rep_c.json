@@ -1,0 +1,94 @@
+{
+  "name": "set-rep_c",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "gEcSQ",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ This resets the cooldown of the rep command for a specific ID.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(tempVars(\"id\"));",
+      "storage": "0",
+      "varName": "user",
+      "name": "Run Script"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ ID! ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "rep_c",
+      "changeType": "0",
+      "value": "(Date.parse(new Date()) / 1000)",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💚 Done",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

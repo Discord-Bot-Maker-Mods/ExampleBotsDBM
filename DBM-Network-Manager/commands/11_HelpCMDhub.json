@@ -1,0 +1,49 @@
+{
+  "name": "HelpCMDhub",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_server_hub_help",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "457628513353334798",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "LIVESTREAM ALERTS",
+      "message": "From time to time we go live and stream some Q&A or direct support streams.\nIf you want to get a notification do the following command:\n`!live`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Language chats",
+      "message": "You can join language specific chats using\n`!german`\n`!turkish`\n`!french`\n`!israeli`\n`!spanish`\n(Only these languages are available at the moment!)",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}

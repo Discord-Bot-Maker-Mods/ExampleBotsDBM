@@ -1,0 +1,69 @@
+{
+  "name": "clearwarns",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "wNZEq",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😱 lul. Wrong format!\n`!clearwarns ID`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "ID",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "if(Files.data.players[tempVars(\"ID\")] == undefined) {\nmsg.channel.send('The user does not exist in our database!');\n} else {\nif(Files.data.players) {\nvar json = Files.data.players[tempVars(\"ID\")];\nmsg.channel.send('Removing: ' + json.warning_points + ' points');\ndelete json.warning_points;\nFiles.saveData(\"players\");\nthis.callNextAction(cache);\n} else {\nmessage.channel.send('Looks like an error');\n}\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Reset warning points of <@${tempVars(\"ID\")}> done!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "7",
+      "varName": "warn-log",
+      "message": "${member} reset the warning points of <@${tempVars(\"ID\")}> in ${msg.guild.name}.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "clearwarn"
+  ],
+  "comType": "0"
+}

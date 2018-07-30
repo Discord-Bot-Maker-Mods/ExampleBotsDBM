@@ -1,0 +1,137 @@
+{
+  "name": "you",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DEnjx",
+  "actions": [
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "user",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Please mention a member to see their stats. View your own with `!me`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "${tempVars(\"user\").user.username}",
+      "author": "",
+      "color": "4286f4",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"user\").user.displayAvatarURL}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "warns",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "rep_r",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "rep_r",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "rep_s",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "rep_s",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Here are the information about ${tempVars(\"user\").user.username}.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Warning Points <:warning:468908536231886876>",
+      "message": "${tempVars(\"warns\")} points",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Reputation Points <:rep:468908867904995328>",
+      "message": "Received: ${tempVars(\"rep_r\")}\nSent: ${tempVars(\"rep_s\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": []
+}

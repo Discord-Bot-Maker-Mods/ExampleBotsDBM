@@ -1,0 +1,54 @@
+{
+  "name": "bot-mention-react",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "PoOtT",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot",
+      "name": "Get Bot as Member"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msgtxt",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "msgtxt",
+      "comparison": "5",
+      "value": "tempVars(\"bot\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "channel",
+      "message": "<a:a_ping_socktag_mention:409471182971076618>",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3",
+  "_timeRestriction": 30
+}

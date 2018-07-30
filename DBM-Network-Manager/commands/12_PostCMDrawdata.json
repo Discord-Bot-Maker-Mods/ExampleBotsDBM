@@ -1,0 +1,33 @@
+{
+  "name": "PostCMDrawdata",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_server_rawdata_post",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "'379372685182107669'",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "1",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "comment": "Just For Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}

@@ -1,0 +1,145 @@
+{
+  "name": "[Call]Ban",
+  "temp": "",
+  "event-type": "0",
+  "_id": "msg-ban",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar_url_member",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "avatar_url_member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Ban",
+      "author": "${member.user.username}",
+      "color": "ff1d00",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${member.user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"member\").user.avatarURL}",
+      "storage": "1",
+      "varName": "embed-staff",
+      "name": "Create Embed Message"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "title": "Ban",
+      "author": "${member.user.username}",
+      "color": "ff1d00",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${member.user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed-staff",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "message": "${tempVars(\"member\").user.username} (${tempVars(\"member\").user.id})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "fieldName": "Points",
+      "message": "${tempVars(\"points\")} (Total: ${tempVars(\"total_warnings\")})",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "message": "Issued in ${msg.guild.name}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "channel": "7",
+      "varName2": "warn-log",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "^^ Sent to #warn-log ^^",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "You have been banned!",
+      "author": "",
+      "color": "ff1d00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed-user",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "message": "Hello ${tempVars(\"member\").user.username}.\nYou have been banned from all DBM Network servers.\nIf you think that your ban is incorrect please contact the Management [here](https://dbm-support.site).",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "fieldName": "Points",
+      "message": "${tempVars(\"points\")} (Total: ${tempVars(\"total_warnings\")})",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "channel": "5",
+      "varName2": "member",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "^^ Sent to member ^^",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

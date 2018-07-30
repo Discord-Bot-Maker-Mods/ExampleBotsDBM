@@ -1,0 +1,54 @@
+{
+  "name": "close",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "PUqTW",
+  "actions": [
+    {
+      "info": "1",
+      "find": "DBM Expert",
+      "storage": "1",
+      "varName": "expert-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "expert-role",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "1",
+      "find": "support2",
+      "storage": "1",
+      "varName": "support2",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "support2",
+      "message": "**Closed by ${member}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "3",
+      "varName": "support2",
+      "permission": "READ_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "0"
+}

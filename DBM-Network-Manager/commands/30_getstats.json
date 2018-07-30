@@ -1,0 +1,85 @@
+{
+  "name": "getstats",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "grJoe",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serverid",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "serverid",
+      "comparison": "1",
+      "value": "'374529428174405632'",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💓 Staff Server only!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Moderator Stats",
+      "author": "",
+      "color": "00aeff",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "info": "0",
+      "find": "427101187029073932",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "source": "jzsSH",
+      "list": "0",
+      "varName": "role-list",
+      "tempVarName": "member",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Last reset: 9. July 2018",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

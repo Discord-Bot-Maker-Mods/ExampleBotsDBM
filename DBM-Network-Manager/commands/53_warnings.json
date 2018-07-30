@@ -1,0 +1,177 @@
+{
+  "name": "warnings",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "NqsRH",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "${member.user.id}",
+      "storage": "1",
+      "varName": "staff-member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "staff-member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "find": "427101187029073932",
+      "storage": "1",
+      "varName": "staff-mod-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName": "staff-member",
+      "role": "3",
+      "varName2": "staff-mod-role",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check If Member has Role"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check Parameters"
+    },
+    {
+      "comment": "Mod Only Check member",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "input",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "JSON.stringify(Files.data.players[tempVars(\"input\")]);",
+      "storage": "1",
+      "varName": "res",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "res",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "res",
+      "changeType": "0",
+      "value": "'erm.. error?! Or the user did not even accept the rules.'",
+      "name": "Control Variable"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "🔑 Please do not share these information outside moderator only channels!\n```${tempVars(\"res\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "📡 Data stored from the user has been sent to your DMs! #PrivacyPolicy!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "End",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Change Server"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "points",
+      "name": "Store Member Data"
+    },
+    {
+      "title": "${member.user.username}",
+      "author": "",
+      "color": "00aeff",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"points\")} points",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "warns"
+  ]
+}

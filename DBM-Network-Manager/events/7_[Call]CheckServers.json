@@ -1,0 +1,195 @@
+{
+  "name": "[Call]CheckServers",
+  "temp": "",
+  "event-type": "0",
+  "_id": "BAIqc",
+  "actions": [
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Change Server"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "info": "2",
+      "storage": "1",
+      "varName2": "server_name",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "18",
+      "storage": "1",
+      "varName2": "server_members",
+      "name": "Store Server Things"
+    },
+    {
+      "comment": "Muted Role There? Start",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "muted-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "muted-role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "server_muted_role",
+      "changeType": "0",
+      "value": "'❌ No Muted Role'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "efefef",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "server_muted_role",
+      "changeType": "0",
+      "value": "'✅ Muted Role'",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "Muted Role There? End",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "comment": "Pending Rule Check Role There? Start",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "find": "Pending Rule Check",
+      "storage": "1",
+      "varName": "rule-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "rule-role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "server_rule_role",
+      "changeType": "0",
+      "value": "'❌ No Pending Rule Check Role'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "efefef",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "server_rule_role",
+      "changeType": "0",
+      "value": "'✅ Pending Rule Check Role'",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "Pending Rule Check Role There? End",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "comment": "Bot is Admin? Start",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot-mem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "bot-mem",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "1",
+      "varName": "server_perms_admin",
+      "changeType": "0",
+      "value": "'❌ Bot is not admin'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "efefef",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "server_perms_admin",
+      "changeType": "0",
+      "value": "'✅ Bot is admin'",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "Bot is Admin? End",
+      "color": "#0080ff",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "${tempVars(\"server_name\")}",
+      "message": "Members: ${tempVars(\"server_members\")}\nMuted Role: ${tempVars(\"server_muted_role\")}\nPending Rule Check Role: ${tempVars(\"server_rule_role\")}\nBot has Admin Perms: ${tempVars(\"server_perms_admin\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    }
+  ]
+}

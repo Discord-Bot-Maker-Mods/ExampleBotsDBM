@@ -1,0 +1,31 @@
+{
+  "name": "[SYS]GiveRole",
+  "temp": "",
+  "event-type": "0",
+  "_id": "HDlxa",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "role": "3",
+      "varName2": "pending-role",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "member": "2",
+      "varName2": "member",
+      "role": "3",
+      "varName": "pending-role",
+      "name": "Add Member Role"
+    }
+  ]
+}

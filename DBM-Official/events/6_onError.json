@@ -1,0 +1,58 @@
+{
+  "name": "onError",
+  "temp": "err",
+  "event-type": "37",
+  "_id": "tzruX",
+  "actions": [
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "Bot -> RIP!",
+      "author": "",
+      "color": "",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "The bot (maybe) still works. This is only an error.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "DBM Error:",
+      "message": "${tempVars(\"err\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "JS Error:",
+      "message": "Something happened.... check the real bot log for the json stuff...",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    }
+  ],
+  "temp2": "jserr"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "member-mention-log",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "PoOtT",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "audn",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "auid",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "mentioned users",
+      "name": "Store Message Things"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "mentioned users number",
+      "name": "Store Message Things"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "`${tempVars(\"audn\")} (${tempVars(\"auid\")})` mentioned ${tempVars(\"mentioned users number\")} users: ${tempVars(\"mentioned users\")} in ${tempVars(\"msg-channel\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

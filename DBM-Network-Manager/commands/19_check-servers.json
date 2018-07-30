@@ -1,0 +1,37 @@
+{
+  "name": "check-servers",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "KXSxK",
+  "actions": [
+    {
+      "title": "__Unofficial Servers__",
+      "author": "",
+      "color": "",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "source": "BAIqc",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}

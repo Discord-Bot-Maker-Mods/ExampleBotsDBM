@@ -1,0 +1,97 @@
+{
+  "name": "MemberBan",
+  "temp": "",
+  "event-type": "0",
+  "_id": "ban",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "user_warning_points",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "1",
+      "find": "warn-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "Ban - ${tempVars(\"user\").user.tag}",
+      "author": "",
+      "color": "ff0000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User",
+      "message": "${tempVars(\"user\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "New Points",
+      "message": "${tempVars(\"points\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Points",
+      "message": "${tempVars(\"user_warning_points\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Warned by ${member.user.tag}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "**Hey ${tempVars(\"user\").user.tag}!**\nYou just got banned from the Discord Bot Maker server with the reason:\n*${tempVars(\"reason\")}*\nYou recieved ${tempVars(\"points\")} new warning point(s).\nIf you think that this action was wrong, contact ${member.user.tag}.\nBut please respect the Moderator!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "reason": "${tempVars(\"reason\")} | by ${tempVars(\"mod_tag\")}",
+      "name": "Ban Member"
+    }
+  ]
+}

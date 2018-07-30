@@ -1,0 +1,67 @@
+{
+  "name": "setinfo",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "SDNrQ",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "to_create_raw",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var raw = this.evalMessage(tempVars(\"to_create_raw\"), cache);\nvar res = raw.toLowerCase();\nthis.storeValue(res, 1, \"to_create\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "to_data",
+      "name": "Store Command Params"
+    },
+    {
+      "source": "wBBqo",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ `${tempVars(\"to_create\")}` set to:\n`${tempVars(\"to_data\")}`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "2",
+      "varName": "infos",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "_aliases": []
+}

@@ -1,0 +1,49 @@
+{
+  "name": "HelpCMDrawdata",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_server_raw_data_help",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "379372685182107669",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Post Raw Data",
+      "message": "If you want to publish raw data on our server follow these steps please:\n1. Upload you raw data on http://dbm-mods.xyz/raw or another paste services of your choice.\n2. Think about a category (useful, api-use, moderating, music, minigames, troll or run-scripts)\n3. Do `!post category text`\nNote: You aren't able to edit your submission again!",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Raw Requests",
+      "message": "Maybe you need raw data? Or do you have a nice idea but you don't want to do it yourself?\nThen you can publish a request into #raw-requests!\nJust do:\n`!request idea`\nNote: You cannot edit your request again!",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}

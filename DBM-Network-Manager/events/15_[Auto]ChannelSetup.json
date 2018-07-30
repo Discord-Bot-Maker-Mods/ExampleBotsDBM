@@ -1,0 +1,45 @@
+{
+  "name": "[Auto]ChannelSetup",
+  "temp": "channel",
+  "event-type": "8",
+  "_id": "MRdLl",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "muted",
+      "name": "Find Role"
+    },
+    {
+      "info": "1",
+      "find": "Pending Verification",
+      "storage": "1",
+      "varName": "pending",
+      "name": "Find Role"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "role": "3",
+      "varName2": "pending",
+      "permission": "READ_MESSAGES",
+      "state": "2",
+      "name": "Set Role Channel Perms"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "role": "3",
+      "varName2": "muted",
+      "permission": "SEND_MESSAGES",
+      "state": "2",
+      "name": "Set Role Channel Perms"
+    }
+  ]
+}

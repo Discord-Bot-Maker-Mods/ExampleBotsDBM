@@ -1,0 +1,13 @@
+{
+  "name": "List Create",
+  "temp": "",
+  "event-type": "1",
+  "_id": "ojNvu",
+  "actions": [
+    {
+      "storage": "2",
+      "varName": "list",
+      "name": "Create List"
+    }
+  ]
+}

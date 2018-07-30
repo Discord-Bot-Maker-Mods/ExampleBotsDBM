@@ -1,0 +1,16 @@
+{
+  "name": "[Call]SetInfoLoop",
+  "temp": "",
+  "event-type": "0",
+  "_id": "wBBqo",
+  "actions": [
+    {
+      "server": "1",
+      "varName": "server",
+      "dataName": "tag_${tempVars(\"to_create\")}",
+      "changeType": "0",
+      "value": "tempVars(\"to_data\")",
+      "name": "Control Server Data"
+    }
+  ]
+}

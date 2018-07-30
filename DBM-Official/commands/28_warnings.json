@@ -1,0 +1,269 @@
+{
+  "name": "warnings",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "wNZEq",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-commands",
+      "storage": "1",
+      "varName": "bot-commands",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "support",
+      "storage": "1",
+      "varName": "support",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "mod-test-channel",
+      "storage": "1",
+      "varName": "mod-test-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"bot-commands\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"support\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"mod-test-channel\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "This command is only available in ${tempVars(\"bot-commands\")} and ${tempVars(\"support\")}!",
+      "storage": "1",
+      "varName2": "info-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "info-msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_MESSAGES",
+      "iftrue": "2",
+      "iftrueVal": "24",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "own_points",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "warning_points",
+      "comparison": "1",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "20",
+      "name": "Check Member Data"
+    },
+    {
+      "title": "${tempVars(\"author_tag\")}",
+      "author": "",
+      "color": "05c163",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "call": "21",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "${tempVars(\"author_tag\")}",
+      "author": "",
+      "color": "e85140",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "You have ${tempVars(\"own_points\")} warning points!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "14",
+      "iffalse": "2",
+      "iffalseVal": "14",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Sorry. I cannot find the user on Discord!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "warns_of_member",
+      "name": "Store Member Data"
+    },
+    {
+      "title": "${tempVars(\"member\").user.username}",
+      "author": "",
+      "color": "4286f4",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed-of-user",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-of-user",
+      "message": "This user has ${tempVars(\"warns_of_member\")} warning points!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-of-user",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "warns"
+  ]
+}

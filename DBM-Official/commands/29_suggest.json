@@ -1,0 +1,149 @@
+{
+  "name": "suggest",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "info": "1",
+      "find": "suggestions",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "desc",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} **Wrong format:**\n`!suggest [text]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "title": "New Suggestion",
+      "author": "${member.user.username}",
+      "color": "FFFF00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "suggestion",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sug-num",
+      "min": "0000",
+      "max": "9999",
+      "name": "Generate Random Number"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "sug_${tempVars(\"sug-num\")}",
+      "changeType": "0",
+      "value": "tempVars(\"desc\")",
+      "name": "Control Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "message": "Suggestion ID: ${tempVars(\"sug-num\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "message": "${tempVars(\"desc\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion",
+      "channel": "5",
+      "varName2": "channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "info": "4",
+      "storage": "1",
+      "varName2": "lastmsginchannel",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "👍",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "👎",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "4",
+      "varName2": "❗",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "info": "0",
+      "find": "435822422747381770",
+      "storage": "1",
+      "varName": "tools_emoji",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "storage": "1",
+      "varName": "lastmsginchannel",
+      "emoji": "1",
+      "varName2": ":tools:",
+      "varName3": "tools_emoji",
+      "name": "Add Reaction"
+    }
+  ],
+  "comType": "0",
+  "_id": "wwMVa"
+}

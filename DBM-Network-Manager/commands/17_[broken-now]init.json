@@ -1,0 +1,227 @@
+{
+  "name": "[broken-now]init",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "DZRiR",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Welcome to RuleSystemV2™!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "roleName": "Pending Verification",
+      "hoist": "false",
+      "mentionable": "false",
+      "color": "",
+      "position": "",
+      "storage": "1",
+      "varName": "pending-role",
+      "name": "Create Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Created Verification role",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "source": "RauQC",
+      "list": "1",
+      "varName": "",
+      "tempVarName": "channel",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Set Permissions",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channelName": "verify",
+      "topic": "Please verify that you're a human!",
+      "position": "",
+      "storage": "1",
+      "varName": "accept-channel",
+      "name": "Create Text Channel"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "3",
+      "varName": "accept-channel",
+      "permission": "READ_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "accept-channel",
+      "role": "3",
+      "varName2": "pending-role",
+      "permission": "READ_MESSAGES",
+      "state": "0",
+      "name": "Set Role Channel Perms"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Created ${tempVars(\"accept-channel\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channelName": "rules",
+      "topic": "DBM Network rules",
+      "position": "",
+      "storage": "1",
+      "varName": "rules-channel",
+      "name": "Create Text Channel"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "3",
+      "varName": "rules-channel",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "rules-channel",
+      "role": "3",
+      "varName2": "pending-role",
+      "permission": "READ_MESSAGES",
+      "state": "0",
+      "name": "Set Role Channel Perms"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Created ${tempVars(\"rules-channel\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "DBM Network - Rules",
+      "author": "",
+      "color": "00a339",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "rules-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "1. General",
+      "message": "1.1 These rules apply to *all* DBM Network Services. If you get warned/kicked/banned this will also happen on the other services.\n1.2 The Moderators are allowed to warn you and if you got a problem with that warning ask them. But they are allowed to block you or mute you.\n1.3 Our servers aren't official! There is only *one* official DBM Server.\n1.4 All rules of the official server does also apply here! Make sure to read them on the official server!\n1.5 We can change these rules at any time given. If one of those rules does not apply anymore, the others will still do.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "2. Support",
+      "message": "2.1 Use the *Search function* included in Discord to search for what you need or for solutions to problems you are having *before asking or suggesting!*\n2.2 Mentioning random or specific users for help reasons is not allowed\n2.3 Mentioning Helpers should be done *after* a few minutes after you send your question\n2.4 All support is done voluntarily, so please do not hold any expectations and respect those that try to help",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "3. Content",
+      "message": "3.1 NSFW content is strictly forbidden\n3.2 Advertising is forbidden (Discord Invites too!)\n3.3 Random memes, emojis or messages are forbidden\n3.4 Spamming messages and/or mentions is forbidden \n3.5 The rules does apply to messages, media, profile picture and name.\n3.6 You are not allowed to publish other users raw data as your own\n3.7 Any hateful messages to a group or person are strictly forbidden",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "4. Staff",
+      "message": "4.1 It is not allowed to DM or mention Staff Members for help reasons\n4.2 It is not allowed to ask to become Moderator or another staff person",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "5. Warning System",
+      "message": "5.1 Getting a warning point on one server of the unofficial servers network means one warning point on all of them\n5.2 Getting a warning point on the officical DBM server *can* also result a warning point on the unofficial server network\n5.3 Wrong reactions on suggestions, raw data or raw data requests can be warned\n5.4 Spamming the request raw data, raw data posting or suggestion system is not allowed\n5.5 On all DBM Network Services [this Privacy Policy](https://dbm-network.com/privacy-policy/) applies.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "channel": "5",
+      "varName2": "rules-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Published rules",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "5",
+      "varName": "accept-channel",
+      "message": "**Welcome!**\nPlease follow the instructions below. 😉\n(If you cannot see any instructions for you please try to rejoin)",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Sent verification info into ${tempVars(\"accept-channel\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😝 If you can see this... the system is activated!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

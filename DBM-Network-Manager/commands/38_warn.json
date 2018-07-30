@@ -1,0 +1,333 @@
+{
+  "name": "warn",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "RiYeh",
+  "actions": [
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ You failed following the format!\n`!warn ID/Mention Points Reason`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "points-raw",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "reason-raw",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "input",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"input\")}",
+      "storage": "1",
+      "varName": "member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💯 The user is not on this server!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "^^ Fetched User ^^ ",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "reason-raw",
+      "comparison": "5",
+      "value": "'-modhelp'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"reason-raw\")}",
+      "text2": "-modhelp",
+      "text3": "Mentioning Moderators for support.",
+      "info": "1",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "reason-raw",
+      "comparison": "5",
+      "value": "'-dmad'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"reason-raw\")}",
+      "text2": "-dmad",
+      "text3": "DM Advertising. Please note that advertising in DMs or on our servers is strictly forbidden!",
+      "info": "1",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "reason-raw",
+      "comparison": "5",
+      "value": "'-ad'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"reason-raw\")}",
+      "text2": "-ad",
+      "text3": "Advertising. Please note that advertising in DMs or on our servers is strictly forbidden!",
+      "info": "1",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "reason",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "reason",
+      "changeType": "0",
+      "value": "tempVars(\"reason-raw\")",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "^^ Reason defined ^^ ",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"points-raw\")}",
+      "storage": "1",
+      "varName2": "points",
+      "name": "Convert a Variable"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "changeType": "1",
+      "value": "tempVars(\"points\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "member",
+      "dataName": "staff_warnings_count",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "total_warnings",
+      "name": "Store Member Data"
+    },
+    {
+      "comment": "^^ Points defined ^^ ",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "comparison": "1",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "6",
+      "name": "Check Member Data"
+    },
+    {
+      "source": "msg-kick",
+      "type": "false",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "***<a:police_blue:449285901722320896> ${tempVars(\"member\").user.username} has been kicked.***",
+      "storage": "1",
+      "varName2": "success-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "source": "kickloop",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "6",
+      "name": "Check Member Data"
+    },
+    {
+      "source": "msg-ban",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "***<a:police_blue:449285901722320896> ${tempVars(\"member\").user.username} has been banned.***",
+      "storage": "1",
+      "varName2": "success-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "source": "banloop",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "source": "msg-warn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "***<a:police_blue:449285901722320896> ${tempVars(\"member\").user.username} has been warned.***",
+      "storage": "1",
+      "varName2": "success-msg",
+      "name": "Send Message"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "[Log]Join",
+  "temp": "mem",
+  "event-type": "6",
+  "_id": "SvLrU",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "${tempVars(\"mem\").user.tag} (${tempVars(\"mem\").user.id}) joined ${tempVars(\"mem\").guild.name}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "dataName": "rules_accepted",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Data"
+    },
+    {
+      "info": "1",
+      "find": "Pending Rule Check",
+      "storage": "1",
+      "varName": "pending-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName2": "mem",
+      "role": "3",
+      "varName": "pending-role",
+      "name": "Add Member Role"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "info": "4",
+      "storage": "1",
+      "varName2": "bot",
+      "name": "Store Member Things"
+    },
+    {
+      "storage": "1",
+      "varName": "bot",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "**That is a bot 😱**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName2": "mem",
+      "role": "3",
+      "varName": "pending-role",
+      "name": "Remove Member Role"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "name": "info",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ZlHCO",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-commands",
+      "storage": "1",
+      "varName": "bot-commands",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "support",
+      "storage": "1",
+      "varName": "support",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "mod-test-channel",
+      "storage": "1",
+      "varName": "mod-test-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"bot-commands\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"support\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg-channel",
+      "comparison": "1",
+      "value": "tempVars(\"mod-test-channel\")",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "This command is only available in ${tempVars(\"bot-commands\")} and ${tempVars(\"support\")}!",
+      "storage": "1",
+      "varName2": "info-msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "info-msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Please do `!help` for a list of available info commands!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "requested_tag_raw",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var raw = this.evalMessage('${tempVars(\"requested_tag_raw\")}', cache);\nvar res = raw.toLowerCase();\nthis.storeValue(res, 1, \"requested_tag\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "tag_${tempVars(\"requested_tag\")}",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry ${member}, there is no info called `${tempVars(\"requested_tag\")}`...\nDo `!help` for a list of all available infos.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "tag_${tempVars(\"requested_tag\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "res",
+      "name": "Store Server Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "author_usnam",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "407cdd",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"res\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "!info ${tempVars(\"requested_tag\")} | ${tempVars(\"author_usnam\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "i"
+  ],
+  "comType": "0"
+}

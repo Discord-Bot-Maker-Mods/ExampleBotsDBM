@@ -1,0 +1,109 @@
+{
+  "name": "[Call]Warn",
+  "temp": "",
+  "event-type": "0",
+  "_id": "msg-warn",
+  "actions": [
+    {
+      "title": "Warning",
+      "author": "${member.user.username}",
+      "color": "4286f4",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"member\").user.displayAvatarURL}",
+      "storage": "1",
+      "varName": "embed-staff",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "message": "${tempVars(\"member\").user.username} (${tempVars(\"member\").user.id})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "fieldName": "Points",
+      "message": "${tempVars(\"points\")} (Total: ${tempVars(\"total_warnings\")})",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "message": "Issued in ${msg.guild.name}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-staff",
+      "channel": "7",
+      "varName2": "warn-log",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "^^ Sent to #warn-log ^^",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "You have been warned!",
+      "author": "",
+      "color": "ff7b00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed-user",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "message": "Hello ${tempVars(\"member\").user.username}.\nYou have been warned in all DBM Network servers.\nPlease read our rules again.\nIf you think that your warning is incorrect please contact the Moderation Manager.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "fieldName": "Points",
+      "message": "${tempVars(\"points\")} (Total: ${tempVars(\"total_warnings\")})",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-user",
+      "channel": "5",
+      "varName2": "member",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "^^ Sent to member ^^",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

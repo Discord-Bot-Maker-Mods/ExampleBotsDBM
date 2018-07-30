@@ -1,0 +1,65 @@
+{
+  "name": "updaterules",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "GHhHe",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "title": "DBM Network - Rules",
+      "author": "",
+      "color": "00a339",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "rules-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "1. General",
+      "message": "1.1 These rules apply to all DBM Network Services. If you get warned/kicked/banned this will also happen on the other services.\n1.2 The Moderators are allowed to warn you, and you are allowed to ask for a reason or appeal the warning. However, Moderators are also allowed to block or mute you.\n1.3 The rules of the Official server do not apply in DBM Network Services. Please read the Official server's rules as well.\n1.4 We may change these rules at any given time. If one of the rules don't apply anymore, the others still will.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "2. Support",
+      "message": "2.1 Use the Search function included in Discord to search for what you need or for solutions to problems you are having before asking or suggesting!\n2.2 Mentioning random or specific users for help reasons is not allowed.\n2.3 Mentioning Helpers should be done after a few minutes after you send your question.\n2.4 All support is done voluntarily, so please do not hold any expectations and respect those who try to help.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "3. Content",
+      "message": "3.1 NSFW content is strictly forbidden.\n3.2 Advertising is forbidden (Exceptions on DBM Store).\n3.3 Random memes, emojis or messages are forbidden (Exeptions on DBM Hub).\n3.4 Spamming messages/mentions/reacts is forbidden. \n3.5 These rules also apply to messages, media, profile picture and name.\n3.6 You are not allowed to publish other users' Raw Data as your own.\n3.7 Any hateful messages, slurs, or provocations to a group or individual are strictly forbidden.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "fieldName": "4. Warning System",
+      "message": "4.1 Warnings are shared between all DBM Network Servers, you will have the same amount of warnings in any of them.\n4.2 Getting warning points in the Official DBM server may also result in you receiving warning points in the DBM Network.\n4.3 You will be warned for using the wrong reactions in Raw Data or Suggestions.\n4.4 Spamming the request raw data, raw data posting or suggestion system is not allowed\n4.5 [This Privacy Policy](https://dbm-network.com/privacy-policy/) applies to all DBM Network Services.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "rules-embed",
+      "channel": "0",
+      "varName2": "rules-channel",
+      "name": "Send Embed Message"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "HelpCMDmods",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "check_server_mods",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_id",
+      "comparison": "1",
+      "value": "374961173524643843",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "6",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Helper Role",
+      "message": "That role is for users who know much about DBM\nbecause it can be mentioned for help reasons.\n`!helper`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "STAY NOTIFIED",
+      "message": "If you want to get pinged if we release a new update or something similar make sure to do the following command:\n`!notified`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Become a beta tester",
+      "message": "Before we release a version of DBM Mods we always test it. If you want to help us do the following command:\n`!beta`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}

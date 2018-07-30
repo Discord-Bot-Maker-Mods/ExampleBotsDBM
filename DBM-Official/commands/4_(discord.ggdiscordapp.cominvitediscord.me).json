@@ -1,0 +1,95 @@
+{
+  "name": "(discord.gg/|discordapp.com/invite|discord.me/)",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "lRInY",
+  "actions": [
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "text",
+      "name": "Store Message Info"
+    },
+    {
+      "title": "Discord Invite",
+      "author": "",
+      "color": "fc3535",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "By: ${member}\nIn: ${msg.channel}\n\nMessage:\n${tempVars(\"text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Invite links are getting removed directly!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "info": "1",
+      "find": "mod-area",
+      "storage": "1",
+      "varName": "mod-channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "mod-channel",
+      "message": "Ehm... ${member.user.tag} send an invite... not sure if that's allowed... I removed it...\n```${tempVars(\"text\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} Discord links aren't allowed here! Please send them in DMs (only for support reasons!).\n*This message will disappear in a moment.*",
+      "storage": "1",
+      "varName2": "message",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "2"
+}

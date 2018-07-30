@@ -1,0 +1,28 @@
+{
+  "name": "god",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "YOwzg",
+  "actions": [
+    {
+      "id": "424594402099462144",
+      "token": "AIbGOgqqU2KpKZ6vFj1-O7_5WEtHxBPY_VJcLVgGzz0jbGfgqF-O9uEVxDdA1srE1xEV",
+      "storage": "1",
+      "varName": "webhook",
+      "name": "Find Webhook"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "raw",
+      "name": "Store Command Params"
+    },
+    {
+      "webhook": "1",
+      "varName": "webhook",
+      "message": "${tempVars(\"raw\")}",
+      "name": "Send Message To Webhook"
+    }
+  ]
+}

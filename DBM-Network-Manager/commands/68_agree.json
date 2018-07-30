@@ -1,0 +1,73 @@
+{
+  "name": "agree",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "APaza",
+  "actions": [
+    {
+      "info": "1",
+      "find": "Pending Rule Check",
+      "storage": "1",
+      "varName": "pending-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "pending-role",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Missing role.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "rules_accepted",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "pending-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "`${member.user.tag}` accepted the rules!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "Thank you for accepting our rules.\nWe wish you a pleasant time!\n\n~ DBM Server Network Team",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

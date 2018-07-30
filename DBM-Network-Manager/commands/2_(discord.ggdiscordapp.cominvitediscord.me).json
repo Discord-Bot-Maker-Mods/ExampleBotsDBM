@@ -1,0 +1,141 @@
+{
+  "name": "(discord.gg/|discordapp.com/invite|discord.me/)",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "lRInY",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_id",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"au_id\")}",
+      "storage": "1",
+      "varName": "s_mem",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "s_mem",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "1",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "name": "Change Server"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "chid",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "chid",
+      "comparison": "1",
+      "value": "'454706852983209985'",
+      "iftrue": "1",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "text",
+      "name": "Store Message Info"
+    },
+    {
+      "title": "Discord Invite!",
+      "author": "",
+      "color": "fc3535",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "By: ${member}\nIn: ${msg.channel}\n\nMessage:\n${tempVars(\"text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Invite links are getting removed directly!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "7",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "7",
+      "varName": "mod-chat",
+      "message": "**${member.user.username}** (${member.user.id}) sent an invite in **${msg.guild.name}**\n```${tempVars(\"text\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} Discord links aren't allowed here! Please send them in DMs (only for support reasons!). All invites of the unofficial servers are in #welcome!\n*This message will disappear in a moment.*",
+      "storage": "1",
+      "varName2": "message",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "7",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "2"
+}

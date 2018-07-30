@@ -1,0 +1,74 @@
+{
+  "name": "callnotified",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "GSwNQ",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "1",
+      "find": "Notified",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "role",
+      "name": "Edit Role"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"role\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "false",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "role",
+      "name": "Edit Role"
+    }
+  ]
+}

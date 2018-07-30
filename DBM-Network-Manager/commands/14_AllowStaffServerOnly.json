@@ -1,0 +1,43 @@
+{
+  "name": "AllowStaffServerOnly",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "GEjRw",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serverid",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "serverid",
+      "comparison": "1",
+      "value": "374529428174405632",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "📛 Currently only available in the staff Discord!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

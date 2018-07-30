@@ -1,0 +1,47 @@
+{
+  "name": "[Aut]BannedUserJoin?",
+  "temp": "mem",
+  "event-type": "6",
+  "_id": "UflrQ",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "dataName": "warning_points",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "5",
+      "varName": "mem",
+      "message": "**Nope.**\nYou have been banned so you can't join any other unofficial DBM server.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "reason": "Already banned from the network.",
+      "name": "Ban Member"
+    },
+    {
+      "channel": "7",
+      "varName": "mod-chat",
+      "message": "__**The banned user ${tempVars(\"mem\").user.username} tried to join ${tempVars(\"mem\").guild.name}! Now they have been banned there too! :troll:**__",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

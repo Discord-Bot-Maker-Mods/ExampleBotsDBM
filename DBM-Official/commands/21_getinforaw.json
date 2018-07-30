@@ -1,0 +1,32 @@
+{
+  "name": "getinforaw",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "exAik",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "infoname",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "tag_${tempVars(\"infoname\")}",
+      "defaultVal": "Not available",
+      "storage": "1",
+      "varName2": "res",
+      "name": "Store Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "```${tempVars(\"res\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

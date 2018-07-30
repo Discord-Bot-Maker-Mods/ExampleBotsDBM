@@ -1,0 +1,114 @@
+{
+  "name": "moderator-cooldown",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "PoOtx",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "3",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "3",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "role",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "auus",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "audi",
+      "name": "Store Member Things"
+    },
+    {
+      "role": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "rname",
+      "name": "Store Role Info"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "**${member.user.tag} (${member.user.id}) mentioned `${tempVars(\"rname\")}`** in ${msg.guild.name}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "1",
+      "find": "Moderator",
+      "storage": "1",
+      "varName": "helper_role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "1",
+      "value": "tempVars(\"helper_role\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "false",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "helper_role",
+      "name": "Edit Role"
+    },
+    {
+      "time": "5",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "roleName": "",
+      "hoist": "none",
+      "mentionable": "true",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "helper_role",
+      "name": "Edit Role"
+    },
+    {
+      "channel": "7",
+      "varName": "log-channel",
+      "message": "*Moderators can get mentioned again in ${msg.guild.name}*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

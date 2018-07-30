@@ -1,0 +1,17 @@
+{
+  "name": "[SYS]ChannelTalkDeny",
+  "temp": "",
+  "event-type": "0",
+  "_id": "RauQC",
+  "actions": [
+    {
+      "channel": "3",
+      "varName": "channel",
+      "role": "3",
+      "varName2": "pending-role",
+      "permission": "READ_MESSAGES",
+      "state": "2",
+      "name": "Set Role Channel Perms"
+    }
+  ]
+}

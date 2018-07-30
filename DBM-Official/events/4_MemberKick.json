@@ -1,0 +1,97 @@
+{
+  "name": "MemberKick",
+  "temp": "",
+  "event-type": "0",
+  "_id": "kick",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "user_warning_points",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "1",
+      "find": "warn-log",
+      "storage": "1",
+      "varName": "log-channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "Kick - ${tempVars(\"user\").user.tag}",
+      "author": "",
+      "color": "ce6412",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User",
+      "message": "${tempVars(\"user\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "New Points",
+      "message": "${tempVars(\"points\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Points",
+      "message": "${tempVars(\"user_warning_points\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Warned by ${member.user.tag}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "**Hey ${tempVars(\"user\").user.tag}!**\nYou just got kicked from the Discord Bot Maker server with the reason:\n*${tempVars(\"reason\")}*\nYou recieved ${tempVars(\"points\")} new warning point(s). You have ${tempVars(\"user_warning_points\")} warning point(s) now.\nPlease make sure to follow the rules. You can rejoin with the linked Invite in DBM.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "reason": "${tempVars(\"reason\")} | by ${tempVars(\"mod_tag\")}",
+      "name": "Kick Member"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Cooldown",
+  "temp": "member",
+  "event-type": "38",
+  "_id": "hGVqj",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "6",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "4",
+      "storage": "1",
+      "varName2": "channel",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "Sorry. Please wait ${tempVars(\"time_left\")} before you can use this command again. ${tempVars(\"member\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "temp2": "time_left"
+}
