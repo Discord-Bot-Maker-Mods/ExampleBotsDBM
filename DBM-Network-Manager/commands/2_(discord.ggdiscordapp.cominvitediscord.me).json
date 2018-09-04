@@ -65,6 +65,11 @@
       "name": "Check Variable"
     },
     {
+      "comment": "---",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
       "message": "0",
       "varName": "",
       "info": "2",

@@ -229,6 +229,11 @@
       "name": "Comment"
     },
     {
+      "source": "teZHD",
+      "type": "false",
+      "name": "Call Command/Event"
+    },
+    {
       "member": "2",
       "varName": "member",
       "dataName": "warning_points",

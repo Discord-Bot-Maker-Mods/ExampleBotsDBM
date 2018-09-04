@@ -1,8 +1,8 @@
 {
-  "name": "OnApprovalApprove",
+  "name": "OnRawDataAppUpv",
   "temp": "msg",
   "event-type": "28",
-  "_id": "NNWEC",
+  "_id": "vYRUv",
   "actions": [
     {
       "source": "hUbUn",
@@ -64,7 +64,7 @@
       "storage": "1",
       "varName": "au_ch_id",
       "comparison": "1",
-      "value": "'445289133829521408'",
+      "value": "'483693395240288286'",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "1",
@@ -73,13 +73,13 @@
     },
     {
       "info": "0",
-      "find": "445289133829521408",
+      "find": "483693395240288286",
       "storage": "1",
       "varName": "approval-channel",
       "name": "Find Channel"
     },
     {
-      "comment": "Check if first reaction",
+      "comment": "Check if 5 reactions",
       "color": "#000000",
       "name": "Comment"
     },
@@ -93,8 +93,8 @@
     {
       "storage": "1",
       "varName": "reaction-count",
-      "comparison": "1",
-      "value": "1",
+      "comparison": "4",
+      "value": "4",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "1",
@@ -102,11 +102,31 @@
       "name": "Check Variable"
     },
     {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var users = tempVars(\"msg\").users.array();\n//var react = reacts.find('name', 'approve');\nthis.storeValue(users, 1, \"users-raw\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "list": "7",
+      "varName": "users-raw",
+      "start": "",
+      "middle": "",
+      "end": ", ",
       "storage": "1",
-      "varName": "reaction-user",
-      "changeType": "0",
-      "value": "tempVars(\"msg\").users.array()",
-      "name": "Control Variable"
+      "varName2": "users-ra",
+      "name": "Convert List to Text"
+    },
+    {
+      "text": "${tempVars(\"users-ra\")}",
+      "text2": ", <@422485418014015491>",
+      "text3": " ",
+      "info": "0",
+      "storage": "1",
+      "varName": "users",
+      "name": "Replace Text"
     },
     {
       "comment": "Check if the raw data is registerd",
@@ -135,7 +155,7 @@
     {
       "channel": "5",
       "varName": "approval-channel",
-      "message": "⛔ That is not raw data...",
+      "message": "⛔ Error! Please don't ping Staff - Lasse will see this!",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -147,6 +167,26 @@
       "comment": "Stores Raw Data Info",
       "color": "#000000",
       "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}_status",
+      "comparison": "1",
+      "value": "'pending'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}_status",
+      "changeType": "0",
+      "value": "'published'",
+      "name": "Control Server Data"
     },
     {
       "server": "0",
@@ -187,7 +227,7 @@
     {
       "channel": "5",
       "varName": "approval-channel",
-      "message": "${tempVars(\"reaction-user\")} approved **#${tempVars(\"raw_id\")}** from <@${tempVars(\"raw_au\")}>",
+      "message": "${tempVars(\"users\")} approved **#${tempVars(\"raw_id\")}** from <@${tempVars(\"raw_au\")}>",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -226,8 +266,8 @@
       "name": "Check Variable"
     },
     {
-      "channel": "4",
-      "varName": "",
+      "channel": "5",
+      "varName": "approval-channel",
       "message": "❤ The author left the server and/or I can't find him.",
       "storage": "0",
       "varName2": "",
@@ -258,7 +298,7 @@
     {
       "storage": "1",
       "varName": "final-embed",
-      "message": "© ${tempVars(\"raw_member\").user.tag} • #${tempVars(\"raw_id\")}",
+      "message": "By ${tempVars(\"raw_member\").user.tag} • #${tempVars(\"raw_id\")}",
       "footerIcon": "",
       "name": "Set Embed Footer"
     },
@@ -326,42 +366,6 @@
     },
     {
       "name": "End Action Sequence"
-    },
-    {
-      "comment": "=====",
-      "color": "#000000",
-      "name": "Comment"
-    },
-    {
-      "comment": "#4 - Store new ID",
-      "color": "#000000",
-      "name": "Comment"
-    },
-    {
-      "comment": "=====",
-      "color": "#000000",
-      "name": "Comment"
-    },
-    {
-      "time": "1",
-      "measurement": "1",
-      "name": "Wait"
-    },
-    {
-      "channel": "3",
-      "varName": "cat-channel",
-      "info": "4",
-      "storage": "1",
-      "varName2": "published_msg",
-      "name": "Store Channel Info"
-    },
-    {
-      "server": "0",
-      "varName": "",
-      "dataName": "msg_${tempVars(\"published_msg\").id}_pub_id",
-      "changeType": "0",
-      "value": "tempVars(\"raw_id\")",
-      "name": "Control Server Data"
     },
     {
       "comment": "===== Must be end =====",

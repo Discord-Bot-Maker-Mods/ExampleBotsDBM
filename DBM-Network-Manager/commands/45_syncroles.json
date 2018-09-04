@@ -43,7 +43,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "<:deny:455023973537939456> This command is only for Staff members",
+      "message": "<:deny:445571097270681611> This command is only for Staff members",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

@@ -1,0 +1,18 @@
+{
+  "name": "[Call]DeleteWarningSuccess",
+  "temp": "",
+  "event-type": "0",
+  "_id": "teZHD",
+  "actions": [
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "success-msg",
+      "name": "Delete Message"
+    }
+  ]
+}

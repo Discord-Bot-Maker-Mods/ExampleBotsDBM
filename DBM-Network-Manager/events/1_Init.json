@@ -75,6 +75,20 @@
       "name": "Find Channel"
     },
     {
+      "info": "0",
+      "find": "457628764109537313",
+      "storage": "3",
+      "varName": "team-updates-hub",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "457589859285073932",
+      "storage": "3",
+      "varName": "team-updates-staff",
+      "name": "Find Channel"
+    },
+    {
       "activity": "2",
       "nameText": "for commands",
       "url": "",
@@ -92,6 +106,14 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.on('error', (error) => {    \n  if(error.message == 'Unexpected server response: 520'){\n    console.log(\"Cant connect to Discords API, Retrying...\");\n  }else if(error.message == 'read ECONNRESET'){\n    console.log(\"Connection Reset! Reconnecting...\");\n  }else{\n    console.error(error);\n  }            \n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "name": "live",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "TCNL7",
+  "_id": "TCfL7",
   "actions": [
     {
       "info": "1",
@@ -72,7 +72,6 @@
   "_aliases": [
     "Livestream-Notifications",
     "livestream-notifications",
-    "livestream",
-    "notifications"
+    "livestream"
   ]
 }

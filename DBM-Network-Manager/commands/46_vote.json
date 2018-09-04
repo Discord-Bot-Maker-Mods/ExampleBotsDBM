@@ -1,0 +1,143 @@
+{
+  "name": "vote",
+  "permissions": "NONE",
+  "restriction": "0",
+  "actions": [
+    {
+      "source": "GEjRw",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authid",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "authtag",
+      "name": "Store Member Things"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "1",
+      "find": "471782853416583170",
+      "storage": "1",
+      "varName": "sentchannel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "suggestion",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "17",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "memberdisplayname",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "memberobject",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<:blobmoustache:464754303006015509> Your submission has been posted ${tempVars(\"memberobject\")}  ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"memberdisplayname\")}",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatar\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Suggest",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Suggest",
+      "fieldName": "Submission",
+      "message": "${tempVars(\"suggestion\")}\n\n",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.guild.channels.find(\"name\",\"staff-voting\").send(tempVars(\"Suggest\"))\n   .then(function (message) { \n   message.react(\"✅\") \n   message.react(\"❌\") \n}).catch(function() { \n   msg.channel.send(\"The current command is broken at the moment.\") \n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Incorrect Format**\n`?vote [Message]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_id": "fuqmr",
+  "comType": "0",
+  "_timeRestriction": 5,
+  "_aliases": [
+    "v"
+  ]
+}

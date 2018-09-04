@@ -1,0 +1,75 @@
+{
+  "name": "notified",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "TCNL9",
+  "actions": [
+    {
+      "info": "1",
+      "find": "Notified",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "role",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, you joined **Notified**. We will ping you when we have something new for you!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, you left **Notified**. So... we won't ping you anymore...........",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_timeRestriction": 10,
+  "comType": "0",
+  "_aliases": [
+    "notifications"
+  ]
+}

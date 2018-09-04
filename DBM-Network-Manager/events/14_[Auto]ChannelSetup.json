@@ -18,7 +18,7 @@
     },
     {
       "info": "1",
-      "find": "Pending Verification",
+      "find": "Pending Rule Check",
       "storage": "1",
       "varName": "pending",
       "name": "Find Role"

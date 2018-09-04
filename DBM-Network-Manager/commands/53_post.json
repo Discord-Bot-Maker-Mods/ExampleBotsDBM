@@ -2,7 +2,7 @@
   "name": "post",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "ChGhM",
+  "_id": "TrThB",
   "actions": [
     {
       "source": "hUbUn",
@@ -142,12 +142,20 @@
       "name": "Control Server Data"
     },
     {
-      "title": "New Raw Data: ${member.user.tag}",
-      "author": "",
-      "color": "",
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}_status",
+      "changeType": "0",
+      "value": "'pending'",
+      "name": "Control Server Data"
+    },
+    {
+      "title": " ",
+      "author": "${member.user.username}",
+      "color": "4286f4",
       "timestamp": "true",
       "url": "",
-      "authorIcon": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
       "imageUrl": "",
       "thumbUrl": "",
       "storage": "1",
@@ -179,7 +187,7 @@
     },
     {
       "info": "0",
-      "find": "445289133829521408",
+      "find": "483693395240288286",
       "storage": "1",
       "varName": "approval-channel",
       "name": "Find Channel"
@@ -189,7 +197,9 @@
       "varName": "embed",
       "channel": "5",
       "varName2": "approval-channel",
-      "name": "Send Embed Message"
+      "varName3": "embed-msg-obj",
+      "storage3": "1",
+      "name": "Send Embed Message MOD"
     },
     {
       "time": "1",
@@ -215,7 +225,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "✅ Thank you! You successfully submitted your raw data with the ID **#${tempVars(\"number\")}**!\nA Moderator will check if everything is correct.\nWe will message you if you raw data has been published!",
+      "message": "✅ Thank you! You successfully submitted your raw data with the ID **#${tempVars(\"number\")}**!\nRaw Data Contributors will check your raw data very soon.\nWe will message you if you raw data has been published!",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -224,6 +234,44 @@
       "storage": "0",
       "varName": "",
       "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "find": "445320865417265174",
+      "storage": "1",
+      "varName": "approval-emoji",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "445571097270681611",
+      "storage": "1",
+      "varName": "deny-emoji",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-msg-obj",
+      "emoji": "1",
+      "varName2": "",
+      "varName3": "approval-emoji",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-msg-obj",
+      "emoji": "1",
+      "varName2": "",
+      "varName3": "deny-emoji",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-msg-obj",
+      "emoji": "4",
+      "varName2": "🔒",
+      "varName3": "deny-emoji",
+      "name": "Add Reaction"
     }
   ],
   "_timeRestriction": 5,

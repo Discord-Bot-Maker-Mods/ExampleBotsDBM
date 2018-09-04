@@ -35,7 +35,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "Language chats",
-      "message": "You can join language specific chats using\n`!german`\n`!turkish`\n`!french`\n`!israeli`\n`!spanish`\n(Only these languages are available at the moment!)",
+      "message": "You can join language specific chats using\n`!german`\n`!turkish`\n`!french`\n`!israeli`\n`!spanish`\n`!polish`\n(Only these languages are available at the moment!)",
       "inline": "1",
       "name": "Add Embed Field"
     },

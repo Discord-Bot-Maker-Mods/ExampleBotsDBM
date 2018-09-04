@@ -145,5 +145,6 @@
       "name": "Send Message"
     }
   ],
-  "_aliases": []
+  "_aliases": [],
+  "comType": "0"
 }

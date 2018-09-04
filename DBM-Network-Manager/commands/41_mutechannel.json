@@ -1,0 +1,99 @@
+{
+  "name": "mutechannel",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "jYVyv",
+  "actions": [
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "info": "1",
+      "find": "Moderator",
+      "storage": "1",
+      "varName": "mod",
+      "name": "Find Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "role": "3",
+      "varName2": "mod",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "name": "Set Role Channel Perms"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Channel Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "mutec-${tempVars(\"id\")}",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Server Data"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "mutec-${tempVars(\"id\")}",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Channel unmuted!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "mutec-${tempVars(\"id\")}",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Channel muted!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

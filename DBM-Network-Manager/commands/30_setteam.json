@@ -1,0 +1,164 @@
+{
+  "name": "setteam",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "TzcIl",
+  "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💬 `!team join/leave @user teamname`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "type",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "user",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "team",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "type",
+      "comparison": "6",
+      "value": "(join|leave)",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Just join or leave!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "5",
+      "value": "\"<@\"",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Mention the member!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"team\")}",
+      "storage": "1",
+      "varName": "team-role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "team-role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ That's not a valid team!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Done! Check ${globalVars(\"team-updates-hub\")} and ${globalVars(\"team-updates-staff\")}!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "7",
+      "varName": "team-updates-staff",
+      "message": "${tempVars(\"user\")} ${tempVars(\"type\")}s **${tempVars(\"team\")}**!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "0",
+      "find": "457628513353334798",
+      "storage": "1",
+      "varName": "hub",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "hub",
+      "name": "Change Server"
+    },
+    {
+      "channel": "7",
+      "varName": "team-updates-hub",
+      "message": "${tempVars(\"user\")} ${tempVars(\"type\")}s **${tempVars(\"team\")}**!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
