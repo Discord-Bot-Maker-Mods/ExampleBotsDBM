@@ -1,0 +1,20 @@
+{
+  "name": "ownerstopbot",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "WuRSR",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Ok",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "Stop Bot"
+    }
+  ],
+  "comType": "0"
+}

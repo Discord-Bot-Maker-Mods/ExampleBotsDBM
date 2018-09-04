@@ -1,0 +1,24 @@
+{
+  "name": "UserLeave",
+  "temp": "user",
+  "event-type": "7",
+  "_id": "wYjVg",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id1",
+      "name": "Store Member Info"
+    },
+    {
+      "source": "JjxKK",
+      "list": "0",
+      "varName": "",
+      "tempVarName": "member",
+      "type": "true",
+      "name": "Loop Through List"
+    }
+  ]
+}

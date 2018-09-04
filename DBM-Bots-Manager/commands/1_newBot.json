@@ -1,0 +1,175 @@
+{
+  "name": "newBot",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "CLjGp",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Channel Info"
+    },
+    {
+      "info": "0",
+      "find": "407624561115398164",
+      "storage": "1",
+      "varName": "serv",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "serv",
+      "name": "Change Server"
+    },
+    {
+      "storage": "1",
+      "varName": "id",
+      "comparison": "1",
+      "value": "473877133941538817",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "owner",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"owner\")}",
+      "storage": "1",
+      "varName": "mem",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "mem",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "owner",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "oowner",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"oowner\")}",
+      "storage": "1",
+      "varName": "oowner",
+      "name": "Find Member"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"owner\")}",
+      "storage": "1",
+      "varName": "nowner",
+      "name": "Find Member"
+    },
+    {
+      "info": "1",
+      "find": "Bot Developer",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName2": "oowner",
+      "role": "3",
+      "varName": "role",
+      "name": "Remove Member Role"
+    },
+    {
+      "member": "2",
+      "varName2": "nowner",
+      "role": "3",
+      "varName": "role",
+      "name": "Add Member Role"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "owner",
+      "changeType": "0",
+      "value": "tempVars(\"owner\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "5",
+      "varName": "nowner",
+      "message": "Hello !\n\nYour bot ${mentionedUser} was approved by our team ! :tada:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${mentionedUser}'s owner was set to <@${tempVars(\"owner\")}>",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "3"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ownerservers",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "SHjKk",
+  "actions": [
+    {
+      "list": "4",
+      "varName": "",
+      "start": "",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "servers",
+      "name": "Convert List to Text"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**All Servers:**\n\n${tempVars(\"servers\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

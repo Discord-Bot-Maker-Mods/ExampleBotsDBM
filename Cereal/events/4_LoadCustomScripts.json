@@ -1,0 +1,17 @@
+{
+  "name": "LoadCustomScripts",
+  "temp": "dbm_error",
+  "event-type": "1",
+  "_id": "opBsf",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "if(!globalVars(\"scripts_loaded\")){ \n    require('./custom.js')({DBM: this.getDBM(),Actions, Files, Events, tempVars, serverVars, globalVars},client)    \n    this.storeValue(true, 3, \"scripts_loaded\", cache)\n}\n\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ],
+  "temp2": "js_error"
+}

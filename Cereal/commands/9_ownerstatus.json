@@ -1,0 +1,47 @@
+{
+  "name": "ownerstatus",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "ojyKU",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "new-game",
+      "name": "Store Command Params"
+    },
+    {
+      "gameName": "${tempVars(\"new-game\")}",
+      "gameLink": "",
+      "name": "Set Bot Game"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Set!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "status": "3",
+      "name": "Set Bot Status"
+    }
+  ]
+}

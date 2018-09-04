@@ -1,0 +1,128 @@
+{
+  "name": "set-welcome",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DiVqp",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(member.user.id)",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔑 Missing Perms! You need to have **Manage Guild** permission to use this command.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Hey! You are about to set up a welcome message channel!\nPlease mention the channel you want messages to appear and add your personal welcome message. Example:\n`c?set-welcome #general Welcome %member% to our server!`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "4",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "message",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "comparison": "5",
+      "value": "'%member%'",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💬 Please make sure that your welcome message includes `%member%`. This will be replaced with the member who joined!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.channelid.join",
+      "changeType": "0",
+      "value": "tempVars(\"channel\").id",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.message.join",
+      "changeType": "0",
+      "value": "tempVars(\"message\")",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👌 Your welcome channel has been set to ${tempVars(\"channel\")} and your message to:\n```${tempVars(\"message\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

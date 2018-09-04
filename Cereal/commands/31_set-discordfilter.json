@@ -1,0 +1,98 @@
+{
+  "name": "set-discordfilter",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "BcMqp",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔑 Missing Perms! You need to have **Manage Guild** permission to use this command.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "feature.discordfilter",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "11",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "feature.discordfilter",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "11",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "feature.discordfilter",
+      "changeType": "0",
+      "value": "false",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔘 Discord invite link filter has been disabled.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "feature.discordfilter",
+      "changeType": "0",
+      "value": "true",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💹 Discord link invite filter has been enabled!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0"
+}

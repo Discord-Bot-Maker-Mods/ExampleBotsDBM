@@ -1,0 +1,33 @@
+{
+  "name": "Error",
+  "temp": "text",
+  "event-type": "37",
+  "_id": "qtrxi",
+  "actions": [
+    {
+      "channel": "7",
+      "varName": "error-console",
+      "message": "**---------ERROR---------**\n${tempVars(\"text\")}\n```${tempVars(\"js\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "7",
+      "varName": "error-console",
+      "message": "${tempVars(\"server\").name} ${tempVars(\"server\").id}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "temp2": "js"
+}

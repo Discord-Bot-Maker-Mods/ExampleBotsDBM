@@ -1,0 +1,61 @@
+{
+  "name": "AnnounceAndStopMusic",
+  "temp": "",
+  "event-type": "0",
+  "_id": "PEKvF",
+  "actions": [
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Change Server"
+    },
+    {
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "6",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "storage": "1",
+      "varName2": "botmem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "botmem",
+      "info": "1",
+      "storage": "1",
+      "varName2": "vc",
+      "name": "Store Member Things"
+    },
+    {
+      "action": "0",
+      "name": "Control Audio"
+    },
+    {
+      "url": "soundboard/cereal-restart.mp3",
+      "seek": "0",
+      "volume": "",
+      "passes": "1",
+      "bitrate": "",
+      "type": "0",
+      "name": "Play File"
+    },
+    {
+      "time": "18",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "name": "Leave Voice Channel"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

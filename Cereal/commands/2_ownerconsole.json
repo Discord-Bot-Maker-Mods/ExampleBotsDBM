@@ -1,0 +1,27 @@
+{
+  "name": "ownerconsole",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "FoOcu",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "input",
+      "name": "Store Command Params"
+    },
+    {
+      "tosend": "${tempVars(\"input\")}",
+      "name": "Send Message to Console"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💘 Sent to console",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

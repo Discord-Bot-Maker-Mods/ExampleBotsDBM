@@ -1,0 +1,54 @@
+{
+  "name": "[LOOP] User Left",
+  "temp": "",
+  "event-type": "0",
+  "_id": "JjxKK",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "owner",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "id2",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "id2",
+      "comparison": "1",
+      "value": "tempVars(\"id1\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "reason": "Bot owner left the server. Automatic kick.",
+      "name": "Kick Member"
+    },
+    {
+      "info": "0",
+      "find": "472886519674437674",
+      "storage": "1",
+      "varName": "chan",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "chan",
+      "message": "${tempVars(\"user\")} left the server. ${tempVars(\"member\")} was kicked.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

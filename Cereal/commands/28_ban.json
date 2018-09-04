@@ -1,0 +1,153 @@
+{
+  "name": "ban",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "uLycK",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔑 Missing Perms! You need to have **Ban members** permission to use this command.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ This commands bans a member from your server (Reason optional). Example:\n`c?ban @Lasse` or `c?ban @Lasse Spamming chat`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "user",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot-mem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💥 Ew! I don't have permission to ban this member. Please fix that!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "1",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "reason",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "reason": "Banned by ${member.user.username}",
+      "name": "Ban Member"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "You have been banned from ${msg.channel.guild.name} by ${member.user.username} for:\n```${tempVars(\"reason\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "reason": "Banned by ${member.user.username} for ${tempVars(\"reason\")}",
+      "name": "Ban Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "***<:blobpolice1:460558681189384206> ${tempVars(\"user\").user.username} has been kicked by ${member.user.username}***",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

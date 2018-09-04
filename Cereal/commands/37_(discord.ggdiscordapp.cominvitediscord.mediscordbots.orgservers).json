@@ -1,0 +1,44 @@
+{
+  "name": "(discord.gg/|discordapp.com/invite/|discord.me/|discordbots.org/servers/)",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "txLIm",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "feature.discordfilter",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "1",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:police_blue:449285901722320896> ${member} Discord invites aren't allowed here!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "2"
+}

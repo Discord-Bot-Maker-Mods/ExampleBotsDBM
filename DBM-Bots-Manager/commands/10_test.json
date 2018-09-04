@@ -1,0 +1,30 @@
+{
+  "name": "test",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "wztiS",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "userID",
+      "name": "Store Member Info"
+    },
+    {
+      "source": "BkqLa",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"result\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

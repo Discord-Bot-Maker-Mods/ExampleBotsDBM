@@ -1,0 +1,24 @@
+{
+  "name": "ownercompile",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "UwRCF",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "my_code",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "\n    var mycode = this.evalMessage(tempVars(\"my_code\"), cache);\n    let evald;\n    try{\n       evald = eval(mycode, cache);\n       if(evald){\n          msg.channel.send(\"Result: \" + evald);\n          console.log(evald);\n        }\n    }catch(err){\n      msg.channel.send(\"Error: \" +err);\n    }\n\n   \n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ],
+  "comType": "0"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "dbm-network-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "split.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sanitize-filename": "^1.6.1"
+  }
+}

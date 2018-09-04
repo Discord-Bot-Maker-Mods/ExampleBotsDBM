@@ -1,0 +1,74 @@
+{
+  "name": "Leave",
+  "temp": "user",
+  "event-type": "7",
+  "_id": "shvDY",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "7",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "count",
+      "name": "Store Server Info"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"tag\")} left",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatar\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "message": "ID: ${tempVars(\"id\")} | ${tempVars(\"count\")} members",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "info": "0",
+      "find": "473215448817729536",
+      "storage": "1",
+      "varName": "chan",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "5",
+      "varName2": "chan",
+      "name": "Send Embed Message"
+    }
+  ]
+}

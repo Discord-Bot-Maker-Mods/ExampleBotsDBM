@@ -1,0 +1,33 @@
+{
+  "name": "ownerreload",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "EiHKM",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Reloading Commands/Events...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "console.log(\"General Wrex's Data Reloader V1.0\")\nconsole.log(\"Please tell General Wrex is theres an issue in the #support channel of the raw data server!\")\n\nFiles.data.commands = {};\nFiles.data.events = {};\nBot.$icds = [];\nBot.$regx = [];\nBot.$anym = [];\n\nFiles.readDataFile = function(filename, callback) {\nconst fs = require('fs');\nconst path = require('path');\nconst filePath = path.join(process.cwd(), 'data', filename + \".json\");\nif(fs.existsSync(filePath)){\n  fs.readFile(filePath, function(error, content) {\n    let data;\n    try {\n\tif(typeof content !== 'string' && content.toString) content = content.toString();\n\t\tdata = JSON.parse(this.decrypt(content));\n\t} catch(e) {\n\t\tconsole.error(`There was issue parsing ${this.dataFiles[i]}!`);\n\t\treturn;\n\t}\n\tFiles.data[filename] = data;\n\tcallback();\t\t\t\n  }.bind(this));\t\n}\t\n};\n\nconsole.log(\"Reloading Commands/Events..\");\nlet $evts = Bot.$evts;\nconsole.log(\"Unregistering Previous Events...\");\nfor(let i = 0; i < Files.data.length; i++) {\n  const d = Files.data[i];\n  if(d.length > 0 && $evts[String(i)]) {\n    client.removeListener(d[0], this.callEvents.bind(this, String(i), d[1], d[2], d[3], !!d[4], d[5]));\n  }\n}\nif($evts[\"28\"]) client.removeListener('messageReactionAdd', this.onReaction.bind(this, \"28\"));\nif($evts[\"29\"]) client.removeListener('messageReactionRemove', this.onReaction.bind(this, \"29\"));\nif($evts[\"34\"]) client.removeListener('typingStart', this.onTyping.bind(this, \"34\"));\nif($evts[\"35\"]) client.removeListener('typingStop', this.onTyping.bind(this, \"35\"));\n\nconsole.log(\"Done!\");\nFiles.readDataFile(\"commands\", ()=>{\n  Files.readDataFile(\"events\", ()=>{\n    Bot.reformatData();\n    console.log(\"All Reloaded!\");\n    Events.registerEvents();\n    console.log(\"Registered Events!\");\n    console.log(\"All Done!\");\n    Actions.callNextAction(cache);\n  });\n});",
+      "storage": "0",
+      "varName": "all_data",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Completed! \n\nData from `commands.json` And`events.json` has been reloaded!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

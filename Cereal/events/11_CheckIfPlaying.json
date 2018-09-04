@@ -1,0 +1,82 @@
+{
+  "name": "CheckIfPlaying",
+  "temp": "300",
+  "event-type": "3",
+  "_id": "wotlT",
+  "actions": [
+    {
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "botmember",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "botmember",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "member": "2",
+      "varName": "botmember",
+      "info": "1",
+      "storage": "1",
+      "varName2": "vc",
+      "name": "Store Member Things"
+    },
+    {
+      "channel": "3",
+      "varName": "vc",
+      "info": "4",
+      "storage": "1",
+      "varName2": "members",
+      "name": "Store Voice channel things"
+    },
+    {
+      "list": "7",
+      "varName": "members",
+      "storage": "1",
+      "varName2": "length",
+      "name": "Get List Length"
+    },
+    {
+      "storage": "1",
+      "varName": "length",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "action": "0",
+      "name": "Control Audio"
+    },
+    {
+      "name": "Leave Voice Channel"
+    },
+    {
+      "channel": "6",
+      "varName": "music-cmd-channel",
+      "message": "💭 I was alone in the voice channel... I left",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

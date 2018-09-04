@@ -1,0 +1,139 @@
+{
+  "name": "info",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Fwetr",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please mention a bot to see its informations.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: This user is not a bot !",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "owner",
+      "defaultVal": "1",
+      "storage": "1",
+      "varName2": "owner",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "votes",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Total",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "votes_monthly",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "monthvotes",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "user",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "${tempVars(\"user\")}'s informations",
+      "author": "",
+      "color": "26B2D6",
+      "timestamp": "false",
+      "url": "https://dbm-network.com",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"avatar\")}",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"owner\")}",
+      "storage": "1",
+      "varName": "owner",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Owner",
+      "message": "${tempVars(\"owner\") == null ? '`None`' : tempVars(\"owner\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Votes",
+      "message": "Monthly: `${tempVars(\"monthvotes\")}`\nTotal: `${tempVars(\"Total\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": []
+}

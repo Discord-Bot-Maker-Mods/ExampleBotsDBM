@@ -1,0 +1,159 @@
+{
+  "name": "deny",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "aFyTv",
+  "actions": [
+    {
+      "info": "0",
+      "find": "473843909416452116",
+      "storage": "1",
+      "varName": "verif",
+      "name": "Find Server"
+    },
+    {
+      "info": "0",
+      "find": "407624561115398164",
+      "storage": "1",
+      "varName": "bots",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "verif",
+      "name": "Change Server"
+    },
+    {
+      "info": "1",
+      "find": "Bot Approver",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: This command is `Bot Approver` only !",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "1",
+      "varName": "bots",
+      "name": "Change Server"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please include the user & the reason.\n\n`.deny <@user | user ID> <reason>`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "changeType": "0",
+      "value": "mentionedUser",
+      "name": "Control Variable"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Can't find that user !",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "Hello !\n\nYour bot was denied by our staff team. 😓\n\n```${tempVars(\"reason\")}```\n\nPlease note that you can still submit your bot, just make sure you checked the deny reason.\nIf you think that was an error, please message a Bot Approver.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Sent the deny message.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

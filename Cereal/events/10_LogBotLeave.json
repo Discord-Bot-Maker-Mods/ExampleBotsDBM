@@ -1,0 +1,42 @@
+{
+  "name": "LogBotLeave",
+  "temp": "",
+  "event-type": "5",
+  "_id": "gPXKG",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "title": "LEFT ${tempVars(\"server\").name}",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Members: ${tempVars(\"server\").memberCount}\nID: ${tempVars(\"server\").id}\nOwner: ${tempVars(\"server\").owner.user.username} (${tempVars(\"server\").owner.id})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "7",
+      "varName2": "server-log",
+      "name": "Send Embed Message"
+    }
+  ]
+}

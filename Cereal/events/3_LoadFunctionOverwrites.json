@@ -1,0 +1,24 @@
+{
+  "name": "LoadFunctionOverwrites",
+  "temp": "",
+  "event-type": "0",
+  "_id": "LoadSubs",
+  "actions": [
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "// Make sure it only runs once!!\n//------------\n\nif(!globalVars(\"loadoverwrites\")){ \n  this.callNextAction(cache);\n  this.storeValue(true, 3,\"loadoverwrites\", cache);\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "// put your function overwrites here\n\nAudio.playItem2 = function(item, id) {\n\tif(!this.connections[id]) return;\n\tif(this.dispatchers[id]) {\n\t\tthis.dispatchers[id]._forceEnd = true;\n\t\tthis.dispatchers[id].end();\n\t}\n\tconst type = item[0];\n\tlet setupDispatcher = false;\n\tswitch(type) {\n\t\tcase 'file':\n\t\t\tsetupDispatcher = this.playFile(item[2], item[1], id);\n\t\t\tbreak;\n\t\tcase 'url':\n\t\t\tsetupDispatcher = this.playUrl(item[2], item[1], id);\n\t\t\tbreak;\n\t\tcase 'yt':\n\t\t\tsetupDispatcher = this.playYt(item[2], item[1], id);\n\t\t\tbreak;\n\t}\n\tif(setupDispatcher && !this.dispatchers[id]._eventSetup) {\n\t\tthis.dispatchers[id].on('end', function() {\n\t\t\tconst isForced = this.dispatchers[id]._forceEnd;\n\t\t\tthis.dispatchers[id] = null;\n\t\t\t// LASSE EDIT\n\t\t\t// console.log('Trigger');\n\t\t\t\n\t\t\tconst ActionIDToCall = 'cKJvt'\n\n\t\t\tconst events = Files.data.commands.concat(Files.data.events);\n\t\t\tfor(var index in events) { \n\t\t\t\t\n\t\t\t\tif(events[index] && events[index]._id == ActionIDToCall) {\n\t\t\t\t\tconst name = events[index].name;\n\t\t\t\t   \n\t\t\t\t\tlet actions = events[index].actions;\n\t\t\t\t\tconst act = actions[0];\n\t\t\t\t\tif (actions && act && Actions.exists(act.name)) {                \n\t\t\t\t\t\tconst cache2 = {\n\t\t\t\t\t\t\tactions: actions,\n\t\t\t\t\t\t\tindex: 0,\n\t\t\t\t\t\t\ttemp: cache.temp,\n\t\t\t\t\t\t\tserver: server,\n\t\t\t\t\t\t\tmsg: null\n\t\t\t\t\t\t};               \n\t\t\t\t\t\tActions[act.name](cache2);                       \n\t\t\t\t\t\tActions.callNextAction(cache); \n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}       \n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\t// LASSE EDIT\n\t\t\tif(!isForced) {\n\t\t\t\tthis.playNext(id);\n\t\t\t}\n\t\t}.bind(this));\n\t\tthis.dispatchers[id]._eventSetup = true;\n\t}\n};\n\nAudio.addToQueue2 = function(item, cache) {\n\tif(!cache.server) return;\n\tconst id = cache.server.id;\n\tif(!this.queue[id]) this.queue[id] = [];\n\tthis.queue[id].push(item);\n\tthis.playNext2(id);\n};\n\nAudio.playNext2 = function(id, forceSkip) {\n\tif(!this.connections[id]) return;\n\tif(!this.dispatchers[id] || !!forceSkip) {\n\t\tif(this.queue[id].length > 0) {\n\t\t\tconst item = this.queue[id].shift();\n\t\t\tthis.playItem2(item, id);\n\t\t} else {\n\t\t\tthis.connections[id].disconnect();\n\t\t}\n\t}\n};\n\n\n////////////////////////\nconsole.log('[Function Overwrites] Loaded!');\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "name": "botowner",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "LJHmN",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please mention a bot to get his owner.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "owner",
+      "defaultVal": "1",
+      "storage": "1",
+      "varName2": "owner",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "owner",
+      "comparison": "1",
+      "value": "\"1\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: This bot has no owner. If you own this bot, please DM a staff member and he'll set you as the owner.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "owner",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Could not find the stored user. He probably left the server.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "7",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Things"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${mentionedUser}'s owner is `${tempVars(\"tag\")}`.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

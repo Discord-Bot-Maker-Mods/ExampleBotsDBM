@@ -1,0 +1,33 @@
+{
+  "name": "TimeRestriction",
+  "temp": "member",
+  "event-type": "38",
+  "_id": "IEMGg",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "6",
+      "storage": "1",
+      "varName2": "message",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "message",
+      "info": "4",
+      "storage": "1",
+      "varName2": "channel",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "${tempVars(\"member\")} - This command is time restricted. Please wait ${tempVars(\"time\")}.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "temp2": "time"
+}

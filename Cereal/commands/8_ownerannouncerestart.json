@@ -1,0 +1,30 @@
+{
+  "name": "ownerannouncerestart",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "gGQyU",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💭 Starting... Sound takes 16 seconds!",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "source": "PEKvF",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "❗ Done",
+      "name": "Edit Message"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "LogBotJoin",
+  "temp": "",
+  "event-type": "4",
+  "_id": "gPXKG",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "server",
+      "name": "Store Server Info"
+    },
+    {
+      "title": "JOINED ${tempVars(\"server\").name}",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Members: ${tempVars(\"server\").memberCount}\nID: ${tempVars(\"server\").id}\nOwner: ${tempVars(\"server\").owner.user.username} (${tempVars(\"server\").owner.id})",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "7",
+      "varName2": "server-log",
+      "name": "Send Embed Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2MjkwMzE5OTkwOTU0Mzk0NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTMwNDc1NDk3fQ.xE6iau7-RAK6pUY0SU2c_2JrgwyTWJ2U54WOupdA6xc', client);\n\ndbl.postStats(client.guilds.size);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "guild",
+      "name": "Store Server Info"
+    },
+    {
+      "source": "nAedT",
+      "type": "true",
+      "name": "Call Command/Event"
+    }
+  ]
+}

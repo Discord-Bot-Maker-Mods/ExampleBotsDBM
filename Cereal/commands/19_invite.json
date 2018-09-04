@@ -1,0 +1,41 @@
+{
+  "name": "invite",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "InyKt",
+  "actions": [
+    {
+      "title": "",
+      "author": "Cereal Bot | Invite",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "https://cdn.discordapp.com/attachments/463642906574585857/464819412864598016/cereal-pic_v3.png",
+      "imageUrl": "",
+      "thumbUrl": "https://cdn.discordapp.com/attachments/463642906574585857/464819412864598016/cereal-pic_v3.png",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Thank you for using Cereal Bot. If you need help with this bot join our [support server](https://discord.gg/enscRtr) or call a supporter using `c?callsupport`.\n\n:cyclone:[**Website**](https://cerealbot.party/) |<:cerealtag:464002772560510986> [**Invite**](https://invite.cerealbot.party) |<:cerealstars:464000853507047425> [**Vote**](https://cerealbot.party/vote)",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Our bot for your community!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "BotJoin",
+  "temp": "user",
+  "event-type": "6",
+  "_id": "shvDY",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serv",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "serv",
+      "comparison": "1",
+      "value": "407624561115398164",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "2",
+      "name": "Check If Member"
+    },
+    {
+      "info": "0",
+      "find": "473843909416452116",
+      "storage": "1",
+      "varName": "serv",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "serv",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "473877133941538817",
+      "storage": "1",
+      "varName": "chan",
+      "name": "Find Channel"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "26B2D6",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "message": "Please set ${tempVars(\"user\")}'s owner by sending \"**${tempVars(\"user\")} OwnerID**\" in this channel.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "5",
+      "varName2": "chan",
+      "name": "Send Embed Message"
+    }
+  ]
+}

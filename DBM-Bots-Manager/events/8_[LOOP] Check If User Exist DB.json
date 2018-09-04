@@ -1,0 +1,66 @@
+{
+  "name": "[LOOP] Check If User Exist DB",
+  "temp": "",
+  "event-type": "0",
+  "_id": "BkqLa",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "result",
+      "hostname": "localhost",
+      "port": "3306",
+      "username": "root",
+      "password": "ZWI0MDNlMzEyMWZm",
+      "database": "bmanager",
+      "query": "SELECT id FROM members WHERE id=${tempVars(\"userID\")}",
+      "otype": "0",
+      "debugMode": "1",
+      "name": "Run SQL Query"
+    },
+    {
+      "storage": "1",
+      "varName": "result",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "result",
+      "hostname": "localhost",
+      "port": "3306",
+      "username": "root",
+      "password": "ZWI0MDNlMzEyMWZm",
+      "database": "bmanager",
+      "query": "INSERT INTO members (id) VALUES (${tempVars(\"userID\")})",
+      "otype": "0",
+      "debugMode": "1",
+      "name": "Run SQL Query"
+    },
+    {
+      "storage": "1",
+      "varName": "result",
+      "hostname": "localhost",
+      "port": "3306",
+      "username": "root",
+      "password": "ZWI0MDNlMzEyMWZm",
+      "database": "bmanager",
+      "query": "SELECT id FROM members WHERE id=${tempVars(\"userID\")}",
+      "otype": "0",
+      "debugMode": "1",
+      "name": "Run SQL Query"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const res = JSON.stringify(tempVars(\"result\"))\nres.id",
+      "storage": "1",
+      "varName": "result",
+      "name": "Run Script"
+    }
+  ]
+}

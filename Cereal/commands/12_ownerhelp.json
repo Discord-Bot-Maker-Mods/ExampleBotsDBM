@@ -1,0 +1,16 @@
+{
+  "name": "ownerhelp",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "hIfAA",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "`c?ownerstopbot`\n`c?ownerconsole`\n`c?ownerforcedblpost`\n`c?ownerservers`\n`c?ownercompile`\n`c?ownermusic`\n`c?ownergenerateinvite`\n`c?ownerannouncerestart` (VCs only)\n`c?ownerstatus`\n`c?ownerresetstatus`\n`c?ownerreaload`\n`c?ownerhelp`\n`c?soundboard`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

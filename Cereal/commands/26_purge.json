@@ -1,0 +1,80 @@
+{
+  "name": "purge",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "_id": "zwoWM",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_MESSAGES",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔑 Missing Perms! You need to have **Manage Messages** permission to use this command.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ This command deletes multiple messages. Make sure to tell me how many messages you want to delete!\n`c?purge 5`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "count": "${tempVars(\"number\")}",
+      "condition": "0",
+      "custom": "",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    }
+  ],
+  "_aliases": [
+    "prune"
+  ],
+  "_timeRestriction": 1
+}

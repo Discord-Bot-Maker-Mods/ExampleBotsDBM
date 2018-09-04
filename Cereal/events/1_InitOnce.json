@@ -1,0 +1,113 @@
+{
+  "name": "InitOnce",
+  "temp": "",
+  "event-type": "1",
+  "_id": "ltvaO",
+  "actions": [
+    {
+      "storage": "3",
+      "varName": "init",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "init",
+      "changeType": "0",
+      "value": "true",
+      "name": "Control Variable"
+    },
+    {
+      "info": "0",
+      "find": "462697055316606977",
+      "storage": "3",
+      "varName": "support-server",
+      "name": "Find Server"
+    },
+    {
+      "server": "3",
+      "varName": "support-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "462697497782124554",
+      "storage": "3",
+      "varName": "request-supporter",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "462697836837076992",
+      "storage": "3",
+      "varName": "error-console",
+      "name": "Find Channel"
+    },
+    {
+      "info": "0",
+      "find": "463073427415367682",
+      "storage": "3",
+      "varName": "server-log",
+      "name": "Find Channel"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "type": "3",
+      "storage": "1",
+      "varName": "h",
+      "name": "Store UTC Time Info"
+    },
+    {
+      "type": "4",
+      "storage": "1",
+      "varName": "m",
+      "name": "Store UTC Time Info"
+    },
+    {
+      "tosend": "Restarted at ${tempVars(\"h\")+2}:${tempVars(\"m\")}",
+      "name": "Send Message to Console"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.on('error', (error) => {    \n  if(error.message == 'Unexpected server response: 520'){\n    console.log(\"Cant connect to Discords API, Retrying...\");\n  }else if(error.message == 'read ECONNRESET'){\n    console.log(\"Connection Reset! Reconnecting...\");\n  }else{\n    console.error(error);\n  }            \n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "activity": "1",
+      "nameText": "c?help",
+      "url": "",
+      "name": "Set Bot Activity"
+    },
+    {
+      "channel": "7",
+      "varName": "error-console",
+      "message": "*Restarted*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2MjkwMzE5OTkwOTU0Mzk0NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTMwNDc1NDk3fQ.xE6iau7-RAK6pUY0SU2c_2JrgwyTWJ2U54WOupdA6xc', client);\n\ndbl.postStats(client.guilds.size);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}

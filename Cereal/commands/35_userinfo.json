@@ -1,0 +1,342 @@
+{
+  "name": "userinfo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DmhAp",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "22",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authid",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "authavatar-url",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "authusername",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "15",
+      "storage": "1",
+      "varName2": "authstatus",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "14",
+      "storage": "1",
+      "varName2": "authgame",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "authroles",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "authcolor",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "Userinfo: ${tempVars(\"authusername\")}",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"authavatar-url\")}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "authgame",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "authgame",
+      "changeType": "0",
+      "value": "'Not playing'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "authroles",
+      "removeType": "1",
+      "position": "",
+      "storage2": "1",
+      "varName2": "newroles",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Status",
+      "message": "${tempVars(\"authstatus\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Playing",
+      "message": "${tempVars(\"authgame\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "ID",
+      "message": "${tempVars(\"authid\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "authroles",
+      "comparison": "1",
+      "value": "''",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "authroles",
+      "changeType": "0",
+      "value": "'No roles'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles",
+      "message": "${tempVars(\"authroles\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Cereal",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "15",
+      "storage": "1",
+      "varName2": "status",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "14",
+      "storage": "1",
+      "varName2": "game",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar-url",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "roles",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "color",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "Userinfo: ${tempVars(\"username\")}",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"avatar-url\")}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "game",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "game",
+      "changeType": "0",
+      "value": "'Not playing'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "roles-everyone",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Status",
+      "message": "${tempVars(\"status\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Playing",
+      "message": "${tempVars(\"game\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "ID",
+      "message": "${tempVars(\"id\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "comparison": "1",
+      "value": "''",
+      "iftrue": "0",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "changeType": "0",
+      "value": "'No roles'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles",
+      "message": "${tempVars(\"roles\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Cereal",
+      "footerIcon": "https://cdn.discordapp.com/attachments/463642906574585857/464819412864598016/cereal-pic_v3.png",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}

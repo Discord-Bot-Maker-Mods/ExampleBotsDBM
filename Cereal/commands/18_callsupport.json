@@ -1,0 +1,192 @@
+{
+  "name": "callsupport",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "LPmEO",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Missing Perms! You need to have **Manage Guild** permission to use this command.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Hello! If you want to invite a member of our support team please tell us what's wrong.\n`c?callsupport the bot doesn't kick members`\nThe support team will automatically get an invite link.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "botmem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "botmem",
+      "permission": "CREATE_INSTANT_INVITE",
+      "iftrue": "2",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔴 Sorry. I cannot create an invite because I do not have \"Create Invite\" permission.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "maxUses": "1",
+      "lifetime": "",
+      "tempInvite": "false",
+      "unique": "true",
+      "storage": "1",
+      "varName2": "invite",
+      "name": "Create Invite"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "icon",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Things"
+    },
+    {
+      "storage": "1",
+      "varName": "icon",
+      "comparison": "5",
+      "value": "'http'",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Supporter needed",
+      "author": "${msg.channel.guild.name}",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "${tempVars(\"invite\")}",
+      "authorIcon": "https://cdn.discordapp.com/attachments/462697056973094913/462733676531286017/blobpolice.png",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "title": "Supporter needed",
+      "author": "${msg.channel.guild.name}",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "${tempVars(\"invite\")}",
+      "authorIcon": "${msg.channel.guild.iconURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Reason:",
+      "message": "${tempVars(\"reason\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Requested by: ${tempVars(\"tag\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "7",
+      "varName2": "request-supporter",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<:tools_emoji:435822422747381770> Okay! A member of support will join your server as soon as possible. Please note that this can take up to 24 hours!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

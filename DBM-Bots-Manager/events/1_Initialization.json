@@ -1,0 +1,14 @@
+{
+  "name": "Initialization",
+  "temp": "",
+  "event-type": "1",
+  "_id": "mbaGa",
+  "actions": [
+    {
+      "activity": "2",
+      "nameText": "for inactive bots.",
+      "url": "",
+      "name": "Set Bot Activity"
+    }
+  ]
+}

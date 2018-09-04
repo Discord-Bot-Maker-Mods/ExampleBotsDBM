@@ -1,0 +1,24 @@
+{
+  "name": "restartbot",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "BcoSY",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Restarting the bot.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "process.exit(0)",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ]
+}

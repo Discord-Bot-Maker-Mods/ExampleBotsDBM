@@ -1,0 +1,98 @@
+{
+  "name": "approvedBot",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "CLjGp",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "id",
+      "comparison": "1",
+      "value": "473847236636180492",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "infoIndex": "0",
+      "storage": "1",
+      "varName": "url",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "407624561115398164",
+      "storage": "1",
+      "varName": "serv",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "serv",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "473857374130667532",
+      "storage": "1",
+      "varName": "chan",
+      "name": "Find Channel"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "26B2D6",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "message": "${member} **approved a bot. Invite it using this link.**\n\n${tempVars(\"url\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "5",
+      "varName2": "chan",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "emoji": "4",
+      "varName2": "👍",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "3"
+}

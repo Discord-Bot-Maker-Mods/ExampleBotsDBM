@@ -1,0 +1,145 @@
+{
+  "name": "MemberJoin",
+  "temp": "member",
+  "event-type": "6",
+  "_id": "LXZFg",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.channelid.join",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.message.join",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.message.join",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "message",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.channelid.join",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "channelid",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"channelid\")}",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "%member%",
+      "text3": "${tempVars(\"member\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "message-replaced",
+      "name": "Replace Text"
+    },
+    {
+      "title": " ",
+      "author": "${tempVars(\"member\").user.username}",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"member\").user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"message-replaced\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Members: ${tempVars(\"member\").guild.memberCount}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "channel",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "error",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "11",
+      "storage": "1",
+      "varName2": "owner",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "5",
+      "varName": "owner",
+      "message": "Hey!\nYou set the welcome message channel to ${tempVars(\"channel\")}!\nProblem: I don't have permission to post messages there :/\nYou need to fix that to allow me to welcome new members :D",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "4",
+      "varName": "owner",
+      "message": "Hey!\nThe channel for welcome message channel has been set to ${tempVars(\"channel\")}!\nProblem: I don't have permission to post messages there :/\nYou need to fix that to allow me to welcome new members :D",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "name": "submit",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "gxQqt",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "[${member}]\nYou are submitting a bot to DBM Bots.\n\n*Type **cancel** to stop.*\n`What is your bot name ?`",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authorid",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0",
+      "max": "1",
+      "time": "60000",
+      "storage2": "1",
+      "varName2": "response",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Await Response Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "response",
+      "info": "3",
+      "storage": "1",
+      "varName2": "msgauthor",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "2",
+      "varName": "msgauthor",
+      "info": "1",
+      "storage": "1",
+      "varName2": "msgauthorid",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "authorid",
+      "comparison": "1",
+      "value": "tempVars(\"msgauthorid\")",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "2",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": ":clock1: ${member}, hello ? Cancelled",
+      "name": "Edit Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "response",
+      "comparison": "1",
+      "value": "\"cancel\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "Cancelled !",
+      "name": "Edit Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "response",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "[${member}]\n\n`What is your bot prefix ?`",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res1",
+      "changeType": "0",
+      "value": "tempVars(\"response\")",
+      "name": "Control Variable"
+    },
+    {
+      "call": "4",
+      "name": "Jump to Action"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "[${member}]\n\n`What is your bot description ?`",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res2",
+      "changeType": "0",
+      "value": "tempVars(\"response\")",
+      "name": "Control Variable"
+    },
+    {
+      "call": "4",
+      "name": "Jump to Action"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "comparison": "1",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "[${member}]\n\n`What is your bot invite link ?`",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res3",
+      "changeType": "0",
+      "value": "tempVars(\"response\")",
+      "name": "Control Variable"
+    },
+    {
+      "call": "4",
+      "name": "Jump to Action"
+    },
+    {
+      "storage": "1",
+      "varName": "num",
+      "comparison": "1",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "[${member}]\n\n:white_check_mark: Your bot has been submitted.",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res4",
+      "changeType": "0",
+      "value": "tempVars(\"response\")",
+      "name": "Control Variable"
+    },
+    {
+      "title": "New bot submitted !",
+      "author": "",
+      "color": "26B2D6",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Author",
+      "message": "${member}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Name",
+      "message": "${tempVars(\"res1\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Prefix",
+      "message": "${tempVars(\"res2\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Description",
+      "message": "${tempVars(\"res3\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "fieldName": "Invite Link",
+      "message": "${tempVars(\"res4\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "info": "0",
+      "find": "473843909416452116",
+      "storage": "1",
+      "varName": "serv",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "serv",
+      "name": "Change Server"
+    },
+    {
+      "info": "1",
+      "find": "waiting-approval",
+      "storage": "1",
+      "varName": "chan",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "chan",
+      "message": "<@&473845526811377674>",
+      "storage": "1",
+      "varName2": "m",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "m",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "5",
+      "varName2": "chan",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}

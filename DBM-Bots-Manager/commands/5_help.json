@@ -1,0 +1,35 @@
+{
+  "name": "help",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "kKadJ",
+  "actions": [
+    {
+      "title": "Bot Commands",
+      "author": "",
+      "color": "26B2D6",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "message": "`.submit`: Submit your bot to get it added on the server.\n`.botowner`: Get the owner of a bot.\n`.vote`: Vote for a bot. Can be done every 12 hours.\n`.info`: Get informations about a bot.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}
