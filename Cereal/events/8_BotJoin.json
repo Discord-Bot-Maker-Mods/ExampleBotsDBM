@@ -1,0 +1,34 @@
+{
+  "name": "BotJoin",
+  "temp": "",
+  "event-type": "4",
+  "_id": "JbJJa",
+  "actions": [
+    {
+      "info": "1",
+      "find": "general",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "channel",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "Hey! Please set me up!\nMy prefix is `c?`\nJust do the following commands if you want to activate the modules:\n`c?set-welcome` Activates custom welcome messages in a specific channel\n`c?set-log` Activates a warning log for messages\nYou don't need to use these commands. Check `c?help` for a overview of all commands.\n\nIf you have any questions feel free to `c?callsupport` 😀\nEnjoy your day!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

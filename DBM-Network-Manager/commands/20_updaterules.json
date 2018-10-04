@@ -26,7 +26,7 @@
       "storage": "1",
       "varName": "rules-embed",
       "fieldName": "1. General",
-      "message": "1.1 These rules apply to all DBM Network Services. If you get warned/kicked/banned this will also happen on the other services.\n1.2 The Moderators are allowed to warn you, and you are allowed to ask for a reason or appeal the warning. However, Moderators are also allowed to block or mute you.\n1.3 The rules of the Official server do not apply in DBM Network Services. Please read the Official server's rules as well.\n1.4 We may change these rules at any given time. If one of the rules don't apply anymore, the others still will.",
+      "message": "1.1 These rules apply to all DBM Network Services. Any warnings/kicks/bans will apply to all services.\n1.2 The rules of the Official server do not apply in DBM Network Services. Please read the Official server's rules as well.\n1.3 The Moderators are allowed to warn you, and you are allowed to ask for a reason or appeal the warning. However, Moderators are also allowed to block or mute you.\n1.4 Users of pirated copies of DBM will be banned, and may be unbanned if proven to have a legitimate copy of it.\n1.5 These rules can change periodically, even if one changes the others will still apply.",
       "inline": "1",
       "name": "Add Embed Field"
     },
@@ -34,7 +34,7 @@
       "storage": "1",
       "varName": "rules-embed",
       "fieldName": "2. Support",
-      "message": "2.1 Use the Search function included in Discord to search for what you need or for solutions to problems you are having before asking or suggesting!\n2.2 Mentioning random or specific users for help reasons is not allowed.\n2.3 Mentioning Helpers should be done after a few minutes after you send your question.\n2.4 All support is done voluntarily, so please do not hold any expectations and respect those who try to help.",
+      "message": "2.1 Use the Searchbar in Discord to search for Raw Data or solutions to your problem before asking or suggesting!\n2.2 Unsolicited mentioning of any user is forbidden (Ghost mentions will be treated more severely.).\n2.3 Mentioning Helpers should be done at least 15 minutes after posting your question.\n2.4 All support is done voluntarily, so please do not hold any expectations and respect those who try to help.",
       "inline": "1",
       "name": "Add Embed Field"
     },
@@ -42,7 +42,7 @@
       "storage": "1",
       "varName": "rules-embed",
       "fieldName": "3. Content",
-      "message": "3.1 NSFW content is strictly forbidden.\n3.2 Advertising is forbidden (Exceptions on DBM Store).\n3.3 Random memes, emojis or messages are forbidden (Exeptions on DBM Hub).\n3.4 Spamming messages/mentions/reacts is forbidden. \n3.5 These rules also apply to messages, media, profile picture and name.\n3.6 You are not allowed to publish other users' Raw Data as your own.\n3.7 Any hateful messages, slurs, or provocations to a group or individual are strictly forbidden.",
+      "message": "3.1 NSFW content of any kind is forbidden.\n3.2 Advertising of any kind is forbidden.\n3.3 Random memes, emojis or messages are forbidden (Exeptions in DBM Hub).\n3.4 Spamming of any kind is forbidden. \n3.5 Claiming ownership of, or re-posting another user's content (E.g, Raw Data) is forbidden.\n3.6 Any hateful speech/slurs/provocations or harassment targeted at any individual or group is strictly forbidden.\n3.7 You may be warned for sending DMs in mass to multiple users.",
       "inline": "1",
       "name": "Add Embed Field"
     },
@@ -50,7 +50,7 @@
       "storage": "1",
       "varName": "rules-embed",
       "fieldName": "4. Warning System",
-      "message": "4.1 Warnings are shared between all DBM Network Servers, you will have the same amount of warnings in any of them.\n4.2 Getting warning points in the Official DBM server may also result in you receiving warning points in the DBM Network.\n4.3 You will be warned for using the wrong reactions in Raw Data or Suggestions.\n4.4 Spamming the request raw data, raw data posting or suggestion system is not allowed\n4.5 [This Privacy Policy](https://dbm-network.com/privacy-policy/) applies to all DBM Network Services.",
+      "message": "4.1 Warnings are shared between all DBM Network Servers, you will have the same amount of warnings in any of them.\n4.2 Getting warning points in the Official DBM server may also result in you receiving warning points in the DBM Network.\n4.3 You will be warned for using the wrong reactions in Raw Data or Suggestions.\n4.4 [Our Privacy Policy](https://dbm-network.com/privacy-policy/) applies to all DBM Network Services.",
       "inline": "1",
       "name": "Add Embed Field"
     },

@@ -1,0 +1,95 @@
+{
+  "name": "setwarns",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "HnGUg",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Gimme dat ID and points! `!setwarns ID Points`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "points",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(tempVars(\"id\"));",
+      "storage": "1",
+      "varName": "user",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**😵 ERROROORORORORROROROROOOOOROROORORORORORRORORORORRROROROROROROROORO**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "changeType": "0",
+      "value": "tempVars(\"points\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💚 Should be done! Added ${tempVars(\"points\")} to ${tempVars(\"id\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

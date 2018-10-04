@@ -1,0 +1,73 @@
+{
+  "name": "unmute",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "actions": [
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "9",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "Silence",
+      "storage": "1",
+      "varName": "muted-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName2": "member",
+      "role": "3",
+      "varName": "muted-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${member} unmuted ${tempVars(\"member\")}.**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Wrong format!\n`!unmute [@user]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "0",
+  "_id": "EUVJt"
+}

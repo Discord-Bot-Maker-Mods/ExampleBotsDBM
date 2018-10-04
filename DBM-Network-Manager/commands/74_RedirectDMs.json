@@ -1,0 +1,51 @@
+{
+  "name": "RedirectDMs",
+  "permissions": "NONE",
+  "restriction": "3",
+  "_id": "IEqSL",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "0",
+      "storage": "1",
+      "varName": "text",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "374529428174405632",
+      "storage": "1",
+      "varName": "server",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "490207917388070912",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "dm-channel",
+      "name": "Store Channel Info"
+    },
+    {
+      "channel": "5",
+      "varName": "channel",
+      "message": "${tempVars(\"dm-channel\").recipient} (${tempVars(\"dm-channel\").recipient.username}):\n```${tempVars(\"text\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

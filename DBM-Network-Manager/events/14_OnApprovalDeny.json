@@ -1,0 +1,220 @@
+{
+  "name": "OnApprovalDeny",
+  "temp": "msg",
+  "event-type": "28",
+  "_id": "NNWE2",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-name",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").emoji.name}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-name",
+      "comparison": "1",
+      "value": "'deny'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "au_serv_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "au_serv_id",
+      "comparison": "1",
+      "value": "'379372685182107669'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.channel.id}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.channel}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "au_ch_id",
+      "comparison": "1",
+      "value": "'445289133829521408'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "find": "445289133829521408",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "Check if first reaction",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-count",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").count}'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-count",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "reaction-user",
+      "changeType": "0",
+      "value": "tempVars(\"msg\").users.array()",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "Check if the raw data is registerd",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "message_id",
+      "changeType": "0",
+      "value": "'${tempVars(\"msg\").message.id}'",
+      "name": "Control Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "msg_${tempVars(\"message_id\")}_id",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "⛔ That is not raw data...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Stores Raw Data Info",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "msg_${tempVars(\"message_id\")}_id",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "raw_id",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "raw_${tempVars(\"raw_id\")}_au",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "raw_au",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"raw_au\")}",
+      "storage": "1",
+      "varName": "raw_au_member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "raw_au_member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "🐾 The author left the server...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${tempVars(\"reaction-user\")} denied **#${tempVars(\"raw_id\")}** from <@${tempVars(\"raw_au\")}>",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "===== Must be end =====",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "channel": "5",
+      "varName": "raw_au_member",
+      "message": "Hey!\nI am sorry to tell you that we do not accept your raw data **${tempVars(\"raw_id\")}**!\nMaybe a Moderator will DM you the reason but this is not guaranteed.\nHave a nice day!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

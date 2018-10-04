@@ -1,0 +1,37 @@
+{
+  "name": "Error",
+  "temp": "short",
+  "event-type": "37",
+  "_id": "uJBVy",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "servername",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "496814564147462144",
+      "storage": "1",
+      "varName": "error-log",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "error-log",
+      "message": "<@268737698397814784> in ${tempVars(\"servername\")}\n```${tempVars(\"short\")}```\n```${tempVars(\"detail\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "temp2": "detail"
+}

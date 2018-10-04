@@ -1,0 +1,237 @@
+{
+  "name": "warn",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "0",
+  "_id": "wMLOn",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "17",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😒 Something went wrong...\n`!warn [ID] [points] [reason]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "user-input",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "points",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "user",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "bla",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(tempVars(\"user-input\"))",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"user-input\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "19",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😒 Something went wrong...\nI can't find that user!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ ***${tempVars(\"user\").user.tag} has been warned***",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "changeType": "1",
+      "value": "${tempVars(\"points\")}",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_reason",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_reason",
+      "changeType": "0",
+      "value": "tempVars(\"reason\")",
+      "name": "Control Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "Does",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_reason",
+      "changeType": "1",
+      "value": "`, ` + tempVars(\"reason\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Member Data"
+    },
+    {
+      "source": "ban",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "dataName": "warning_points",
+      "comparison": "4",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Member Data"
+    },
+    {
+      "source": "kick",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "source": "warn",
+      "type": "true",
+      "name": "Call Command/Event"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "ow"
+  ]
+}

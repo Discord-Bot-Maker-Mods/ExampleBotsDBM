@@ -1,0 +1,131 @@
+{
+  "name": "reply",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "KZOyu",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😣 Wrong format!\n`!reply [ID] [Text]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "sug-num",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "sug_${tempVars(\"sug-num\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "suggestion-text",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion-text",
+      "comparison": "1",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😩 Nope.\nI can't find that suggestion!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "comment-text",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "find": "suggestions",
+      "storage": "1",
+      "varName": "sug-channel",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "Stored & Checked everything",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "title": "Moderator Reply To Suggestion",
+      "author": "${member.user.username}",
+      "color": "ff1111",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "*${tempVars(\"suggestion-text\")}*",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Comment",
+      "message": "${tempVars(\"comment-text\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "sug-channel",
+      "name": "Send Embed Message"
+    }
+  ]
+}

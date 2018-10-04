@@ -1,0 +1,59 @@
+{
+  "name": "deleteinfo",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "uYOxI",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "infoname",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "infoname",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry. What do you want to delete?\n`!deleteinfo infoname`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "//var info = this.evalMessage(\"tag_\" + tempVars(\"infoname\"));\nif(Files.data.servers[\"335407595890409472\"].tag_${tempVars(\"infoname\")} == undefined) {\nmsg.channel.send('This info does not exists.');\n} else {\nif(Files.data.servers) {\nvar json = Files.data.servers[\"335407595890409472\"];\nmsg.channel.send('Removing: ```' + json.tag_${tempVars(\"infoname\")} + '```');\ndelete json.tag_${tempVars(\"infoname\")};\nFiles.saveData(\"servers\");\nthis.callNextAction(cache);\n} else {\nmessage.channel.send('Looks like an error');\n}\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💚 Done!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "delinfo"
+  ]
+}

@@ -3,6 +3,14 @@
   "permissions": "NONE",
   "restriction": "1",
   "_id": "FCOrN",
-  "actions": [],
+  "actions": [
+    {
+      "activity": "3",
+      "nameText": "123",
+      "url": "sgr",
+      "stat": "0",
+      "name": "Set Bot Activity"
+    }
+  ],
   "comType": "0"
 }

@@ -62,6 +62,14 @@
       "storage": "0",
       "varName": "",
       "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.on('error', (error) => {    \n  if(error.message == 'Unexpected server response: 520'){\n    console.log(\"Cant connect to Discords API, Retrying...\");\n  }else if(error.message == 'read ECONNRESET'){\n    console.log(\"Connection Reset! Reconnecting...\");\n  }else{\n    console.error(error);\n  }            \n});",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
     }
   ]
 }

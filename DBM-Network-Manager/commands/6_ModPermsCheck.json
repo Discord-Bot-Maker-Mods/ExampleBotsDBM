@@ -50,14 +50,32 @@
       "info": "0",
       "find": "427101187029073932",
       "storage": "1",
-      "varName": "req-role",
+      "varName": "mod",
       "name": "Find Role"
     },
     {
       "member": "2",
       "varName": "s_mem",
       "role": "3",
-      "varName2": "req-role",
+      "varName2": "mod",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "0",
+      "find": "432527589505236992",
+      "storage": "1",
+      "varName": "of_mod",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName": "s_mem",
+      "role": "3",
+      "varName2": "of_mod",
       "iftrue": "3",
       "iftrueVal": "2",
       "iffalse": "0",
@@ -67,7 +85,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "💩 You are Staff... but not good enough!",
+      "message": "💩 This command requires you to be Moderator in order to use it.",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

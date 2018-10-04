@@ -32,7 +32,7 @@
       "comparison": "1",
       "value": "tempVars(\"bot-commands\")",
       "iftrue": "2",
-      "iftrueVal": "11",
+      "iftrueVal": "12",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -43,7 +43,7 @@
       "comparison": "1",
       "value": "tempVars(\"mod-test-channel\")",
       "iftrue": "2",
-      "iftrueVal": "11",
+      "iftrueVal": "12",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -70,6 +70,9 @@
       "storage": "1",
       "varName": "info-msg",
       "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

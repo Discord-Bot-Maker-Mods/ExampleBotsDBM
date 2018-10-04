@@ -42,7 +42,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "JS Error:",
-      "message": "Something happened.... check the real bot log for the json stuff...",
+      "message": "```${tempVars(\"jserr\")}```",
       "inline": "1",
       "name": "Add Embed Field"
     },

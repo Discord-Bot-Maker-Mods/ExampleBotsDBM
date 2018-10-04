@@ -1,0 +1,116 @@
+{
+  "name": "stop",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ybFMy",
+  "actions": [
+    {
+      "info": "1",
+      "find": "DJ",
+      "storage": "1",
+      "varName": "djrole",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "djrole",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "djrole",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "13",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❗ You need to have the **DJ** role to use the command on this server!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ No. Please join the voice channel please!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ This command would stop my music and I would leave the voice channel... but there is no music at the moment!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "action": "0",
+      "name": "Control Audio"
+    },
+    {
+      "name": "Leave Voice Channel"
+    },
+    {
+      "name": "Clear Queue"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👋 Bye! Stopped music & left voice channel.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": []
+}

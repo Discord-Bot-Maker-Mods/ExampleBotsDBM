@@ -5,58 +5,6 @@
   "_id": "idDKw",
   "actions": [
     {
-      "message": "0",
-      "varName": "",
-      "info": "4",
-      "storage": "1",
-      "varName2": "msg-channel",
-      "name": "Store Message Info"
-    },
-    {
-      "info": "1",
-      "find": "bot-commands",
-      "storage": "1",
-      "varName": "bot-commands",
-      "name": "Find Channel"
-    },
-    {
-      "storage": "1",
-      "varName": "msg-channel",
-      "comparison": "1",
-      "value": "tempVars(\"bot-commands\")",
-      "iftrue": "2",
-      "iftrueVal": "9",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
-      "channel": "0",
-      "varName": "",
-      "message": "This command is only available in ${tempVars(\"bot-commands\")}!",
-      "storage": "1",
-      "varName2": "info-msg",
-      "name": "Send Message"
-    },
-    {
-      "time": "3",
-      "measurement": "1",
-      "name": "Wait"
-    },
-    {
-      "storage": "0",
-      "varName": "",
-      "name": "Delete Message"
-    },
-    {
-      "storage": "1",
-      "varName": "info-msg",
-      "name": "Delete Message"
-    },
-    {
-      "name": "End Action Sequence"
-    },
-    {
       "info": "1",
       "find": "DBM Helper",
       "storage": "1",
@@ -81,7 +29,7 @@
       "role": "3",
       "varName2": "helper-role",
       "iftrue": "2",
-      "iftrueVal": "17",
+      "iftrueVal": "12",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check If Member has Role"
@@ -108,6 +56,15 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

@@ -1,0 +1,169 @@
+{
+  "name": "[Log]MessageEdit",
+  "temp": "oldmsg",
+  "event-type": "26",
+  "_id": "OFecO",
+  "actions": [
+    {
+      "source": "hUbUn",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "source": "no_staff",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "message": "1",
+      "varName": "oldmsg",
+      "info": "2",
+      "storage": "1",
+      "varName2": "oldmsgtxt",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "newmsg",
+      "info": "2",
+      "storage": "1",
+      "varName2": "newmsgtxt",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "oldmsgtxt",
+      "comparison": "1",
+      "value": "tempVars(\"newmsgtxt\")",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "message": "1",
+      "varName": "newmsg",
+      "info": "3",
+      "storage": "1",
+      "varName2": "author",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "2",
+      "varName": "author",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "message": "1",
+      "varName": "newmsg",
+      "info": "4",
+      "storage": "1",
+      "varName2": "newmsgch",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "3",
+      "varName": "newmsgch",
+      "info": "2",
+      "storage": "1",
+      "varName2": "channel_na",
+      "name": "Store Channel Info"
+    },
+    {
+      "member": "2",
+      "varName": "author",
+      "info": "7",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Things"
+    },
+    {
+      "title": "Message Edit - ${tempVars(\"author_tag\")}",
+      "author": "",
+      "color": "4286f4",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "newmsgtxt",
+      "comparison": "0",
+      "value": "1024",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "11",
+      "name": "Check Variable MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "oldmsgtxt",
+      "comparison": "0",
+      "value": "1024",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Well...",
+      "message": "The message is too long! I can't display it in here!",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "call": "19",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Old message",
+      "message": "${tempVars(\"oldmsgtxt\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "New message",
+      "message": "${tempVars(\"newmsgtxt\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "In #${tempVars(\"channel_na\")} (${tempVars(\"newmsg\").guild.name}) • ID: ${tempVars(\"newmsg\").id}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "7",
+      "varName2": "log-channel",
+      "name": "Send Embed Message"
+    }
+  ],
+  "temp2": "newmsg"
+}

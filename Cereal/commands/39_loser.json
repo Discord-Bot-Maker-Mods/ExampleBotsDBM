@@ -1,0 +1,41 @@
+{
+  "name": "loser",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ZMnLK",
+  "actions": [
+    {
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+      "seek": "0",
+      "volume": "",
+      "passes": "1",
+      "bitrate": "",
+      "type": "0",
+      "name": "Play YouTube Video"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "***DESPACITO***",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "despacito"
+  ],
+  "comType": "0"
+}

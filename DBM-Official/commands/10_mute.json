@@ -1,0 +1,102 @@
+{
+  "name": "mute",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "actions": [
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "time",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "13",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "time",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "13",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "Silence",
+      "storage": "1",
+      "varName": "muted-role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName2": "member",
+      "role": "3",
+      "varName": "muted-role",
+      "name": "Add Member Role"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${tempVars(\"member\")} has been muted for ${tempVars(\"time\")} minutes.**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "${tempVars(\"time\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "member": "2",
+      "varName2": "member",
+      "role": "3",
+      "varName": "muted-role",
+      "name": "Remove Member Role"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Wrong format!\n`!mute [@user] [time]`\nTime in minutes",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ],
+  "_id": "EYLID"
+}

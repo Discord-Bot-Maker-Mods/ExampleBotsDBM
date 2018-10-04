@@ -1,0 +1,49 @@
+{
+  "name": "request2",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "uXXVI",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "c_ser_id",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "c_ser_id",
+      "comparison": "1",
+      "value": "379372685182107669",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👎 You forgot a parameter:\n`!request Your Idea Here`\nWe will post this to #request-raw!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0"
+}

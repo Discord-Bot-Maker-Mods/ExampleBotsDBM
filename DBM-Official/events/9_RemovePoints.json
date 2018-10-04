@@ -1,0 +1,68 @@
+{
+  "name": "RemovePoints",
+  "temp": "",
+  "event-type": "0",
+  "_id": "HHUcv",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "points",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "points",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "points",
+      "comparison": "3",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    },
+    {
+      "tosend": "${tempVars(\"member\").user.username}, your ${tempVars(\"points\")} points have been forgiven by our Lord!",
+      "name": "Send Message to Console"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "points",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "comment": "Skip",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}

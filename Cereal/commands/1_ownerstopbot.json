@@ -1,7 +1,7 @@
 {
   "name": "ownerstopbot",
   "permissions": "NONE",
-  "restriction": "4",
+  "restriction": "0",
   "_id": "WuRSR",
   "actions": [
     {

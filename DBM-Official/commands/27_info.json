@@ -39,7 +39,7 @@
       "comparison": "1",
       "value": "tempVars(\"bot-commands\")",
       "iftrue": "2",
-      "iftrueVal": "13",
+      "iftrueVal": "14",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -50,7 +50,7 @@
       "comparison": "1",
       "value": "tempVars(\"support\")",
       "iftrue": "2",
-      "iftrueVal": "13",
+      "iftrueVal": "14",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -61,7 +61,7 @@
       "comparison": "1",
       "value": "tempVars(\"mod-test-channel\")",
       "iftrue": "2",
-      "iftrueVal": "13",
+      "iftrueVal": "14",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -93,11 +93,14 @@
       "name": "End Action Sequence"
     },
     {
+      "name": "End Action Sequence"
+    },
+    {
       "condition": "0",
       "comparison": "0",
       "value": "1",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "2",
       "name": "Check Parameters"
@@ -109,6 +112,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -135,7 +141,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Server Data"
@@ -147,6 +153,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

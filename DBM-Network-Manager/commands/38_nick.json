@@ -1,0 +1,68 @@
+{
+  "name": "nick",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "AtPWy",
+  "actions": [
+    {
+      "source": "check_perms_mod",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😱 Please follow the format:\n`!nick ID NewUsername`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "nickname",
+      "name": "Store Command Params"
+    },
+    {
+      "source": "evNCQ",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👌 Changed nickname. If it didn't work make sure to enter the *ID*! `!nick ID NewNick`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "nickname"
+  ]
+}

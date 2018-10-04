@@ -41,7 +41,7 @@
     {
       "behavior": "0",
       "interpretation": "0",
-      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2MjkwMzE5OTkwOTU0Mzk0NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTMwNDc1NDk3fQ.xE6iau7-RAK6pUY0SU2c_2JrgwyTWJ2U54WOupdA6xc', client);\n\ndbl.postStats(client.guilds.size);",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('dbltoken', client);\n\ndbl.postStats(client.guilds.size);",
       "storage": "0",
       "varName": "",
       "name": "Run Script"

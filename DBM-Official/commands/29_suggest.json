@@ -22,7 +22,7 @@
       "comparison": "2",
       "value": "0",
       "iftrue": "3",
-      "iftrueVal": "3",
+      "iftrueVal": "4",
       "iffalse": "0",
       "iffalseVal": "3",
       "name": "Check Parameters"
@@ -39,6 +39,9 @@
       "storage": "0",
       "varName": "",
       "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -79,7 +82,7 @@
     {
       "storage": "1",
       "varName": "suggestion",
-      "message": "Suggestion ID: ${tempVars(\"sug-num\")}",
+      "message": "👍=Like; 👎=Dislike; ❗=Already possible; 🛠=DBM Mods; (${tempVars(\"sug-num\")})",
       "footerIcon": "",
       "name": "Set Embed Footer"
     },

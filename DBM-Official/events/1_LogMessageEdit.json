@@ -89,7 +89,7 @@
       "comparison": "0",
       "value": "1024",
       "iftrue": "3",
-      "iftrueVal": "1",
+      "iftrueVal": "4",
       "iffalse": "0",
       "iffalseVal": "11",
       "name": "Check Variable MOD"
@@ -102,7 +102,7 @@
       "iftrue": "0",
       "iftrueVal": "2",
       "iffalse": "3",
-      "iffalseVal": "3",
+      "iffalseVal": "4",
       "name": "Check Variable MOD"
     },
     {
@@ -114,8 +114,11 @@
       "name": "Add Embed Field"
     },
     {
-      "call": "17",
+      "call": "18",
       "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

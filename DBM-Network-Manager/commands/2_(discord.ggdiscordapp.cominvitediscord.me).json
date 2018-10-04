@@ -70,6 +70,32 @@
       "name": "Comment"
     },
     {
+      "invite": "${tempVars(\"text\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "guild",
+      "name": "Store Invite Info"
+    },
+    {
+      "server": "1",
+      "varName": "guild",
+      "info": "2",
+      "storage": "1",
+      "varName2": "name",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "name",
+      "comparison": "5",
+      "value": "'DBM'",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
       "message": "0",
       "varName": "",
       "info": "2",

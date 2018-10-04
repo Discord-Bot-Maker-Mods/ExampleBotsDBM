@@ -1,0 +1,35 @@
+{
+  "name": "Queue-GetYTtitles",
+  "temp": "",
+  "event-type": "0",
+  "_id": "qMFbM",
+  "actions": [
+    {
+      "video": "${tempVars(\"url\")}",
+      "key": "googleapitoken",
+      "info": "1",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "res",
+      "name": "YouTube Search"
+    },
+    {
+      "storage": "1",
+      "varName": "list-title",
+      "addType": "0",
+      "position": "",
+      "value": "tempVars(\"res\")",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "0.5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "comment": "sorted",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}
