@@ -2,7 +2,7 @@
   "name": "post",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "ChGhM",
+  "_id": "VwGUO",
   "actions": [
     {
       "source": "hUbUn",
@@ -27,7 +27,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "💤 That's not enough...\n`!post category name+description`",
+      "message": "?? That's not enough...\n`!post category name+description`",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -63,7 +63,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "😱 Wow! Sorry. That description is too long. Please ask a moderator to post it manually or short your description (Max. 1024 characters!).",
+      "message": ":thinking: Wow! Sorry. That description is too long. Please ask a moderator to post it manually or short your description (Max. 1024 characters!).",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -90,7 +90,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "💩 That is not a valid category! You may use one of the following:\nuseful, api-use, moderating, music, minigames, troll, run-scripts",
+      "message": ":zzz: That is not a valid category! You may use one of the following:\n`useful`, `api-use`, `moderating`, `music`, `minigames`, `troll`, `run-scripts`",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -112,15 +112,23 @@
       "comparison": "0",
       "value": "",
       "iftrue": "2",
-      "iftrueVal": "1",
+      "iftrueVal": "15",
       "iffalse": "0",
       "iffalseVal": "-1",
       "name": "Check Member Data"
     },
     {
+      "input": "",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number\")}",
+      "filepath": "./resources/raw_posts",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
       "server": "0",
       "varName": "",
-      "dataName": "raw_${tempVars(\"number\")}",
+      "dataName": "${tempVars(\"number\")}raw",
       "changeType": "0",
       "value": "tempVars(\"raw\")",
       "name": "Control Server Data"
@@ -128,26 +136,68 @@
     {
       "server": "0",
       "varName": "",
-      "dataName": "raw_${tempVars(\"number\")}_au",
-      "changeType": "0",
-      "value": "member.id",
-      "name": "Control Server Data"
-    },
-    {
-      "server": "0",
-      "varName": "",
-      "dataName": "raw_${tempVars(\"number\")}_cat",
+      "dataName": "${tempVars(\"number\")}cat",
       "changeType": "0",
       "value": "tempVars(\"category\")",
       "name": "Control Server Data"
     },
     {
-      "title": "New Raw Data: ${member.user.tag}",
-      "author": "",
-      "color": "",
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number\")}cat",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "n_cat",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number\")}raw",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "n_raw",
+      "name": "Store Server Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mid",
+      "name": "Store Member Info"
+    },
+    {
+      "input": "{\n\"raw\": \"${serverVars(\"n_raw\")}\",\n\"category\": \"${serverVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Pending\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number\")}",
+      "filepath": "./resources/raw_posts",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "input": "",
+      "format": ".txt",
+      "filename": "raw_${tempVars(\"number\")}_raw",
+      "filepath": "./resources/raw_posts",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "${serverVars(\"n_raw\")}",
+      "format": ".txt",
+      "filename": "raw_${tempVars(\"number\")}_raw",
+      "filepath": "./resources/raw_posts",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": " ",
+      "author": "${member.user.username}",
+      "color": "#ffa500",
       "timestamp": "true",
       "url": "",
-      "authorIcon": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
       "imageUrl": "",
       "thumbUrl": "",
       "storage": "1",
@@ -157,7 +207,7 @@
     {
       "storage": "1",
       "varName": "embed",
-      "fieldName": "Category",
+      "fieldName": "**Category**",
       "message": "${tempVars(\"category\")}",
       "inline": "1",
       "name": "Add Embed Field"
@@ -165,7 +215,7 @@
     {
       "storage": "1",
       "varName": "embed",
-      "fieldName": "Info",
+      "fieldName": "**Info**",
       "message": "${tempVars(\"raw\")}",
       "inline": "1",
       "name": "Add Embed Field"
@@ -189,7 +239,9 @@
       "varName": "embed",
       "channel": "5",
       "varName2": "approval-channel",
-      "name": "Send Embed Message"
+      "varName3": "edit_embed",
+      "storage3": "2",
+      "name": "Send Embed Message MOD"
     },
     {
       "time": "1",
@@ -207,15 +259,15 @@
     {
       "server": "0",
       "varName": "",
-      "dataName": "msg_${tempVars(\"sent-message\").id}_id",
+      "dataName": "${tempVars(\"number\")}_user",
       "changeType": "0",
-      "value": "tempVars(\"number\")",
+      "value": "tempVars(\"mid\")",
       "name": "Control Server Data"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "✅ Thank you! You successfully submitted your raw data with the ID **#${tempVars(\"number\")}**!\nA Moderator will check if everything is correct.\nWe will message you if you raw data has been published!",
+      "message": ":white_check_mark: Thank you! You successfully submitted your raw data with the ID **#${tempVars(\"number\")}**!\nSomeone will check if it is correct.",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

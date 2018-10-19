@@ -50,7 +50,7 @@
     {
       "channel": "1",
       "varName": "",
-      "message": "<a:loading:439082601211494412> We saved the following information from you:\n```${tempVars(\"data\")}```",
+      "message": "<a:loading:500810497965162519> We saved the following information from you:\n```${tempVars(\"data\")}```",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

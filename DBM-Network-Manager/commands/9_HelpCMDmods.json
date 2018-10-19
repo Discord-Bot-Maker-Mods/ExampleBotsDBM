@@ -20,7 +20,7 @@
       "iftrue": "0",
       "iftrueVal": "2",
       "iffalse": "2",
-      "iffalseVal": "6",
+      "iffalseVal": "7",
       "name": "Check Variable"
     },
     {
@@ -44,6 +44,14 @@
       "varName": "embed",
       "fieldName": "Become a beta tester",
       "message": "Before we release a version of DBM Mods we always test it. If you want to help us do the following command:\n`!beta`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Publish your mod or theme",
+      "message": "If you made a modification or theme you can easily submit it to <#501898412208160780> or <#501898358567337985>!\nJust use `!submit`. Good luck!",
       "inline": "1",
       "name": "Add Embed Field"
     },

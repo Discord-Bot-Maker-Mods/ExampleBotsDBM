@@ -11,7 +11,7 @@
     },
     {
       "info": "0",
-      "find": "${tempVars(\"member\").user.id}",
+      "find": "${tempVars(\"member\").id}",
       "storage": "1",
       "varName": "server-member",
       "name": "Find Member"

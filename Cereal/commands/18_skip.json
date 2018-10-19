@@ -153,7 +153,7 @@
     },
     {
       "video": "${tempVars(\"nowplaying-url\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "1",
       "resultNo": "0",
       "storage": "1",

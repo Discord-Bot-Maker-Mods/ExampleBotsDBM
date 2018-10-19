@@ -1,0 +1,43 @@
+{
+  "name": "Ban->5points",
+  "temp": "member",
+  "event-type": "0",
+  "_id": "xaWGG",
+  "actions": [
+    {
+      "comment": "Not Working Right Now!",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "changeType": "1",
+      "value": "5",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "total_warnings",
+      "name": "Store Member Data"
+    },
+    {
+      "source": "banloop",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "channel": "7",
+      "varName": "warn-log",
+      "message": "***Manual ban of `${tempVars(\"member\").user.username}` (${tempVars(\"member\").id})***",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

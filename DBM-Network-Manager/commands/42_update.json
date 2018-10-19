@@ -1,0 +1,418 @@
+{
+  "name": "update",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "HSKFR",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number_param",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "choice",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "channelname",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "channelname",
+      "comparison": "5",
+      "value": "\"approval\"",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: no u. go to a gud channel.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: Use the format!\n`!update [post] [approve/deny]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Invalid post.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}raw",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_raw",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}cat",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_cat",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}_user",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "mid",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "choice",
+      "comparison": "1",
+      "value": "\"approve\"",
+      "iftrue": "2",
+      "iftrueVal": "35",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "choice",
+      "comparison": "1",
+      "value": "\"deny\"",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Choose between `approve` or `deny`\nIncase of `deny`, you must provide a reason.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "input": "{\n\"category\": \"${tempVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number_param\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Denied\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": "Raw Data: ${member.user.tag}",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | DENIED",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "info": "0",
+      "find": "445289133829521408",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "2",
+      "varName": "edit_embed",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"mid\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authorid",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "Hey! We regret to inform you that your raw data post (#${tempVars(\"number_param\")}) has not been accepted.\nIt was denied by <@${tempVars(\"authorid\")}> for `${tempVars(\"reason\")}`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file2",
+      "name": "Read File"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} denied **${tempVars(\"number_param\")}** by ${tempVars(\"user\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"mid\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "7",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Things"
+    },
+    {
+      "title": " ",
+      "author": "${tempVars(\"username\")}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatar\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "final-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "message": "${tempVars(\"n_raw\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "message": "#${tempVars(\"number_param\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"n_cat\")}",
+      "storage": "1",
+      "varName": "cat-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "channel": "5",
+      "varName2": "cat-channel",
+      "varName3": "embed-sent-message",
+      "storage3": "1",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "input": "{\n\"category\": \"${tempVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number_param\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Accepted\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": "Raw Data: ${member.user.tag}",
+      "author": "",
+      "color": "#50C878",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | APPROVED",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "info": "0",
+      "find": "445289133829521408",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "2",
+      "varName": "edit_embed",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} approved **${tempVars(\"number_param\")}** by ${tempVars(\"user\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "Hey! We are happy to inform you that your raw data **#${tempVars(\"number_param\")}** was accepted.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    }
+  ]
+}

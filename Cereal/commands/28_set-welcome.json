@@ -100,6 +100,39 @@
       "name": "End Action Sequence"
     },
     {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var perms = tempVars(\"channel\").permissionsFor(client.user);\nperms.has('SEND_MESSAGES');",
+      "storage": "1",
+      "varName": "permsboolean",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "permsboolean",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔑 Arrr! Make sure that I have permission in ${tempVars(\"channel\")} to \"Send Messages\"!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
       "server": "0",
       "varName": "",
       "dataName": "custom.channelid.join",

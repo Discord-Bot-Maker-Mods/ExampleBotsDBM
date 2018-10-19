@@ -1,5 +1,5 @@
 {
-  "name": "update",
+  "name": "botupdate",
   "permissions": "NONE",
   "restriction": "1",
   "_id": "aHSsj",
@@ -31,7 +31,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "${tempVars(\"bot\")} **9.${globalVars(\"restarts\")}** - ${tempVars(\"text\")}",
+      "message": "${tempVars(\"bot\")} **10.${globalVars(\"restarts\")}** - ${tempVars(\"text\")}",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

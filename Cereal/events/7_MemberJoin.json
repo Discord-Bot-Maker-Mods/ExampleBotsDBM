@@ -31,6 +31,18 @@
     {
       "server": "0",
       "varName": "",
+      "dataName": "custom.sendwelcome",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
       "dataName": "custom.message.join",
       "defaultVal": "0",
       "storage": "1",
@@ -100,20 +112,21 @@
       "name": "Set Embed Footer"
     },
     {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "var perms = tempVars(\"channel\").permissionsFor(client.user);\nperms.has('SEND_MESSAGES');",
       "storage": "1",
-      "varName": "embed",
-      "channel": "5",
-      "varName2": "channel",
-      "name": "Send Embed Message"
+      "varName": "permsboolean",
+      "name": "Run Script"
     },
     {
       "storage": "1",
-      "varName": "error",
+      "varName": "permsboolean",
       "comparison": "1",
       "value": "true",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "1",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
     },
@@ -134,12 +147,17 @@
       "name": "Send Message"
     },
     {
-      "channel": "4",
-      "varName": "owner",
-      "message": "Hey!\nThe channel for welcome message channel has been set to ${tempVars(\"channel\")}!\nProblem: I don't have permission to post messages there :/\nYou need to fix that to allow me to welcome new members :D",
-      "storage": "0",
-      "varName2": "",
-      "name": "Send Message"
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "channel",
+      "name": "Send Embed Message"
     }
   ]
 }

@@ -1,0 +1,164 @@
+{
+  "name": "load",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "mmSQO",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number_param",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "choice",
+      "name": "Store Command Params"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}_raw.txt",
+      "storage": "1",
+      "varName2": "file1",
+      "name": "Read File"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: This post doesnt exist.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.category",
+      "storage": "1",
+      "varName": "cat",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.raw_number",
+      "storage": "1",
+      "varName": "r_num",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.author",
+      "storage": "1",
+      "varName": "r_author",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.status",
+      "storage": "1",
+      "varName": "r_status",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "title": "",
+      "author": "${member.displayName}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"cat\")}",
+      "storage": "1",
+      "varName": "cid",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "info": "1",
+      "storage": "1",
+      "varName2": "cid",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"cid\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Post Number**",
+      "message": "${tempVars(\"r_num\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Author**",
+      "message": "${tempVars(\"r_author\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Post**",
+      "message": "${tempVars(\"file1\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Status: ${tempVars(\"r_status\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

@@ -1,62 +1,73 @@
 {
-  "name": "[Call]SyncRoles",
+  "name": "[Call]SyncRolesRemove",
   "temp": "",
   "event-type": "0",
-  "_id": "TMZwz",
+  "_id": "TMZwk",
   "actions": [
     {
-      "time": "10",
+      "time": "100",
       "measurement": "0",
       "name": "Wait"
     },
     {
-      "role": "3",
-      "varName": "staffrole",
-      "info": "2",
-      "storage": "1",
-      "varName2": "staffrolename",
-      "name": "Store Role Info"
-    },
-    {
-      "server": "1",
-      "varName": "server",
+      "server": "3",
+      "varName": "staff-server",
       "name": "Change Server"
     },
     {
       "info": "1",
-      "find": "${tempVars(\"staffrolename\")}",
+      "find": "${tempVars(\"role\").name}",
       "storage": "1",
-      "varName": "serverrole",
+      "varName": "role-on-staff",
       "name": "Find Role"
     },
     {
       "storage": "1",
-      "varName": "serverrole",
+      "varName": "role-on-staff",
       "comparison": "0",
       "value": "",
       "iftrue": "0",
       "iftrueVal": "12",
       "iffalse": "2",
-      "iffalseVal": "10",
+      "iffalseVal": "11",
       "name": "Check Variable"
     },
     {
       "member": "2",
-      "varName": "member",
+      "varName": "staffmember",
       "role": "3",
-      "varName2": "serverrole",
+      "varName2": "role-on-staff",
       "iftrue": "2",
-      "iftrueVal": "10",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "11",
+      "name": "Check If Member has Role"
+    },
+    {
+      "role": "3",
+      "varName": "role-on-staff",
+      "info": "2",
+      "storage": "1",
+      "varName2": "name",
+      "name": "Store Role Info"
+    },
+    {
+      "storage": "1",
+      "varName": "name",
+      "comparison": "1",
+      "value": "\"@everyone\"",
+      "iftrue": "2",
+      "iftrueVal": "11",
       "iffalse": "0",
       "iffalseVal": "",
-      "name": "Check If Member has Role"
+      "name": "Check Variable"
     },
     {
       "member": "2",
       "varName2": "member",
       "role": "3",
-      "varName": "serverrole",
-      "name": "Add Member Role"
+      "varName": "role",
+      "name": "Remove Member Role"
     },
     {
       "message": "1",
@@ -69,7 +80,7 @@
     {
       "storage": "1",
       "varName": "stat-msg",
-      "message": "${tempVars(\"stat-msg-txt\")}\n➕ Added ${tempVars(\"staffrolename\")}",
+      "message": "${tempVars(\"stat-msg-txt\")}\n➖ Removed ${tempVars(\"role\").name}",
       "name": "Edit Message"
     },
     {

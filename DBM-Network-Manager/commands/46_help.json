@@ -34,7 +34,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "Info commands",
-      "message": "You can use premade messages to answer to often asked questions\nusing our \"info\" command.\nType `!info [infoname]` to get such a message.\n\nInfonames:\n`./constants`, `hosting`, `servers`, `beta`, `google`, `dbm2`, `cmd`, `verify`, `heroku`, `installerror`, `ffmpeg`, `install-modules`, `music`, `npm`, `one-channel`, `howtobecool`, `embed`, `closedservers`, `fntfile`, `embedhelp`, `embeds`, `hub`, `rawdata`, `mods`, `store`",
+      "message": "You can use premade messages to answer to often asked questions\nusing our \"info\" command.\nType `!info [infoname]` to get such a message.\n\nInfonames:\n`./constants`, `servers`, `beta`, `cmd`, `verify`, `installerror`, `install-modules`, `music`, `npm`, `one-channel`, `fntfile`, `embeds`, `hub`, `rawdata`, `mods`, `websites`, `apply`, `vps`, `tutorials`",
       "inline": "1",
       "name": "Add Embed Field"
     },
@@ -42,7 +42,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "Utility",
-      "message": "Check out our team!\n`!team`\n\nPing and Ram of the Bot?\n`!botinfo`\n\nMhh... What did these guys save from me? Let's check it!\n`!mydata`\n\n\"Wow! thank you DBM Network\" or \"Ew DBM Network - go away\"?\nPlease send us feedback.\n`!feedback text`",
+      "message": "Check out our team!\n`!team`\n\nPing and Ram of the Bot?\n`!botinfo`\n\nMhh... What did these guys save from me? Let's check it!\n`!mydata`",
       "inline": "1",
       "name": "Add Embed Field"
     },

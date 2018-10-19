@@ -85,6 +85,9 @@
       "name": "Run Script"
     },
     {
+      "name": "End Action Sequence"
+    },
+    {
       "activity": "1",
       "nameText": "c?help",
       "url": "",
@@ -105,9 +108,6 @@
       "storage": "0",
       "varName": "",
       "name": "Run Script"
-    },
-    {
-      "name": "End Action Sequence"
     }
   ]
 }

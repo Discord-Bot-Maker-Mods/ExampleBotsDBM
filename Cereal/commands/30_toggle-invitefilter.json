@@ -1,5 +1,5 @@
 {
-  "name": "set-discordfilter",
+  "name": "toggle-invitefilter",
   "permissions": "NONE",
   "restriction": "1",
   "_id": "BcMqp",

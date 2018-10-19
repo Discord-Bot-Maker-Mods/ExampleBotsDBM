@@ -5,50 +5,14 @@
   "_id": "msg-ban",
   "actions": [
     {
-      "member": "2",
-      "varName": "member",
-      "info": "16",
-      "storage": "1",
-      "varName2": "avatar_url_member",
-      "name": "Store Member Info"
-    },
-    {
-      "storage": "1",
-      "varName": "avatar_url_member",
-      "comparison": "0",
-      "value": "",
-      "iftrue": "0",
-      "iftrueVal": "2",
-      "iffalse": "2",
-      "iffalseVal": "2",
-      "name": "Check Variable"
-    },
-    {
       "title": "Ban",
       "author": "${member.user.username}",
       "color": "ff1d00",
       "timestamp": "true",
       "url": "",
-      "authorIcon": "${member.user.avatarURL}",
+      "authorIcon": "${member.user.displayAvatarURL}",
       "imageUrl": "",
-      "thumbUrl": "${tempVars(\"member\").user.avatarURL}",
-      "storage": "1",
-      "varName": "embed-staff",
-      "name": "Create Embed Message"
-    },
-    {
-      "count": "1",
-      "name": "Skip Actions"
-    },
-    {
-      "title": "Ban",
-      "author": "${member.user.username}",
-      "color": "ff1d00",
-      "timestamp": "true",
-      "url": "",
-      "authorIcon": "${member.user.avatarURL}",
-      "imageUrl": "",
-      "thumbUrl": "",
+      "thumbUrl": "${tempVars(\"member\").user.displayAvatarURL}",
       "storage": "1",
       "varName": "embed-staff",
       "name": "Create Embed Message"

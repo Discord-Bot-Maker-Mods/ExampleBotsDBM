@@ -131,7 +131,7 @@
     },
     {
       "video": "${tempVars(\"nowplayingurl\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "1",
       "resultNo": "0",
       "storage": "1",
@@ -150,6 +150,27 @@
       "storage": "1",
       "varName": "queue-embed-new",
       "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res-list",
+      "comparison": "0",
+      "value": "1020",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable MOD"
+    },
+    {
+      "storage": "1",
+      "varName": "queue-embed-new",
+      "message": "*🎧 Current Song: [${tempVars(\"nowplaying-title\")}](${tempVars(\"nowplayingurl\")})*\n\n*The queue is too long to display it here <a:facepalmgif:500655012020748309>*",
+      "name": "Set Embed Description"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
     },
     {
       "storage": "1",

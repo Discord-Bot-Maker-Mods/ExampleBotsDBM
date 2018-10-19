@@ -20,14 +20,22 @@
       "iftrue": "0",
       "iftrueVal": "2",
       "iffalse": "2",
-      "iffalseVal": "5",
+      "iffalseVal": "6",
       "name": "Check Variable"
     },
     {
       "storage": "1",
       "varName": "embed",
       "fieldName": "Post Raw Data",
-      "message": "If you want to publish raw data on our server follow these steps please:\n1. Upload you raw data on http://dbm-mods.xyz/raw or another paste services of your choice.\n2. Think about a category (useful, api-use, moderating, music, minigames, troll or run-scripts)\n3. Do `!post category text`\nNote: You aren't able to edit your submission again!",
+      "message": "If you want to publish raw data on our server follow these steps please:\n1. Upload you raw data on https://paste.dbm-network.com/ or another paste services of your choice.\n2. Think about a category (useful, api-use, moderating, music, minigames, troll or run-scripts)\n3. Do `!post category text`\nNote: You aren't able to edit your submission again!",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Helper Role",
+      "message": "That role is for users who know much about DBM\nbecause it can be mentioned for help reasons.\n`!helper`",
       "inline": "1",
       "name": "Add Embed Field"
     },

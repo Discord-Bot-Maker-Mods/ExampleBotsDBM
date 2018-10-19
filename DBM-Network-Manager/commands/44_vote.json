@@ -39,13 +39,6 @@
     },
     {
       "info": "1",
-      "find": "471782853416583170",
-      "storage": "1",
-      "varName": "sentchannel",
-      "name": "Find Channel"
-    },
-    {
-      "info": "1",
       "infoIndex": "1",
       "storage": "1",
       "varName": "suggestion",
@@ -55,51 +48,52 @@
       "condition": "0",
       "comparison": "0",
       "value": "0",
-      "iftrue": "2",
+      "iftrue": "0",
       "iftrueVal": "17",
-      "iffalse": "0",
-      "iffalseVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
       "name": "Check Parameters"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "16",
-      "storage": "1",
-      "varName2": "avatar",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "3",
-      "storage": "1",
-      "varName2": "memberdisplayname",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "0",
-      "storage": "1",
-      "varName2": "memberobject",
-      "name": "Store Member Info"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "<:blobmoustache:464754303006015509> Your submission has been posted ${tempVars(\"memberobject\")}  ",
+      "message": "**Incorrect Format**\n`!vote [Message]`",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
     },
     {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "497864494848933898",
+      "storage": "1",
+      "varName": "notified",
+      "name": "Find Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<:blobmoustache:464754303006015509> Your submission has been posted.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "0",
+      "find": "471782853416583170",
+      "storage": "1",
+      "varName": "voting-channel",
+      "name": "Find Channel"
+    },
+    {
       "title": "",
-      "author": "${tempVars(\"memberdisplayname\")}",
+      "author": "${member.user.username}",
       "color": "#36393E",
       "timestamp": "true",
       "url": "",
-      "authorIcon": "${tempVars(\"avatar\")}",
+      "authorIcon": "${member.user.displayAvatarURL}",
       "imageUrl": "",
       "thumbUrl": "",
       "storage": "1",
@@ -115,23 +109,58 @@
       "name": "Add Embed Field"
     },
     {
-      "behavior": "0",
-      "interpretation": "0",
-      "code": "msg.guild.channels.find(\"name\",\"staff-voting\").send(tempVars(\"Suggest\"))\n   .then(function (message) { \n   message.react(\"✅\") \n   message.react(\"❌\") \n   message.react(\"❔\")\n}).catch(function() { \n   msg.channel.send(\"The current command is broken at the moment.\") \n});",
-      "storage": "0",
-      "varName": "",
-      "name": "Run Script"
-    },
-    {
-      "name": "End Action Sequence"
-    },
-    {
-      "channel": "0",
-      "varName": "",
-      "message": "**Incorrect Format**\n`?vote [Message]`",
+      "channel": "5",
+      "varName": "voting-channel",
+      "message": "${tempVars(\"notified\")}",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Suggest",
+      "channel": "5",
+      "varName2": "voting-channel",
+      "storage3": "0",
+      "varName3": "sent-obj",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "3",
+      "varName": "voting-channel",
+      "info": "4",
+      "storage": "1",
+      "varName2": "sent-obj",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "sent-obj",
+      "emoji": "4",
+      "varName2": "👍",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "sent-obj",
+      "emoji": "4",
+      "varName2": "👎",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "sent-obj",
+      "emoji": "4",
+      "varName2": "❔",
+      "varName3": "",
+      "name": "Add Reaction"
     }
   ],
   "_id": "fuqmr",

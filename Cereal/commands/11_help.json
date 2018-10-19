@@ -35,7 +35,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "Fun",
-      "message": "`c?definition` - The \"truth\" about something // Urban Dictionary (Needs to be in a NSFW channel)\n`c?userinfo` - Tells you information about a specific user",
+      "message": "`c?definition` - The \"truth\" about something // Urban Dictionary (Needs to be in a NSFW channel)\n`c?meme` - Sends you a random meme from r/memes\n`c?userinfo` - Tells you information about a specific user",
       "inline": "1",
       "name": "Add Embed Field"
     },
@@ -43,7 +43,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "Set up",
-      "message": "`c?set-welcome` - Configures and enables welcome messages\n`c?set-discordfilter` Toggles a discord invite link filter for non-staff members\n(Requires Manage Guild permission)",
+      "message": "`c?set-welcome` - Configures and enables welcome messages\n`c?toggle-welcome` - Disables/Enables welcome messages again\n`c?toggle-invitefilter` Toggles a discord invite link filter for non-staff members\n(Requires Manage Guild permission)",
       "inline": "1",
       "name": "Add Embed Field"
     },

@@ -17,12 +17,6 @@
       "name": "Store Bot Client Info"
     },
     {
-      "info": "9",
-      "storage": "1",
-      "varName2": "voice",
-      "name": "Store Bot Client Info"
-    },
-    {
       "info": "3",
       "storage": "1",
       "varName2": "guilds",
@@ -44,6 +38,24 @@
       "info": "25",
       "storage": "1",
       "varName2": "u-mins",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "21",
+      "storage": "1",
+      "varName2": "djs-ver",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "31",
+      "storage": "1",
+      "varName2": "njs-ver",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "43",
+      "storage": "1",
+      "varName2": "mem-use",
       "name": "Store Bot Client Info"
     },
     {
@@ -73,11 +85,11 @@
     },
     {
       "title": "Bot Info",
-      "author": "",
+      "author": "${client.user.username}",
       "color": "eaf700",
       "timestamp": "true",
       "url": "",
-      "authorIcon": "",
+      "authorIcon": "${client.user.displayAvatarURL}",
       "imageUrl": "",
       "thumbUrl": "",
       "storage": "1",
@@ -87,8 +99,72 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "Custom Volume: ${tempVars(\"volume\")}\nPing: ${tempVars(\"ping\")}ms\nGuilds: ${tempVars(\"guilds\")}\nUsers: ${tempVars(\"users\")}\nUptime: ${tempVars(\"u-days\")} days ${tempVars(\"u-hours\")} hours ${tempVars(\"u-mins\")} minutes\nUpvotes on [DBL](https://discordbots.org/bot/cereal): ${tempVars(\"count\")}\n\n:cyclone:[Website](https://cerealbot.party/) | <:cerealtag:464002772560510986> [Invite](https://discordapp.com/oauth2/authorize?client_id=462903199909543946&scope=bot&permissions=1312124097) | <:cerealstars:464000853507047425> [Vote](https://discordbots.org/bot/cereal/vote) | <:CerealCertified:466190881343406100> [Certified](https://discordbots.org/bot/cereal)\n",
+      "message": ":cyclone:[Website](https://cerealbot.party/) | <:cerealtag:464002772560510986> [Invite](https://discordapp.com/oauth2/authorize?client_id=462903199909543946&scope=bot&permissions=1312124097) | <:cerealstars:464000853507047425> [Vote](https://discordbots.org/bot/cereal/vote) | <:CerealCertified:466190881343406100> [Certified](https://discordbots.org/bot/cereal)\n",
       "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Ping",
+      "message": "${tempVars(\"ping\")} ms",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Servers",
+      "message": "${tempVars(\"guilds\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Users",
+      "message": "${tempVars(\"users\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Uptime",
+      "message": "${tempVars(\"u-days\")} days ${tempVars(\"u-hours\")} hours ${tempVars(\"u-mins\")} minutes",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Memory Usage",
+      "message": "${tempVars(\"mem-use\")}%",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Versions",
+      "message": "node.js: ${tempVars(\"njs-ver\")}\ndiscord.js: ${tempVars(\"djs-ver\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Upvotes on DBL",
+      "message": "${tempVars(\"count\")} ([Vote now!](https://discordbots.org/bot/cereal))\n",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Thank you!",
+      "message": "We are happy you use our bot. Cereal is made for small communities and should be limited to basic commands. Feel free to join our [discord server](https://discord.gg/enscRtr) to suggest features or report bugs!",
+      "inline": "1",
+      "name": "Add Embed Field"
     },
     {
       "storage": "1",

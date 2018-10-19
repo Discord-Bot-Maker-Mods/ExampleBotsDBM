@@ -18,6 +18,14 @@
       "name": "Store Server Info"
     },
     {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "member",
+      "name": "Store Member Info"
+    },
+    {
       "server": "3",
       "varName": "staff-server",
       "name": "Change Server"
@@ -43,7 +51,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "<:deny:455023973537939456> This command is only for Staff members",
+      "message": "<:deny:500810435436478474> This command is only for Staff members",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -60,6 +68,14 @@
       "name": "Store Member Info"
     },
     {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:loading:500810497965162519> Loading your roles...",
+      "storage": "1",
+      "varName2": "stat-msg",
+      "name": "Send Message"
+    },
+    {
       "behavior": "0",
       "interpretation": "0",
       "code": "tempVars(\"staffmember\").roles.array()",
@@ -68,18 +84,26 @@
       "name": "Run Script"
     },
     {
-      "channel": "0",
-      "varName": "",
-      "message": "<a:loading:439082601211494412> Loading your roles...",
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "member.roles.array()",
       "storage": "1",
-      "varName2": "stat-msg",
-      "name": "Send Message"
+      "varName": "servermemberroles",
+      "name": "Run Script"
     },
     {
-      "source": "TMZwz",
+      "source": "hMenM",
       "list": "7",
       "varName": "staffmemberroles",
       "tempVarName": "staffrole",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "source": "TMZwk",
+      "list": "7",
+      "varName": "servermemberroles",
+      "tempVarName": "role",
       "type": "true",
       "name": "Loop Through List"
     },

@@ -209,8 +209,19 @@
     {
       "storage": "1",
       "varName": "to-search",
-      "comparison": "6",
-      "value": "(https://www.youtube.com/|youtu.be/|youtube.com)",
+      "comparison": "5",
+      "value": "\"youtube.com\"",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "to-search",
+      "comparison": "5",
+      "value": "\"youtu.be\"",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
@@ -230,7 +241,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "0",
       "resultNo": "0",
       "storage": "1",
@@ -239,7 +250,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "1",
       "resultNo": "0",
       "storage": "1",
@@ -248,7 +259,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "3",
       "resultNo": "0",
       "storage": "1",
@@ -257,7 +268,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "9",
       "resultNo": "0",
       "storage": "1",
@@ -266,7 +277,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoke",
+      "key": "googleapitoken",
       "info": "3",
       "resultNo": "0",
       "storage": "1",
