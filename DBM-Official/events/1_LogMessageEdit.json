@@ -86,24 +86,24 @@
     {
       "storage": "1",
       "varName": "newmsgtxt",
-      "comparison": "0",
+      "comparison": "8",
       "value": "1024",
       "iftrue": "3",
-      "iftrueVal": "4",
+      "iftrueVal": "5",
       "iffalse": "0",
       "iffalseVal": "11",
-      "name": "Check Variable MOD"
+      "name": "Check Variable"
     },
     {
       "storage": "1",
       "varName": "oldmsgtxt",
-      "comparison": "0",
+      "comparison": "7",
       "value": "1024",
       "iftrue": "0",
       "iftrueVal": "2",
       "iffalse": "3",
       "iffalseVal": "4",
-      "name": "Check Variable MOD"
+      "name": "Check Variable"
     },
     {
       "storage": "1",

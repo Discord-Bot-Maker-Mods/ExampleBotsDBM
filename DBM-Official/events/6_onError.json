@@ -41,14 +41,6 @@
     {
       "storage": "1",
       "varName": "embed",
-      "fieldName": "JS Error:",
-      "message": "```${tempVars(\"jserr\")}```",
-      "inline": "1",
-      "name": "Add Embed Field"
-    },
-    {
-      "storage": "1",
-      "varName": "embed",
       "channel": "5",
       "varName2": "log-channel",
       "name": "Send Embed Message"

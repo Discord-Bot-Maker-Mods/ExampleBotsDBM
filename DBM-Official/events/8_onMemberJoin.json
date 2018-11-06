@@ -7,6 +7,59 @@
     {
       "member": "2",
       "varName": "mem",
+      "info": "3",
+      "storage": "1",
+      "varName2": "nick",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "nick",
+      "comparison": "5",
+      "value": "\"!\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var string = tempVars(\"nick\");\nvar newString = string.replace('!','');\nthis.storeValue(newString, 1, \"newnick\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "nickname": "${tempVars(\"newnick\")}",
+      "name": "Set Member Nickname"
+    },
+    {
+      "info": "1",
+      "find": "join-log",
+      "storage": "1",
+      "varName": "joinlog",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "joinlog",
+      "message": "Updated ${tempVars(\"mem\")}: `${tempVars(\"nick\")}` -> `${tempVars(\"newnick\")}`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "v Ban check v",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
       "dataName": "warning_points",
       "comparison": "4",
       "value": "4",
