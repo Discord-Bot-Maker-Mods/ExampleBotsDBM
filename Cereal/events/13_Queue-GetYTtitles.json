@@ -6,7 +6,7 @@
   "actions": [
     {
       "video": "${tempVars(\"url\")}",
-      "key": "googleapitoken",
+      "key": "Google API token",
       "info": "1",
       "resultNo": "0",
       "storage": "1",
@@ -15,16 +15,34 @@
     },
     {
       "storage": "1",
+      "varName": "res",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
       "varName": "list-title",
       "addType": "0",
       "position": "",
-      "value": "tempVars(\"res\")",
+      "value": "\"*Couldn't find video name!*\"",
       "name": "Add Item to List"
     },
     {
-      "time": "0.5",
-      "measurement": "1",
-      "name": "Wait"
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "list-title",
+      "addType": "0",
+      "position": "",
+      "value": "\"• \" + tempVars(\"res\")",
+      "name": "Add Item to List"
     },
     {
       "comment": "sorted",

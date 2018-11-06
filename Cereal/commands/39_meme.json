@@ -1,0 +1,100 @@
+{
+  "name": "meme",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "JiUIj",
+  "actions": [
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.reddit.com/r/memes/random/.json",
+      "path": "$[0].data.children[0].data.url",
+      "storage": "1",
+      "varName": "imgurl",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.reddit.com/r/memes/random/.json",
+      "path": "$[0].data.children[0].data.permalink",
+      "storage": "1",
+      "varName": "redditsource",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.reddit.com/r/memes/random/.json",
+      "path": "$[0].data.children[0].data.title",
+      "storage": "1",
+      "varName": "title",
+      "debugMode": "0",
+      "headers": "Authorization: NANI cfb99ba8267b7281a70d19e5627f7192fb5f9d98",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.reddit.com/r/memes/random/.json",
+      "path": "$[0].data.children[0].data.over_18",
+      "storage": "1",
+      "varName": "nsfw",
+      "debugMode": "0",
+      "headers": "Authorization: NANI cfb99ba8267b7281a70d19e5627f7192fb5f9d98",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "storage": "1",
+      "varName": "imgurl",
+      "comparison": "0",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "1",
+      "iffalse": "2",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "nsfw",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "2",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "${tempVars(\"title\")}",
+      "author": "",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "https://www.reddit.com/${tempVars(\"redditsource\")}",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"imgurl\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_timeRestriction": 5
+}

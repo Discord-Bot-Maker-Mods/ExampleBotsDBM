@@ -40,10 +40,10 @@
     {
       "channel": "3",
       "varName": "vc",
-      "info": "4",
+      "info": "9",
       "storage": "1",
       "varName2": "members",
-      "name": "Store Voice channel things"
+      "name": "Store Voice Channel Info"
     },
     {
       "list": "7",

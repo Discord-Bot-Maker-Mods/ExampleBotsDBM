@@ -1,0 +1,147 @@
+{
+  "name": "lyrics",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "KBEJX",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "📄 This command would send you the lyrics. Please follow the format:\n`c?lyrics songname`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "input",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "<a:loading:497076167610859531> Searching for \"${tempVars(\"input\")}\" on genius.com",
+      "author": "",
+      "color": "FFFF00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed-load",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-load",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "embed-load-sent",
+      "name": "Send Embed Message"
+    },
+    {
+      "song": "${tempVars(\"input\")}",
+      "key": "Genius API key",
+      "info": "0",
+      "storage": "1",
+      "varName": "title",
+      "name": "Get Song Lyrics"
+    },
+    {
+      "song": "${tempVars(\"input\")}",
+      "key": "Genius API key",
+      "info": "1",
+      "storage": "1",
+      "varName": "artist",
+      "name": "Get Song Lyrics"
+    },
+    {
+      "song": "${tempVars(\"input\")}",
+      "key": "Genius API key",
+      "info": "2",
+      "storage": "1",
+      "varName": "lyrics",
+      "name": "Get Song Lyrics"
+    },
+    {
+      "song": "${tempVars(\"input\")}",
+      "key": "Genius API key",
+      "info": "3",
+      "storage": "1",
+      "varName": "url",
+      "name": "Get Song Lyrics"
+    },
+    {
+      "title": "${tempVars(\"artist\")}: ${tempVars(\"title\")}",
+      "author": "${member.user.username}",
+      "color": "FFFF00",
+      "timestamp": "false",
+      "url": "${tempVars(\"url\")}",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "lyrics",
+      "comparison": "7",
+      "value": "2048",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "🙈 The lyrics are too long to get displayed here! Click [here](${tempVars(\"url\")}) to see them online.",
+      "name": "Set Embed Description"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"lyrics\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Powered by genius.com",
+      "footerIcon": "${client.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-load-sent",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    }
+  ]
+}

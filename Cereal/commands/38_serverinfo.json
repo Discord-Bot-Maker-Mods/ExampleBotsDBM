@@ -1,0 +1,120 @@
+{
+  "name": "serverinfo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "naIcp",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "icon",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "icon",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "title": "${server.name}",
+      "author": "${server.owner.user.username}",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${server.owner.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "${server.iconURL}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "title": "${server.name}",
+      "author": "${server.owner.user}",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${server.owner.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Membercount",
+      "message": "${server.memberCount}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Owner",
+      "message": "${server.owner}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Region",
+      "message": "${server.region}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Nitro",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "<:cereal_nitro:507200424860712970> CEREAL NITRO",
+      "message": "This server is uses a premium version of Cereal. Learn more on [https://cerealbot.party](https://cerealbot.party).",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Cereal",
+      "footerIcon": "${client.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "server"
+  ]
+}

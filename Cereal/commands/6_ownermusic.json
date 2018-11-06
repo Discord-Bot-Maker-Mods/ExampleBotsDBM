@@ -1,0 +1,58 @@
+{
+  "name": "ownermusic",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "EFgKU",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "list",
+      "name": "Create List"
+    },
+    {
+      "source": "WkTzH",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "server",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "list": "7",
+      "varName": "list",
+      "start": "",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "list-conv",
+      "sort": "1",
+      "name": "Convert List to Text"
+    },
+    {
+      "storage": "1",
+      "varName": "list-conv",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "list-conv",
+      "changeType": "0",
+      "value": "\"*No active music streams.*\"",
+      "name": "Control Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**🎵 Active Music Streams:**\n${tempVars(\"list-conv\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "vote",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "btMXu",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "voted",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "5",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Member Data"
+    },
+    {
+      "title": "You voted!",
+      "author": "",
+      "color": "eaf700",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "<:cerealstars:464000853507047425> Yes! You voted for me and supported my development! Thank you!\nNow you have access to:\n`c?volume`\n`c?definition`\nIf you want to vote again click [here](https://discordbots.org/bot/cereal/vote). ",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "apitoken": "DBL Token",
+      "varName": "",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check DBL Voted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "voted",
+      "changeType": "0",
+      "value": "true",
+      "name": "Control Member Data"
+    },
+    {
+      "call": "2",
+      "name": "Jump to Action"
+    },
+    {
+      "title": "You did not vote yet!",
+      "author": "",
+      "color": "eaf700",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "😐 You did not vote for me yet... You can do that [here](https://discordbots.org/bot/cereal/vote) to receive access to some commands! (If you just voted please wait a minute)",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

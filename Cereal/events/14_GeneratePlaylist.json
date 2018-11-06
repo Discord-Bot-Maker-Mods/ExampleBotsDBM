@@ -8,15 +8,15 @@
       "storage": "1",
       "varName": "position",
       "comparison": "3",
-      "value": "11",
+      "value": "16",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "12",
+      "iffalseVal": "8",
       "name": "Check Variable"
     },
     {
-      "behavior": "0",
+      "behavior": "1",
       "interpretation": "0",
       "code": "if(tempVars(\"file\")){\nvar lines = tempVars(\"file\").split('\\n');\nvar res = lines[Math.floor(Math.random()*lines.length)];\nthis.storeValue(res, 1, \"res\", cache);\nthis.callNextAction(cache);\n}else{\nmsg.channel.send('**EROORORORORORRR!**');\n}",
       "storage": "0",
@@ -41,20 +41,6 @@
       "name": "Store Server Data"
     },
     {
-      "video": "${tempVars(\"res\")}",
-      "key": "googleapitoken",
-      "info": "0",
-      "resultNo": "0",
-      "storage": "1",
-      "varName": "url",
-      "name": "YouTube Search"
-    },
-    {
-      "time": "3",
-      "measurement": "1",
-      "name": "Wait"
-    },
-    {
       "storage": "1",
       "varName": "position",
       "changeType": "0",
@@ -62,22 +48,10 @@
       "name": "Control Variable"
     },
     {
-      "iftrue": "3",
-      "iftrueVal": "1",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Check is Bot in Voice Channel"
-    },
-    {
-      "channel": "3",
-      "varName": "vc",
-      "name": "Join Voice Channel"
-    },
-    {
-      "url": "${tempVars(\"url\")}",
+      "url": "${tempVars(\"res\")}",
       "seek": "0",
       "volume": "${tempVars(\"volume\")}",
-      "passes": "1",
+      "passes": "3",
       "bitrate": "",
       "type": "0",
       "name": "Play YouTube Video"

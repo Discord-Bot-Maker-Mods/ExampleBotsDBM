@@ -1,0 +1,56 @@
+{
+  "name": "tfm",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "TjAvr",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "bot",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔇 Please join a voice channel first!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "url": "https://radio.truckers.fm/",
+      "seek": "0",
+      "volume": "",
+      "passes": "1",
+      "bitrate": "",
+      "type": "0",
+      "name": "Play URL"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🚚 **TruckersFM** is now playing!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

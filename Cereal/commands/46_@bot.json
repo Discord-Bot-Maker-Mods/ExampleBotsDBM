@@ -1,0 +1,46 @@
+{
+  "name": "@bot",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "MbieA",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "0",
+      "storage": "1",
+      "varName": "params",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "5",
+      "value": "'<@462903199909543946>'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "👋 Hai! My prefix is `c?`. You can view all my commands using `c?help`. Have fun!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

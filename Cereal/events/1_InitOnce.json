@@ -56,25 +56,11 @@
       "name": "Find Channel"
     },
     {
-      "time": "2",
-      "measurement": "1",
-      "name": "Wait"
-    },
-    {
-      "type": "3",
-      "storage": "1",
-      "varName": "h",
-      "name": "Store UTC Time Info"
-    },
-    {
-      "type": "4",
-      "storage": "1",
-      "varName": "m",
-      "name": "Store UTC Time Info"
-    },
-    {
-      "tosend": "Restarted at ${tempVars(\"h\")+2}:${tempVars(\"m\")}",
-      "name": "Send Message to Console"
+      "info": "0",
+      "find": "506983592803434517",
+      "storage": "3",
+      "varName": "activity-log",
+      "name": "Find Channel"
     },
     {
       "behavior": "0",
@@ -85,12 +71,10 @@
       "name": "Run Script"
     },
     {
-      "name": "End Action Sequence"
-    },
-    {
       "activity": "1",
       "nameText": "c?help",
       "url": "",
+      "stat": "0",
       "name": "Set Bot Activity"
     },
     {
@@ -104,10 +88,13 @@
     {
       "behavior": "0",
       "interpretation": "0",
-      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('dbltoken', client);\n\ndbl.postStats(client.guilds.size);",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('DBL Token', client);\n\ndbl.postStats(client.guilds.size);",
       "storage": "0",
       "varName": "",
       "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
     }
   ]
 }

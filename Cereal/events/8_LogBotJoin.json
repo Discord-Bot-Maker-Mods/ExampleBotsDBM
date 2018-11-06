@@ -41,7 +41,7 @@
     {
       "behavior": "0",
       "interpretation": "0",
-      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('dbltoken', client);\n\ndbl.postStats(client.guilds.size);",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('DBL Token', client);\n\ndbl.postStats(client.guilds.size);",
       "storage": "0",
       "varName": "",
       "name": "Run Script"

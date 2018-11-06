@@ -13,21 +13,16 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "2",
+      "iffalseVal": "1",
       "name": "Check is Bot in Voice Channel"
     },
     {
-      "channel": "5",
-      "varName": "channel",
-      "message": "${tempVars(\"server\").name} - (${tempVars(\"server\").id})",
-      "storage": "0",
-      "varName2": "",
-      "name": "Send Message"
-    },
-    {
-      "time": "1",
-      "measurement": "1",
-      "name": "Wait"
+      "storage": "1",
+      "varName": "list",
+      "addType": "0",
+      "position": "",
+      "value": "`${tempVars(\"server\").name} - (${tempVars(\"server\").id})`",
+      "name": "Add Item to List"
     },
     {
       "comment": "Skip",

@@ -1,0 +1,193 @@
+{
+  "name": "queue",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "zDPCB",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot",
+      "name": "Get Bot as Member"
+    },
+    {
+      "title": "<a:loading:497076167610859531> Loading queue...",
+      "author": "${member.user.username}",
+      "color": "ea0101",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "queue-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "queue-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "sent-embed",
+      "name": "Send Embed Message"
+    },
+    {
+      "server": "0",
+      "info": "1",
+      "storage": "1",
+      "varName": "status",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "storage": "1",
+      "varName": "status",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🙉 There is nothing in the queue!",
+      "author": "${member.user.username}",
+      "color": "ea0101",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "queue-empty",
+      "name": "Create Embed Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"sent-embed\").edit(tempVars(\"queue-empty\"));",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "info": "3",
+      "storage": "1",
+      "varName": "list",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "storage": "1",
+      "varName": "list-title",
+      "name": "Create List"
+    },
+    {
+      "source": "qMFbM",
+      "list": "7",
+      "varName": "list",
+      "tempVarName": "url",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "list": "7",
+      "varName": "list-title",
+      "start": "",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "res-list",
+      "name": "Convert List to Text"
+    },
+    {
+      "storage": "1",
+      "varName": "res-list",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "6",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const audio = this.getDBM().Audio;\nvar obj = audio.playingnow[server.id];\nvar obj2 = obj[2]\nobj2;",
+      "storage": "1",
+      "varName": "nowplayingurl",
+      "name": "Run Script"
+    },
+    {
+      "video": "${tempVars(\"nowplayingurl\")}",
+      "key": "Google API token",
+      "info": "1",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "nowplaying-title",
+      "name": "YouTube Search"
+    },
+    {
+      "title": "📑 Queue (${tempVars(\"list\").length} songs in queue)",
+      "author": "",
+      "color": "0282ea",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "queue-embed-new",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "res-list",
+      "comparison": "7",
+      "value": "1020",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "queue-embed-new",
+      "message": "*🎧 Current Song: [${tempVars(\"nowplaying-title\")}](${tempVars(\"nowplayingurl\")})*\n\n*The queue is too long to display it here <a:facepalmgif:500655012020748309>*",
+      "name": "Set Embed Description"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "queue-embed-new",
+      "message": "*🎧 Current Song: [${tempVars(\"nowplaying-title\")}](${tempVars(\"nowplayingurl\")})*\n\n${tempVars(\"res-list\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"sent-embed\").edit(tempVars(\"queue-embed-new\"));",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    }
+  ],
+  "_aliases": [
+    "q"
+  ]
+}

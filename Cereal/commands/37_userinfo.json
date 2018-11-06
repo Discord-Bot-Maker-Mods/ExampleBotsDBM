@@ -1,0 +1,228 @@
+{
+  "name": "userinfo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DmhAp",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "member",
+      "name": "Store Command Params"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "storage": "1",
+      "varName": "member",
+      "changeType": "0",
+      "value": "member",
+      "name": "Control Variable"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "15",
+      "storage": "1",
+      "varName2": "status",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "14",
+      "storage": "1",
+      "varName2": "game",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "17",
+      "storage": "1",
+      "varName2": "roles",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "4",
+      "storage": "1",
+      "varName2": "color",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "${tempVars(\"member\").user.username}",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"member\").user.displayAvatarURL}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "game",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "game",
+      "changeType": "0",
+      "value": "'Not playing'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "roles-everyone",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Status",
+      "message": "${tempVars(\"status\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Playing",
+      "message": "${tempVars(\"game\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "comparison": "1",
+      "value": "''",
+      "iftrue": "0",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "roles",
+      "changeType": "0",
+      "value": "'No roles'",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Roles",
+      "message": "${tempVars(\"roles\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "Developer",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "<:CerealDeveloper:465846116806688768> Cereal Developer",
+      "message": "Official Developer of this bot. Invests his free time to make cereal taste better.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "Support",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "❓ Cereal Supporter",
+      "message": "Consuming cereal can be difficult. This person is supporting you to improve the taste.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "Donator",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "<:cereal_nitro:507200424860712970> Donator",
+      "message": "Consuming cereal can be difficult. This person is so cool and helps us keeping Ceral online! Learn more at [https://cerealbot.party](https://cerealbot.party).",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Cereal",
+      "footerIcon": "https://cdn.discordapp.com/attachments/463642906574585857/464819412864598016/cereal-pic_v3.png",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "user"
+  ]
+}

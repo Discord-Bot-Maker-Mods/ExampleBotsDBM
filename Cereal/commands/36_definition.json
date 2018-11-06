@@ -1,0 +1,275 @@
+{
+  "name": "definition",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "XHgln",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "nsfw",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "nsfw",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💩 Uff! Some of the responses are NSFW... please make sure to be in a NSFW channel.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💬 This command displays a sarcasm definition of a word. Example:\n`c?definition Lasse`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Nitro",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "voted",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "3",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "7",
+      "name": "Check Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "req.defs",
+      "comparison": "4",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "6",
+      "name": "Check Member Data"
+    },
+    {
+      "member": "1",
+      "apitoken": "DBL Token",
+      "varName": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check DBL Voted"
+    },
+    {
+      "title": "Feature Locked!",
+      "author": "",
+      "color": "eaf700",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "vote-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "vote-embed",
+      "message": "<:cerealstars:464000853507047425> You requested definitions 5 times. Please vote [here](https://discordbots.org/bot/462903199909543946) to receive unlimited access to this and other commands!\n(If you just voted we sadly need to ask you to wait 1-2 minutes 😢)",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "vote-embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "voted",
+      "changeType": "0",
+      "value": "true",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "req.defs",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "in",
+      "name": "Store Command Params"
+    },
+    {
+      "string": "${tempVars(\"in\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "def",
+      "name": "Urban Dictionary Search"
+    },
+    {
+      "storage": "1",
+      "varName": "def",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ There is no definition *yet*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "string": "${tempVars(\"in\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "url",
+      "name": "Urban Dictionary Search"
+    },
+    {
+      "string": "${tempVars(\"in\")}",
+      "info": "2",
+      "storage": "1",
+      "varName": "example",
+      "name": "Urban Dictionary Search"
+    },
+    {
+      "title": "${tempVars(\"in\")}",
+      "author": "",
+      "color": "4286f4",
+      "timestamp": "false",
+      "url": "${tempVars(\"url\")}",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "def",
+      "comparison": "7",
+      "value": "2048",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"def\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "example",
+      "comparison": "7",
+      "value": "1024",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Example",
+      "message": "*${tempVars(\"example\")}*",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "def",
+    "urban",
+    "dict"
+  ],
+  "_timeRestriction": 2,
+  "comType": "0"
+}

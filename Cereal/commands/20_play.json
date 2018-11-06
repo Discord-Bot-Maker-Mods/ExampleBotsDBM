@@ -1,0 +1,512 @@
+{
+  "name": "play",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "JwWvG",
+  "actions": [
+    {
+      "info": "1",
+      "find": "DJ",
+      "storage": "1",
+      "varName": "djrole",
+      "name": "Find Role"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(member.user.id);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "bot-mem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "bot-mem",
+      "permission": "CONNECT",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💥 Ew. Please make sure that I have permission to join this voice channel!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "bot-mem",
+      "permission": "SPEAK",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💥 Ew. Please make sure that I have permission to speak in this voice channel!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "djrole",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "djrole",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "13",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❗ You need to have the **DJ** role to use the command on this server!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ With this command you can play songs from YouTube. Please enter a link or a keyword to play a song!\n`c?play Yee 1h` or `c?play https://youtu.be/Jp2TFRqOOOs?t=14s`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "client.fetchUser(member.user.id);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Please join a voice channel before you can play music!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "to-search-raw",
+      "name": "Store Command Params"
+    },
+    {
+      "text": "${tempVars(\"to-search-raw\")}",
+      "text2": "&feature=youtu.be",
+      "text3": "",
+      "info": "1",
+      "storage": "1",
+      "varName": "to-search",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "to-search",
+      "comparison": "5",
+      "value": "'list'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Sorry. Sadly I am not able to play playlists *yet*...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "url",
+      "comparison": "5",
+      "value": "'t='",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Sorry. Sadly I am not able to play songs with a specific start positions *yet*...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Loading msg v ",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "<a:loading:497076167610859531> Searching on YouTube for \"${tempVars(\"to-search\")}\"...",
+      "author": "",
+      "color": "ff1500",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "loading-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "loading-embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "res-sent-obj",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "Loading msg ^",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "to-search",
+      "comparison": "5",
+      "value": "'https://youtu'",
+      "iftrue": "0",
+      "iftrueVal": "1",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "url",
+      "changeType": "0",
+      "value": "tempVars(\"to-search\")",
+      "name": "Control Variable"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "video": "${tempVars(\"to-search\")}",
+      "key": "Google API token",
+      "info": "0",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "url",
+      "name": "YouTube Search"
+    },
+    {
+      "video": "${tempVars(\"to-search\")}",
+      "key": "Google API token",
+      "info": "1",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "name",
+      "name": "YouTube Search"
+    },
+    {
+      "video": "${tempVars(\"to-search\")}",
+      "key": "Google API token",
+      "info": "3",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "creator",
+      "name": "YouTube Search"
+    },
+    {
+      "video": "${tempVars(\"to-search\")}",
+      "key": "Google API token",
+      "info": "9",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "image",
+      "name": "YouTube Search"
+    },
+    {
+      "video": "${tempVars(\"to-search\")}",
+      "key": "Google API token",
+      "info": "3",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "channel",
+      "name": "YouTube Search"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.volume",
+      "defaultVal": "100",
+      "storage": "1",
+      "varName2": "volume",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "name",
+      "comparison": "8",
+      "value": "200",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "${tempVars(\"channel\")}: [😫 The songs title is too long!]",
+      "author": "${member.user.username}",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "${tempVars(\"url\")}",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "title": "${tempVars(\"channel\")}: ${tempVars(\"name\")}",
+      "author": "${member.user.username}",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "${tempVars(\"url\")}",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const Audio = this.getDBM().Audio;\nconst id = server.id;\nif(Audio && Audio.queue[id]) {\nif(Audio.queue[id].length > 0) {\n   const left = Audio.queue[id].length;\n   this.storeValue(left + \" songs before!\", 1 , \"queue-script\", cache);\n} else {\n   this.storeValue(\"Next song.\", 1 , \"queue-script\", cache);\n}\n} else {\nthis.storeValue(\" \", 1, \"queue-script\", cache);\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "👍 Added to queue! ${tempVars(\"queue-script\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Requested by ${member.user.username}",
+      "footerIcon": "${member.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "url",
+      "comparison": "5",
+      "value": "'channel'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Sorry. That is a channel and I cannot play music from it *yet*...",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "url",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😮 Wow! I didn't find *any* video on YouTube with this name!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "url": "${tempVars(\"url\")}",
+      "seek": "0",
+      "volume": "${tempVars(\"volume\")}",
+      "passes": "3",
+      "bitrate": "",
+      "type": "0",
+      "name": "Play YouTube Video"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"res-sent-obj\").edit(tempVars(\"embed\"));",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "2",
+      "varName2": "music-cmd-channel",
+      "name": "Store Channel Info"
+    },
+    {
+      "channel": "7",
+      "varName": "activity-log",
+      "message": "`${member.guild.name}`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_timeRestriction": 3,
+  "_aliases": [
+    "p"
+  ],
+  "comType": "0"
+}

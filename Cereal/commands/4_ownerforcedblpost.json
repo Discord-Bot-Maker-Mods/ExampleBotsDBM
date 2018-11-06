@@ -1,0 +1,72 @@
+{
+  "name": "ownerforcedblpost",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "wJfdS",
+  "actions": [
+    {
+      "info": "20",
+      "storage": "1",
+      "varName2": "clientid",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Forcing Bot to `POST` server_count to DBL API...**",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "1.5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const DBL = require(\"dblapi.js\");\nconst dbl = new DBL('a token lol', client);\n\ndbl.postStats(client.guilds.size);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "title": "Success!",
+      "author": "",
+      "color": "",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "info": "3",
+      "storage": "1",
+      "varName2": "guilds",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Sucessfully posted `server_count` to Discordbots.org API!\n\n`server_count: ${tempVars(\"guilds\")}`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    }
+  ]
+}

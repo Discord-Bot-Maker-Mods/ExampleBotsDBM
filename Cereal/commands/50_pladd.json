@@ -1,0 +1,106 @@
+{
+  "name": "pladd",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "ZiBcS",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "item",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "item",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🙈 You need to tell me what I should add to your playlist ${member.user.username}.\n`c?pladd SongName`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "item",
+      "comparison": "5",
+      "value": "'https://youtu'",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "This is too broken. Please add only YouTube URLs!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./playlists/pl-${member.user.id}.txt",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "input": "",
+      "format": ".txt",
+      "filename": "pl-${member.user.id}",
+      "filepath": "./playlists/",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "${tempVars(\"item\")}",
+      "format": ".txt",
+      "filename": "pl-${member.user.id}",
+      "filepath": "./playlists/",
+      "filetask": "2",
+      "name": "File Control"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "➕ Added `${tempVars(\"item\")}` to your playlist!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

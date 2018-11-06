@@ -1,0 +1,432 @@
+{
+  "name": "help",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "isCVQ",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "Cereal Bot | Help",
+      "author": "${client.user.username}",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${client.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "${client.user.displayAvatarURL}",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Click a reaction to see all commands.\n\n🏠 - Command Overview\n🎶 - Music commands\n🎉 - Fun\n⚙ - Configuration\n❗ - Moderation\n➕ - Other",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Our bot for your community!",
+      "footerIcon": "${client.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "msg",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "🏠",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "🎶",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "🎉",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "⚙",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "❗",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "emoji": "4",
+      "varName2": "➕",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "number",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "🏠",
+      "storage": "1",
+      "varName2": "home",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "🎶",
+      "storage": "1",
+      "varName2": "music",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "🎉",
+      "storage": "1",
+      "varName2": "fun",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "⚙",
+      "storage": "1",
+      "varName2": "config",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "❗",
+      "storage": "1",
+      "varName2": "moderation",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "msg",
+      "info": "1",
+      "find": "➕",
+      "storage": "1",
+      "varName2": "other",
+      "name": "Find Reaction"
+    },
+    {
+      "comment": "Jump here v",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "Cereal Bot | Help",
+      "author": "${client.user.username}",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${client.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "${client.user.displayAvatarURL}",
+      "storage": "1",
+      "varName": "embed2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "Our bot for your community!",
+      "footerIcon": "${client.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "uses",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "uses",
+      "comparison": "1",
+      "value": "160",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Clear reactions from message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "Reaction control expired. Please redo `c?help` to browse through more tasty commands!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "home",
+      "iftrue": "0",
+      "iftrueVal": "25",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "Click a reaction to see all commands.\n\n🏠 - Command Overview\n🎶 - Music commands\n🎉 - Fun\n⚙ - Configuration\n❗ - Moderation\n➕ - Other",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "home",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "music",
+      "iftrue": "0",
+      "iftrueVal": "28",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "⏯ `c?play` - Plays a song from YouTube (keyword search supported)\n⏭ `c?skip` - Skips the current song\n⏸ `c?stop` - Stop music and leaves voice channel\n🔊 `c?volume` - Sets the volume to a specific level\n📄 `c?queue` - View the current song queue\n🎵 `c?nowplaying` - View the current song\n🗒 `c?lyrics` - Displays lyrics of a song\nIf you add a role called \"DJ\" to your server then all music commands will be limited to users with the role.",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "music",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "fun",
+      "iftrue": "0",
+      "iftrueVal": "28",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "📖 `c?definition` - The \"truth\" about something // Urban Dictionary (Needs to be in a NSFW channel)\n😝 `c?meme` - Sends you a random meme from r/memes\nℹ `c?userinfo` - Tells you information about a specific user\n📝 `c?serverinfo`\n🔞 `c?hentai` - Sends hentai image/GIF\n🔞 `c?neko` - Sends random neko GIF\n🔞 `c?boobs` - Sends neko boobs",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "fun",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "config",
+      "iftrue": "0",
+      "iftrueVal": "31",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "`c?set-welcome` - Configures and enables welcome messages\n`c?toggle-welcome` - Disables/Enables welcome messages again\n`c?toggle-invitefilter` Toggles a discord invite link filter for non-staff members\n(Requires Manage Guild permission)",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "config",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "moderation",
+      "iftrue": "0",
+      "iftrueVal": "31",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "👢 `c?kick` - Kicks a member from this server\n🔒 `c?ban` - Bans a member from this server\n🗑 `c?purge` - Deletes multiple messages at once",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "moderation",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "reaction": "1",
+      "varName2": "other",
+      "iftrue": "0",
+      "iftrueVal": "37",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check If User Reacted"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": "❔ `c?help` - Displays all available commands\n📞 `c?callsupport` - Lets a supporter join your server if you need help with me (Requires Manage Server permission)\n❕ `c?botinfo` - View information about me\n⬆ `c?vote` - Checks if you have voted -> More features permanently\n💌 `c?invite` - Sends you the invite link of me",
+      "name": "Set Embed Description"
+    },
+    {
+      "reaction": "1",
+      "varName": "other",
+      "member": "1",
+      "varName2": "",
+      "name": "Remove Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    },
+    {
+      "comment": "End of check",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "time": "250",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "call": "20",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "name": "boobs",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "bdFSr",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "nsfw",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "nsfw",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔞 Please enable **NSFW mode** for this channel. Porn commands aren't for children!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "<a:eggplant:472249649072308224>",
+      "author": "",
+      "color": "f442ee",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed1",
+      "message": "Requested by ${member.user.tag}. Powered by nekos.life",
+      "footerIcon": "${member.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed1",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "sent",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "v After Loading v",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://nekos.life/api/v2/img/boobs",
+      "path": "url",
+      "storage": "1",
+      "varName": "img-url",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": " ",
+      "author": "",
+      "color": "f442ee",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"img-url\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed1",
+      "message": "Requested by ${member.user.tag}. Powered by nekos.life",
+      "footerIcon": "${member.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sent",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    }
+  ]
+}

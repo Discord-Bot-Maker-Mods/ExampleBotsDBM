@@ -1,0 +1,190 @@
+{
+  "name": "botinfo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "AiyNB",
+  "actions": [
+    {
+      "info": "5",
+      "storage": "1",
+      "varName2": "ping",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "4",
+      "storage": "1",
+      "varName2": "users",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "3",
+      "storage": "1",
+      "varName2": "guilds",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "23",
+      "storage": "1",
+      "varName2": "u-days",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "24",
+      "storage": "1",
+      "varName2": "u-hours",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "25",
+      "storage": "1",
+      "varName2": "u-mins",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "21",
+      "storage": "1",
+      "varName2": "djs-ver",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "31",
+      "storage": "1",
+      "varName2": "njs-ver",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "27",
+      "storage": "1",
+      "varName2": "mem-use",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.volume",
+      "defaultVal": "100",
+      "storage": "1",
+      "varName2": "volume",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.volume",
+      "defaultVal": "100",
+      "storage": "1",
+      "varName2": "volume",
+      "name": "Store Server Data"
+    },
+    {
+      "botID": "462903199909543946",
+      "info": "16",
+      "storage": "1",
+      "varName": "count",
+      "name": "Get Bot Stats From DBL"
+    },
+    {
+      "title": "Bot Info",
+      "author": "${client.user.username}",
+      "color": "eaf700",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${client.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": ":cyclone:[Website](https://cerealbot.party/) | <:cerealtag:464002772560510986> [Invite](https://discordapp.com/oauth2/authorize?client_id=462903199909543946&scope=bot&permissions=1312124097) | <:cerealstars:464000853507047425> [Vote](https://discordbots.org/bot/cereal/vote) | <:CerealCertified:466190881343406100> [Certified](https://discordbots.org/bot/cereal)\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Ping",
+      "message": "${tempVars(\"ping\")} ms",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Servers",
+      "message": "${tempVars(\"guilds\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Total Users",
+      "message": "${tempVars(\"users\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Uptime",
+      "message": "${tempVars(\"u-days\")} days ${tempVars(\"u-hours\")} hours ${tempVars(\"u-mins\")} minutes",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Memory Usage",
+      "message": "${tempVars(\"mem-use\")} MB",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Versions",
+      "message": "node.js: ${tempVars(\"njs-ver\")}\ndiscord.js: ${tempVars(\"djs-ver\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Upvotes on DBL",
+      "message": "${tempVars(\"count\")} ([Vote now!](https://discordbots.org/bot/cereal))\n",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Thank you!",
+      "message": "We are happy you use our bot. Cereal is made for small communities and should be limited to basic commands. Feel free to join our [discord server](https://discord.gg/enscRtr) to suggest features or report bugs!",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Our bot for your community",
+      "footerIcon": "https://cdn.discordapp.com/attachments/463642906574585857/464819412864598016/cereal-pic_v3.png",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "stats",
+    "info",
+    "about"
+  ],
+  "comType": "0"
+}

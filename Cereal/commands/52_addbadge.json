@@ -1,0 +1,69 @@
+{
+  "name": "addbadge",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "bVOFo",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "2",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❗ Please specify a member using `c?addbadge ID badgename`\nFor example `c?addbadge ID Developer`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "id",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"id\")}",
+      "storage": "1",
+      "varName": "member",
+      "name": "Find Member"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "badge-to-add",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "${tempVars(\"badge-to-add\")}",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Added **${tempVars(\"badge-to-add\")}** to ${tempVars(\"member\").user.username}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "name": "playlist",
+  "permissions": "NONE",
+  "restriction": "0",
+  "_id": "ksuef",
+  "actions": [
+    {
+      "filename": "./playlists/pl-${member.user.id}.txt",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "💩 There is nothing on your playlist!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🎤 Please join a voice channel *first*!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:loading:497076167610859531> Generating playlist (15 Songs)",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "vc",
+      "name": "Store Voice Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "list",
+      "name": "Create List"
+    },
+    {
+      "storage": "1",
+      "varName": "position",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "source": "DRHRf",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "message": "🎬 Playlist generated! (15 Songs)",
+      "name": "Edit Message"
+    }
+  ]
+}

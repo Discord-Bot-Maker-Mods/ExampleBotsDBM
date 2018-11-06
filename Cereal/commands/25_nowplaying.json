@@ -1,0 +1,78 @@
+{
+  "name": "nowplaying",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "pRuUA",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const audio = this.getDBM().Audio;\nif(audio.playingnow && audio.playingnow[server.id]){\nvar obj = audio.playingnow[server.id][2];\nthis.storeValue(obj, 1, \"res\", cache);\n}",
+      "storage": "0",
+      "varName": "res",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "res",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🙈 No music! ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "video": "${tempVars(\"res\")}",
+      "key": "Google API token",
+      "info": "1",
+      "resultNo": "0",
+      "storage": "1",
+      "varName": "yt-name",
+      "name": "YouTube Search"
+    },
+    {
+      "title": "🎶 Current Song: ${tempVars(\"yt-name\")}",
+      "author": "${member.user.username}",
+      "color": "f44842",
+      "timestamp": "false",
+      "url": "${tempVars(\"res\")}",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "np",
+    "now",
+    "current"
+  ],
+  "comType": "0"
+}

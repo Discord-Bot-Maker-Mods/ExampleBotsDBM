@@ -1,0 +1,102 @@
+{
+  "name": "changemymind",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "tlptw",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "😵 Wut? `c?changemymind something here`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "message",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "<a:loading:497076167610859531> Give me a second...",
+      "author": "${member.user.username}",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "embed-msg",
+      "name": "Send Embed Message"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://nekobot.xyz/api/imagegen?type=changemymind&text=${tempVars(\"message\")}",
+      "path": "message",
+      "storage": "1",
+      "varName": "url",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": " ",
+      "author": "${member.user.username}",
+      "color": "RANDOM",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${member.user.displayAvatarURL}",
+      "imageUrl": "${tempVars(\"url\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed2",
+      "message": " ",
+      "footerIcon": "${client.user.displayAvatarURL}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-msg",
+      "storage2": "1",
+      "varName2": "embed2",
+      "name": "Edit Embed"
+    }
+  ],
+  "_aliases": [],
+  "_timeRestriction": 5
+}

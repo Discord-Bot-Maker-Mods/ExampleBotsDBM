@@ -1,0 +1,16 @@
+{
+  "name": "ownerhelp",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "hIfAA",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "`c?ownerstopbot`\n`c?ownerconsole`\n`c?ownerforcedblpost`\n`c?ownercompile`\n`c?ownermusic`\n`c?ownergenerateinvite`\n`c?ownerstatus`\n`c?ownerresetstatus`\n`c?ownerhelp`\n`c?addbadge ID Support` & removebadge\n`c?addserverbadge ID Nitro` & removeserverebadge\n`c?tfm` - public & unlisted.\n`c?ownerleave`\n`c?changemymind` - public & unlisted.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

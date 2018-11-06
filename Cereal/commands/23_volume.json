@@ -1,0 +1,278 @@
+{
+  "name": "volume",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "dpEgv",
+  "actions": [
+    {
+      "info": "1",
+      "find": "DJ",
+      "storage": "1",
+      "varName": "djrole",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "djrole",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "djrole",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "13",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❗ You need to have the **DJ** role to use the command on this server!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Nitro",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "voted",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "3",
+      "iftrueVal": "6",
+      "iffalse": "0",
+      "iffalseVal": "5",
+      "name": "Check Member Data"
+    },
+    {
+      "member": "1",
+      "apitoken": "DBL Token",
+      "varName": "",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check DBL Voted"
+    },
+    {
+      "title": "Feature Locked!",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "<:cerealstars:464000853507047425> Wew! This a locked feature at the moment! Please vote for me on [DBL](https://discordbots.org/bot/cereal/vote).\nIt is free! (If you just voted please wait 1-2 minutes)",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ No. Please join the voice channel!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ This command would set the volume to a specific level but there is no music at the moment!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "volume",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "volume",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Please tell me your wished volume (10-150)\n`c?volume 35`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"volume\")}",
+      "storage": "1",
+      "varName2": "int",
+      "name": "Convert a Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "int",
+      "comparison": "3",
+      "value": "151",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Please. That is too loud. Only 10-150!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "int",
+      "comparison": "4",
+      "value": "9",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "❔ Please. That is too quiet. Only 10-150! You can stop music using `c?stop`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "volume": "${tempVars(\"int\")}",
+      "name": "Set Audio Volume"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔊 Volume set to ${tempVars(\"int\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "custom.volume",
+      "changeType": "0",
+      "value": "tempVars(\"int\")",
+      "name": "Control Server Data"
+    }
+  ],
+  "_timeRestriction": 2,
+  "_aliases": [
+    "v",
+    "vol"
+  ],
+  "comType": "0"
+}
