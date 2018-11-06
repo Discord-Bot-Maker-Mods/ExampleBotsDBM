@@ -1,12 +1,12 @@
 {
-  "name": "dutch",
+  "name": "spanish",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "TCNL5",
+  "_id": "TCNL6",
   "actions": [
     {
       "info": "1",
-      "find": "Dutch",
+      "find": "Spanish",
       "storage": "1",
       "varName": "role",
       "name": "Find Role"
@@ -28,7 +28,7 @@
       "role": "3",
       "varName2": "role",
       "iftrue": "3",
-      "iftrueVal": "3",
+      "iftrueVal": "4",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check If Member has Role"
@@ -43,10 +43,13 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "${member}, you joined **Dutch**.",
+      "message": "${member}, you joined **Spanish**.",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -61,11 +64,12 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "${member}, you left **Dutch**.",
+      "message": "${member}, you left **Spanish**.",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
     }
   ],
-  "_timeRestriction": 10
+  "_timeRestriction": 10,
+  "comType": "0"
 }

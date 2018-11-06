@@ -5,78 +5,22 @@
   "_id": "idDKw",
   "actions": [
     {
-      "source": "hUbUn",
-      "type": "true",
-      "name": "Call Command/Event"
-    },
-    {
-      "info": "0",
-      "find": "379372685182107669",
-      "storage": "1",
-      "varName": "rawdataserver",
-      "name": "Find Server"
-    },
-    {
-      "info": "0",
-      "find": "374961173524643843",
-      "storage": "1",
-      "varName": "modsserver",
-      "name": "Find Server"
-    },
-    {
-      "info": "0",
-      "find": "418414602536091648",
-      "storage": "1",
-      "varName": "hostingserver",
-      "name": "Find Server"
-    },
-    {
-      "server": "0",
-      "varName": "",
-      "info": "1",
-      "storage": "1",
-      "varName2": "serverid",
-      "name": "Store Server Info"
-    },
-    {
-      "storage": "1",
-      "varName": "serverid",
-      "comparison": "1",
-      "value": "${tempVars(\"rawdataserver\").id}",
-      "iftrue": "3",
-      "iftrueVal": "2",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
-      "storage": "1",
-      "varName": "serverid",
-      "comparison": "1",
-      "value": "${tempVars(\"hostingserver\").id}",
-      "iftrue": "3",
-      "iftrueVal": "1",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
-      "storage": "1",
-      "varName": "serverid",
-      "comparison": "1",
-      "value": "${tempVars(\"modsserver\").id}",
-      "iftrue": "0",
-      "iftrueVal": "2",
-      "iffalse": "1",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
       "info": "1",
       "find": "Helper",
       "storage": "1",
       "varName": "helper-role",
       "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "helper-role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
     },
     {
       "storage": "0",
@@ -89,7 +33,7 @@
       "role": "3",
       "varName2": "helper-role",
       "iftrue": "3",
-      "iftrueVal": "4",
+      "iftrueVal": "5",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check If Member has Role"
@@ -116,6 +60,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

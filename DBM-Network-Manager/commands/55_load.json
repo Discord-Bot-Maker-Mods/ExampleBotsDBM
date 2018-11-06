@@ -36,7 +36,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -51,6 +51,17 @@
     },
     {
       "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.raw",
+      "storage": "1",
+      "varName": "raw",
+      "name": "Parse From Stored Json"
     },
     {
       "behavior": "0",

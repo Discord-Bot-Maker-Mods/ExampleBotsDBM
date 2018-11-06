@@ -14,7 +14,7 @@
       "comparison": "0",
       "value": "2",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Parameters"
@@ -26,6 +26,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -58,7 +61,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -75,17 +78,27 @@
       "name": "End Action Sequence"
     },
     {
+      "name": "End Action Sequence"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"points\")}",
+      "storage": "1",
+      "varName2": "points-int",
+      "name": "Convert a Variable"
+    },
+    {
       "member": "2",
       "varName": "user",
       "dataName": "warning_points",
       "changeType": "0",
-      "value": "tempVars(\"points\")",
+      "value": "tempVars(\"points-int\")",
       "name": "Control Member Data"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "💚 Should be done! Added ${tempVars(\"points\")} to <@${tempVars(\"id\")}> (${tempVars(\"id\")})",
+      "message": "💚 Should be done! Set ${tempVars(\"points-int\")} for <@${tempVars(\"id\")}> (${tempVars(\"id\")})",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

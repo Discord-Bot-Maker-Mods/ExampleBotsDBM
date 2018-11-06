@@ -5,9 +5,42 @@
   "_id": "SvLrU",
   "actions": [
     {
-      "source": "hUbUn",
-      "type": "true",
-      "name": "Call Command/Event"
+      "member": "2",
+      "varName": "mem",
+      "info": "3",
+      "storage": "1",
+      "varName2": "nick",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "nick",
+      "comparison": "5",
+      "value": "\"!\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var string = tempVars(\"nick\");\nvar newString = string.replace('!','');\nthis.storeValue(newString, 1, \"newnick\", cache);\nthis.callNextAction(cache);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "nickname": "${tempVars(\"newnick\")}",
+      "name": "Set Member Nickname"
+    },
+    {
+      "comment": "^ Nick Check ^",
+      "color": "#000000",
+      "name": "Comment"
     },
     {
       "channel": "7",
@@ -42,40 +75,6 @@
       "role": "3",
       "varName": "pending-role",
       "name": "Add Member Role"
-    },
-    {
-      "member": "2",
-      "varName": "mem",
-      "info": "4",
-      "storage": "1",
-      "varName2": "bot",
-      "name": "Store Member Things"
-    },
-    {
-      "storage": "1",
-      "varName": "bot",
-      "comparison": "1",
-      "value": "true",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "1",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
-      "channel": "7",
-      "varName": "log-channel",
-      "message": "**That is a bot 😱**",
-      "storage": "0",
-      "varName2": "",
-      "name": "Send Message"
-    },
-    {
-      "member": "2",
-      "varName2": "mem",
-      "role": "3",
-      "varName": "pending-role",
-      "name": "Remove Member Role"
     }
   ]
 }

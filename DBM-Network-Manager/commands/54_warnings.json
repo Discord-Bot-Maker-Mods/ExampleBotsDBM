@@ -32,7 +32,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "18",
+      "iffalseVal": "19",
       "name": "Check Variable"
     },
     {
@@ -50,7 +50,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "18",
+      "iffalseVal": "19",
       "name": "Check If Member has Role"
     },
     {
@@ -60,7 +60,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "18",
+      "iffalseVal": "19",
       "name": "Check Parameters"
     },
     {
@@ -121,6 +121,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

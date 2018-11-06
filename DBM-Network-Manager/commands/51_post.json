@@ -5,11 +5,6 @@
   "_id": "VwGUO",
   "actions": [
     {
-      "source": "hUbUn",
-      "type": "true",
-      "name": "Call Command/Event"
-    },
-    {
       "source": "check_server_rawdata_post",
       "type": "true",
       "name": "Call Command/Event"
@@ -19,7 +14,7 @@
       "comparison": "2",
       "value": "2",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Parameters"
@@ -31,6 +26,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -52,13 +50,13 @@
     {
       "storage": "1",
       "varName": "raw",
-      "comparison": "0",
+      "comparison": "7",
       "value": "1024",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "2",
-      "name": "Check Variable MOD"
+      "iffalseVal": "3",
+      "name": "Check Variable"
     },
     {
       "channel": "0",
@@ -67,6 +65,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -82,7 +83,7 @@
       "comparison": "6",
       "value": "(useful|api-use|moderating|music|minigames|troll|run-scripts|testing-the-approval-system)",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -94,6 +95,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -111,8 +115,8 @@
       "dataName": "raw_${tempVars(\"number\")}",
       "comparison": "0",
       "value": "",
-      "iftrue": "2",
-      "iftrueVal": "15",
+      "iftrue": "3",
+      "iftrueVal": "-1",
       "iffalse": "0",
       "iffalseVal": "-1",
       "name": "Check Member Data"
@@ -168,30 +172,6 @@
       "name": "Store Member Info"
     },
     {
-      "input": "{\n\"raw\": \"${serverVars(\"n_raw\")}\",\n\"category\": \"${serverVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Pending\"\n}",
-      "format": ".json",
-      "filename": "raw_${tempVars(\"number\")}",
-      "filepath": "./resources/raw_posts",
-      "filetask": "1",
-      "name": "File Control"
-    },
-    {
-      "input": "",
-      "format": ".txt",
-      "filename": "raw_${tempVars(\"number\")}_raw",
-      "filepath": "./resources/raw_posts",
-      "filetask": "0",
-      "name": "File Control"
-    },
-    {
-      "input": "${serverVars(\"n_raw\")}",
-      "format": ".txt",
-      "filename": "raw_${tempVars(\"number\")}_raw",
-      "filepath": "./resources/raw_posts",
-      "filetask": "1",
-      "name": "File Control"
-    },
-    {
       "title": " ",
       "author": "${member.user.username}",
       "color": "#ffa500",
@@ -229,7 +209,7 @@
     },
     {
       "info": "0",
-      "find": "445289133829521408",
+      "find": "504004340537884683",
       "storage": "1",
       "varName": "approval-channel",
       "name": "Find Channel"
@@ -239,9 +219,41 @@
       "varName": "embed",
       "channel": "5",
       "varName2": "approval-channel",
-      "varName3": "edit_embed",
       "storage3": "2",
-      "name": "Send Embed Message MOD"
+      "varName3": "edit_embed",
+      "name": "Send Embed Message"
+    },
+    {
+      "message": "2",
+      "varName": "edit_embed",
+      "info": "1",
+      "storage": "1",
+      "varName2": "embed_id",
+      "name": "Store Message Info"
+    },
+    {
+      "input": "{\n\"raw\": \"${serverVars(\"n_raw\")}\",\n\"category\": \"${serverVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"embedid\": \"${tempVars(\"embed_id\")}\",\n\"status\": \"Pending\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number\")}",
+      "filepath": "./resources/raw_posts",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "input": "",
+      "format": ".txt",
+      "filename": "raw_${tempVars(\"number\")}_raw",
+      "filepath": "./resources/raw_posts",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "${serverVars(\"n_raw\")}",
+      "format": ".txt",
+      "filename": "raw_${tempVars(\"number\")}_raw",
+      "filepath": "./resources/raw_posts",
+      "filetask": "1",
+      "name": "File Control"
     },
     {
       "time": "1",

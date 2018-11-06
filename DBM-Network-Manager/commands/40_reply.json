@@ -22,7 +22,7 @@
       "role": "3",
       "varName2": "role_raw_dat_posters",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check If Member has Role"
@@ -34,6 +34,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -62,7 +65,7 @@
       "comparison": "2",
       "value": "1",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Parameters"
@@ -74,6 +77,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -92,7 +98,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Server Data"
@@ -104,6 +110,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -142,7 +151,7 @@
       "color": "ffee00",
       "timestamp": "false",
       "url": "",
-      "authorIcon": "${member.user.avatarURL}",
+      "authorIcon": "${member.user.displayAvatarURL}",
       "imageUrl": "",
       "thumbUrl": "",
       "storage": "1",

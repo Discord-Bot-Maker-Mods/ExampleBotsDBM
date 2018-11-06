@@ -2,13 +2,8 @@
   "name": "moderator-cooldown",
   "permissions": "NONE",
   "restriction": "0",
-  "_id": "PoOtx",
+  "_id": "KpAUm",
   "actions": [
-    {
-      "source": "hUbUn",
-      "type": "true",
-      "name": "Call Command/Event"
-    },
     {
       "condition": "3",
       "comparison": "2",
@@ -27,33 +22,17 @@
       "name": "Store Command Params"
     },
     {
-      "member": "1",
-      "varName": "",
-      "info": "2",
-      "storage": "1",
-      "varName2": "auus",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "0",
-      "varName": "",
-      "info": "5",
-      "storage": "1",
-      "varName2": "audi",
-      "name": "Store Member Things"
-    },
-    {
       "role": "0",
       "varName": "",
       "info": "2",
       "storage": "1",
-      "varName2": "rname",
+      "varName2": "ment-name",
       "name": "Store Role Info"
     },
     {
       "channel": "7",
       "varName": "log-channel",
-      "message": "**${member.user.tag} (${member.user.id}) mentioned `${tempVars(\"rname\")}`** in ${msg.guild.name}",
+      "message": "**${member.user.tag} (${member.user.id}) mentioned `${tempVars(\"ment-name\")}`** in ${msg.guild.name}",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
@@ -62,14 +41,22 @@
       "info": "1",
       "find": "Moderator",
       "storage": "1",
-      "varName": "helper_role",
+      "varName": "mod_role",
       "name": "Find Role"
     },
     {
+      "role": "3",
+      "varName": "mod_role",
+      "info": "2",
       "storage": "1",
-      "varName": "role",
+      "varName2": "mod-name",
+      "name": "Store Role Info"
+    },
+    {
+      "storage": "1",
+      "varName": "ment-name",
       "comparison": "1",
-      "value": "tempVars(\"helper_role\")",
+      "value": "tempVars(\"mod_role\")",
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "1",
@@ -83,7 +70,7 @@
       "color": "",
       "position": "",
       "storage": "3",
-      "varName": "helper_role",
+      "varName": "mod_role",
       "name": "Edit Role"
     },
     {
@@ -98,13 +85,13 @@
       "color": "",
       "position": "",
       "storage": "3",
-      "varName": "helper_role",
+      "varName": "mod_role",
       "name": "Edit Role"
     },
     {
       "channel": "7",
       "varName": "log-channel",
-      "message": "*Moderators can get mentioned again in ${msg.guild.name}*",
+      "message": "*${tempVars(\"ment-name\")} can get mentioned again in ${msg.guild.name}*",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"

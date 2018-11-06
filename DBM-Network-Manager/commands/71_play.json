@@ -176,7 +176,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoken",
+      "key": "Google API Key",
       "info": "0",
       "resultNo": "0",
       "storage": "1",
@@ -185,7 +185,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoken",
+      "key": "Google API Key",
       "info": "1",
       "resultNo": "0",
       "storage": "1",
@@ -194,7 +194,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoken",
+      "key": "Google API Key",
       "info": "3",
       "resultNo": "0",
       "storage": "1",
@@ -203,7 +203,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoken",
+      "key": "Google API Key",
       "info": "9",
       "resultNo": "0",
       "storage": "1",
@@ -212,7 +212,7 @@
     },
     {
       "video": "${tempVars(\"to-search\")}",
-      "key": "googleapitoken",
+      "key": "Google API Key",
       "info": "3",
       "resultNo": "0",
       "storage": "1",

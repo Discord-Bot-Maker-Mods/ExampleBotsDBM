@@ -42,7 +42,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "4",
+      "iffalseVal": "5",
       "name": "Check Server Data"
     },
     {
@@ -67,6 +67,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

@@ -1,0 +1,524 @@
+{
+  "name": "deny",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "HSKFR",
+  "actions": [
+    {
+      "info": "0",
+      "find": "449262058563698691",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You need to be a Raw Data Contributor to be able to do this..",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "504004340537884683",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number_param",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "channelname",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "channelname",
+      "comparison": "5",
+      "value": "\"rd-contributor-chat\"",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: Please use <#450309703277346836>",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: Use the format!\n`!deny [post] [reason]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Invalid post.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-voted",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "lol u cant vote twice",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-voted",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}cat",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_cat",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}raw",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_raw",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}_user",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "mid",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totalaccepted",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Post vote already finished.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "changeType": "1",
+      "value": "+1",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "3",
+      "iftrueVal": "15",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "defaultVal": "1",
+      "storage": "1",
+      "varName2": "totaldeny",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totalaccepted",
+      "name": "Store Server Data"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} voted to deny **#${tempVars(\"number_param\")}** for `${tempVars(\"reason\")}` (Total: ${tempVars(\"totaldeny\")}) ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.embedid",
+      "storage": "1",
+      "varName": "embed_id",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "channel": "3",
+      "varName": "approval-channel",
+      "info": "1",
+      "search": "${tempVars(\"embed_id\")}",
+      "storage": "1",
+      "varName2": "embedidmsg",
+      "name": "Find Message"
+    },
+    {
+      "title": "Vote in progress",
+      "author": "",
+      "color": "#ffa500",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Author**",
+      "message": "<@${tempVars(\"mid\")}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Current Voting Status**",
+      "message": "Accepted: ${tempVars(\"totalaccepted\")}\nDenied: ${tempVars(\"totaldeny\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | PENDING",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embedidmsg",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "input": "${member}: ${tempVars(\"reason\")}",
+      "format": ".txt",
+      "filename": "reasons_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "2",
+      "name": "File Control"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "input": "${member}: ${tempVars(\"reason\")}",
+      "format": ".txt",
+      "filename": "reasons_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "2",
+      "name": "File Control"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "filename": "./resources/raw_posts/reasons_${tempVars(\"number_param\")}.txt",
+      "storage": "1",
+      "varName2": "file2",
+      "name": "Read File"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} voted to deny **#${tempVars(\"number_param\")}** for `${tempVars(\"reason\")}` (Total: 5) ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "Denied by 5 votes.",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Author**",
+      "message": "<@${tempVars(\"mid\")}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Deny Reasons**",
+      "message": "${tempVars(\"file2\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | DENIED",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "2",
+      "varName": "edit_embed",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"mid\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authorid",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "5",
+      "varName": "user",
+      "message": "Hey! We regret to inform you that your raw data post (#${tempVars(\"number_param\")}) has not been accepted.\nIt was denied by the following people for the following reasons:\n${tempVars(\"file2\")}",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"n_raw\")}-denied",
+      "defaultVal": "1",
+      "storage": "1",
+      "varName2": "denied2",
+      "name": "Store Server Data"
+    },
+    {
+      "input": "{\n\"category\": \"${tempVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number_param\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Denied\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "1",
+      "name": "File Control"
+    }
+  ]
+}

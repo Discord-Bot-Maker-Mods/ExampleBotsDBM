@@ -1,0 +1,597 @@
+{
+  "name": "approve",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "udKTe",
+  "actions": [
+    {
+      "info": "0",
+      "find": "449262058563698691",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "role",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You need to be a Raw Data Contributor to be able to do this..",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "504004340537884683",
+      "storage": "1",
+      "varName": "approval-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number_param",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "channelname",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "channelname",
+      "comparison": "5",
+      "value": "\"rd-contributor-chat\"",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: no u. go to a gud channel.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":thinking: Use the format!\n`!approve [ID]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Invalid post.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-voted",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "lol u cant vote twice",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-voted",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}cat",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_cat",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}raw",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_raw",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}_user",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "mid",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totalaccepted",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Post vote already finished.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "changeType": "1",
+      "value": "+1",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totaldeny",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "defaultVal": "1",
+      "storage": "1",
+      "varName2": "totalaccepted",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}-accepted",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "3",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} voted to accept **#${tempVars(\"number_param\")}** (Total: ${tempVars(\"totalaccepted\")}) ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "filename": "./resources/raw_posts/raw_${tempVars(\"number_param\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "file",
+      "path": "$.embedid",
+      "storage": "1",
+      "varName": "embed_id",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "channel": "3",
+      "varName": "approval-channel",
+      "info": "1",
+      "search": "${tempVars(\"embed_id\")}",
+      "storage": "1",
+      "varName2": "embededitmsg",
+      "name": "Find Message"
+    },
+    {
+      "title": "Vote in progress",
+      "author": "",
+      "color": "#ffa500",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Author**",
+      "message": "<@${tempVars(\"mid\")}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Current Voting Status**",
+      "message": "Accepted: ${tempVars(\"totalaccepted\")}\nDenied: ${tempVars(\"totaldeny\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | PENDING",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embededitmsg",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "5",
+      "varName": "approval-channel",
+      "message": "${member} voted to accept **#${tempVars(\"number_param\")}** (Total: 5) ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}cat",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_cat",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}raw",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "n_raw",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}_user",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "mid",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"number_param\")}",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totalaccepted",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"mid\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "7",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "user",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"tag\")}",
+      "color": "#50C878",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatar\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Category**",
+      "message": "${tempVars(\"n_cat\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Author**",
+      "message": "<@${tempVars(\"mid\")}>",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Info**",
+      "message": "${tempVars(\"n_raw\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "#${tempVars(\"number_param\")} | ACCEPTED",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "2",
+      "varName": "edit_embed",
+      "storage2": "1",
+      "varName2": "embed",
+      "name": "Edit Embed"
+    },
+    {
+      "title": " ",
+      "author": "${tempVars(\"username\")}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatar\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "final-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "message": "${tempVars(\"n_raw\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "message": "#${tempVars(\"number_param\")} | 👍 Upvote | 👎 Downvote | ❗ Does not function",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"n_cat\")}",
+      "storage": "1",
+      "varName": "cat-channel",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "final-embed",
+      "channel": "5",
+      "varName2": "cat-channel",
+      "storage3": "1",
+      "varName3": "embed-sent-message",
+      "name": "Send Embed Message"
+    },
+    {
+      "input": "{\n\"category\": \"${tempVars(\"n_cat\")}\",\n\"raw_number\": \"${tempVars(\"number_param\")}\",\n\"author\": \"<@${tempVars(\"mid\")}>\",\n\"status\": \"Accepted\"\n}",
+      "format": ".json",
+      "filename": "raw_${tempVars(\"number_param\")}",
+      "filepath": "./resources/raw_posts/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "time": "4",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-sent-message",
+      "emoji": "4",
+      "varName2": "👍",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-sent-message",
+      "emoji": "4",
+      "varName2": "👎",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-sent-message",
+      "emoji": "4",
+      "varName2": "❗",
+      "varName3": "",
+      "name": "Add Reaction"
+    }
+  ],
+  "_aliases": [
+    "accept"
+  ]
+}

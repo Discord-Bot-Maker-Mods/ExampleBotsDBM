@@ -51,7 +51,7 @@
       "iftrue": "0",
       "iftrueVal": "17",
       "iffalse": "3",
-      "iffalseVal": "2",
+      "iffalseVal": "3",
       "name": "Check Parameters"
     },
     {
@@ -61,6 +61,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"

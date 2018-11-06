@@ -1,9 +1,14 @@
 {
   "name": "avatar",
   "permissions": "NONE",
-  "restriction": "4",
+  "restriction": "0",
   "_id": "EMXAE",
   "actions": [
+    {
+      "source": "check_perms_manager",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
     {
       "member": "0",
       "varName": "",

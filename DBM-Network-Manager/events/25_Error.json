@@ -5,6 +5,17 @@
   "_id": "uJBVy",
   "actions": [
     {
+      "storage": "1",
+      "varName": "short",
+      "comparison": "5",
+      "value": "\"Parse From Stored Json\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
       "server": "0",
       "varName": "",
       "info": "2",

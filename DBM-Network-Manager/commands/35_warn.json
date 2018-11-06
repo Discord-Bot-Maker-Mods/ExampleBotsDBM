@@ -14,7 +14,7 @@
       "comparison": "2",
       "value": "2",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Parameters"
@@ -26,6 +26,9 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -62,7 +65,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "5",
+      "iftrueVal": "6",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -87,7 +90,7 @@
       "comparison": "0",
       "value": "",
       "iftrue": "3",
-      "iftrueVal": "2",
+      "iftrueVal": "3",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Variable"
@@ -99,6 +102,46 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "3",
+      "varName": "staff-server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"member\").user.id}",
+      "storage": "1",
+      "varName": "staff-member",
+      "name": "Find Member"
+    },
+    {
+      "storage": "1",
+      "varName": "staff-member",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "<a:police_blue:449285901722320896> Don't fight! This is very unprofessional!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "name": "End Action Sequence"
@@ -315,6 +358,18 @@
     },
     {
       "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "dataName": "warning_points",
+      "comparison": "3",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "6",
+      "name": "Check Member Data"
     },
     {
       "source": "msg-warn",
